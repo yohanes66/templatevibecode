@@ -205,8 +205,10 @@ ul { padding: 0; list-style: none; }
 .price span { padding-bottom: 8px; color: var(--muted); font-size: 16px; line-height: 24px; font-weight: 500; }
 .price-top .button { position: relative; width: 100%; margin-top: 16px; }
 .price-points { display: flex; flex-direction: column; gap: 16px; padding: 32px 32px 40px; }
-.price-points li { display: flex; align-items: center; gap: 4px; color: var(--muted); font-size: 16px; line-height: 24px; }
-.price-points img { flex: none; width: 9.49px; height: 10px; margin-inline: .31px .2px; }
+/* flex-start, not center: on a 2-line point (common on mobile) centering pulls the bullet down to the
+   vertical middle of both lines, when it should sit with the first line. */
+.price-points li { display: flex; align-items: flex-start; gap: 4px; color: var(--muted); font-size: 16px; line-height: 24px; }
+.price-points img { flex: none; width: 9.49px; height: 10px; margin-inline: .31px .2px; margin-top: 7px; }
 .price-points b { color: #b1b1b1; font-weight: 600; }
 .featured .price-points b { color: #cd9703; }
 
@@ -283,7 +285,9 @@ footer .logo { display: flex; width: fit-content; }
   .pricing-grid { flex-direction: column; }
   /* Mobile: one horizontal marquee. Sets are flattened into one row and reordered A B C A' B' C',
      each set is 2 x 280px cards + 2 x 16px gaps = 592px, so moving 3 sets (1776px) loops seamlessly. */
-  .review-columns { align-items: stretch; gap: 0; height: auto; margin-inline: calc(50% - 50vw); -webkit-mask: linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 32px), transparent); mask: linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 32px), transparent); }
+  /* padding-top gives the hover/tap lift (translateY(-6px) on .review-card) room above the row;
+     height:auto otherwise hugs the cards exactly, so overflow:hidden clipped it. */
+  .review-columns { align-items: stretch; gap: 0; height: auto; padding: 8px 0; margin-inline: calc(50% - 50vw); -webkit-mask: linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 32px), transparent); mask: linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 32px), transparent); }
   .review-col, .review-track { display: contents; }
   .review-set { flex-direction: row; flex: none; gap: 16px; padding: 0 16px 0 0; animation: reviewLeft 40s linear infinite; }
   .review-set + .review-set { order: 1; }
