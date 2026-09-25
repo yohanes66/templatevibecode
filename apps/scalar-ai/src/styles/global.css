@@ -60,7 +60,11 @@ ul { padding: 0; list-style: none; }
 .logo { display: inline-flex; align-items: center; gap: 8px; height: 32px; }
 .logo img { width: 30.37px; height: 32px; }
 .logo span { font-family: 'Satoshi', 'Inter', sans-serif; font-size: 25.42px; font-weight: 500; line-height: 32px; color: #fff; white-space: nowrap; }
-.nav { position: relative; z-index: 5; height: 80px; display: flex; align-items: center; }
+/* Fixed to the viewport (not just within .hero), so it stays visible for the whole page scroll,
+   not only while the hero is in view. Rendered as a sibling of the sections, not inside .hero, so
+   .hero's overflow:clip can't clip it. Background/blur keep it legible over any section's content;
+   without one it was only readable while the (also dark) hero happened to sit behind it. */
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 50; height: 80px; display: flex; align-items: center; background: rgba(10, 12, 16, .6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, .06); }
 /* Centered by its own position, not by giving .logo a fixed width to balance the CTA on the other
    side — that only balanced out at exactly the 1440px design width, and drifted off-center at every
    other width (iPad landscape included). max-width:900px below replaces position/inset for the
@@ -81,7 +85,9 @@ ul { padding: 0; list-style: none; }
   --hero-gap: clamp(48px, calc(48px + (100svh - 700px) * .1481), 96px); }
 .hero-bg { position: absolute; left: calc(50% + .5px); top: -19px; width: 1853px; min-width: 100%; height: 1043px; max-width: none; object-fit: cover; transform: translateX(-50%); animation: heroPan 24s ease-in-out infinite alternate; }
 @keyframes heroPan { from { scale: 1; } to { scale: 1.06; } }
-.hero-copy { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; padding-top: var(--hero-pad); text-align: center; }
+/* Nav no longer sits in-flow above this (it's fixed, see .nav), so its 80px height is added back
+   here to keep the heading at the same position as when nav used to occupy that flow space. */
+.hero-copy { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; padding-top: calc(80px + var(--hero-pad)); text-align: center; }
 .hero-copy h1 { max-width: 768px; color: #fff; font-size: 48px; line-height: 60px; font-weight: 600; letter-spacing: -0.96px; }
 .hero-copy p { max-width: 768px; margin-top: 24px; color: #b8b8b8; font-size: 20px; line-height: 30px; }
 .hero-copy .button { margin-top: var(--hero-btn); }
@@ -280,7 +286,7 @@ footer .logo { display: flex; width: fit-content; }
      Mobile's hero is much shorter (content-sized), so that crop only ever showed empty sky.
      Fill the actual box instead and bias the crop toward the bottom, where the mountains/lake are. */
   .hero-bg { position: absolute; inset: 0; left: 0; width: 100%; height: 100%; min-width: 0; transform: none; object-position: center 78%; }
-  .hero-copy { padding-top: 64px; }
+  .hero-copy { padding-top: calc(80px + 64px); }
   .hero-mockup { position: relative; left: auto; top: auto; transform: none; width: min(835px, calc(100% - 64px)); margin: 56px auto -12%; }
   .bento-row { flex-direction: column; }
   .bento-cell, .price-card, .review-col, .cta-visual { flex: none; }

@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useReveal } from '../lib/motion'
+import { Header } from '../components/Header'
 import { Hero } from '../sections/Hero'
 import { Features } from '../sections/Features'
 import { CaseStudy } from '../sections/CaseStudy'
@@ -15,6 +16,7 @@ function Home() {
 
   return (
     <main id="top">
+      <Header />
       <Hero />
       <Features />
       <CaseStudy />
