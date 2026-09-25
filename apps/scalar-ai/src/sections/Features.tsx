@@ -14,7 +14,7 @@ export function Features() {
             <div className="bento-cell" data-reveal>
               <div className="bento-text">
                 <h3>Know Your AI Reputation</h3>
-                <p>Live AI Answer score plus Model Memory baseline to spot gaps between how AI “remembers” you and how you show up in live answers.</p>
+                <p>Compare your AI Answer score against your Model Memory baseline to spot visibility gaps.</p>
               </div>
               <div className="bento-art">
                 <div className="skew-wrap rep-wrap">

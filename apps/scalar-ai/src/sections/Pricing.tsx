@@ -12,7 +12,7 @@ export function Pricing() {
         <header className="section-heading" data-reveal>
           <h2>Select the best plan for your AI visibility goals.</h2>
           <p>Track how your brand appears across search engines, generative answers, and answer-based platforms — then improve it with actionable insights.</p>
-          <div className="billing-toggle" role="group" aria-label="Billing frequency">
+          <div className="billing-toggle" data-active={yearly ? 'yearly' : 'monthly'} role="group" aria-label="Billing frequency">
             <button className={!yearly ? 'active' : ''} type="button" aria-pressed={!yearly} onClick={() => setYearly(false)}>Monthly</button>
             <button className={yearly ? 'active' : ''} type="button" aria-pressed={yearly} onClick={() => setYearly(true)}>Yearly <span>20% OFF</span></button>
           </div>
@@ -28,7 +28,7 @@ export function Pricing() {
                 </div>
                 <p>{plan.copy}</p>
                 <div className="price">
-                  <strong>${yearly ? Math.round(plan.monthly * 0.8) : plan.monthly}</strong>
+                  <strong key={yearly ? 'y' : 'm'}>${yearly ? Math.round(plan.monthly * 0.8) : plan.monthly}</strong>
                   <span>/month</span>
                 </div>
                 <a className={`button ${plan.featured ? 'primary' : 'secondary'}`} href="#cta">{plan.cta}</a>

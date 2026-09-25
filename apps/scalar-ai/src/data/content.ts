@@ -110,9 +110,9 @@ export const socials = [
 ]
 
 export const features = [
-  ['Keyword Intelligence', 'See if a keyword is already “owned” in AI answers or still open, so you focus on winnable growth.', 'keyword'],
-  ['AI-Citation Content Engine', 'Create content for AI assistants that includes structured feedback and can be easily exported.', 'evidence'],
-  ['Brand Visibility Dashboard', 'SoV analysis, competitor insights, and one-click content creation for your brand.', 'brands'],
+  ['Keyword Intelligence', 'See which keywords AI already “owns” — and which are still up for grabs.', 'keyword'],
+  ['AI-Citation Content Engine', 'Create AI-ready content with structured feedback, exportable in one click.', 'evidence'],
+  ['Brand Visibility Dashboard', 'SoV, competitor insights, and one-click content in a single dashboard.', 'brands'],
 ]
 
 export const ctaPoints = ['30-day free trial', 'Personalized onboarding', 'Access to all features']
