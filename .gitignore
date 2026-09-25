@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+.output/
+.next/
+.nitro/
+.vinxi/
+.tanstack/
+.vercel/
+
+# Environment
+.env*
+!.env.example
+
+# Local QA artifacts
+output/
+.playwright-cli/
+
+# OS / editor
+.DS_Store
+*.local
