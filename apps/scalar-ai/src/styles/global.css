@@ -60,11 +60,15 @@ ul { padding: 0; list-style: none; }
 .logo { display: inline-flex; align-items: center; gap: 8px; height: 32px; }
 .logo img { width: 30.37px; height: 32px; }
 .logo span { font-family: 'Satoshi', 'Inter', sans-serif; font-size: 25.42px; font-weight: 500; line-height: 32px; color: #fff; white-space: nowrap; }
-/* Fixed to the viewport (not just within .hero), so it stays visible for the whole page scroll,
-   not only while the hero is in view. Rendered as a sibling of the sections, not inside .hero, so
-   .hero's overflow:clip can't clip it. Background/blur keep it legible over any section's content;
-   without one it was only readable while the (also dark) hero happened to sit behind it. */
-.nav { position: fixed; inset: 0 0 auto 0; z-index: 50; height: 80px; display: flex; align-items: center; background: rgba(10, 12, 16, .6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, .06); }
+/* Full-bleed fixed bar behind .nav's centered container, so its background reaches both edges
+   of the screen instead of being capped by .container's own max-width. Rendered as a sibling of
+   the sections (not inside .hero), so .hero's overflow:clip can't clip it once it's fixed, and it
+   stays visible for the whole page scroll, not only while the hero is in view. Transparent at
+   rest, matching the hero exactly; .is-scrolled fades in a background once you scroll, so the
+   (fixed, no-longer-in-flow) bar stays legible over whatever section ends up behind it. */
+.nav-bar { position: fixed; inset: 0 0 auto 0; z-index: 50; background: transparent; border-bottom: 1px solid transparent; transition: background-color .3s ease, border-color .3s ease; }
+.nav-bar.is-scrolled { background: rgba(10, 12, 16, .6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom-color: rgba(255, 255, 255, .06); }
+.nav { position: relative; height: 80px; display: flex; align-items: center; }
 /* Centered by its own position, not by giving .logo a fixed width to balance the CTA on the other
    side — that only balanced out at exactly the 1440px design width, and drifted off-center at every
    other width (iPad landscape included). max-width:900px below replaces position/inset for the

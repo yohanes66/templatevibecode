@@ -1,4 +1,4 @@
-import { useEffect, type CSSProperties, type PointerEvent } from 'react'
+import { useEffect, useState, type CSSProperties, type PointerEvent } from 'react'
 
 /** Feeds the bento spotlight: cursor position relative to the hovered cell. */
 export function trackPointer(e: PointerEvent) {
@@ -7,6 +7,19 @@ export function trackPointer(e: PointerEvent) {
   const r = cell.getBoundingClientRect()
   cell.style.setProperty('--mx', `${e.clientX - r.left}px`)
   cell.style.setProperty('--my', `${e.clientY - r.top}px`)
+}
+
+/** True once the page has scrolled past the hero's transparent nav area — used to fade in
+ *  the sticky nav's background so it stays transparent (matching the hero) at rest. */
+export function useScrolled(threshold = 8) {
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > threshold)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [threshold])
+  return scrolled
 }
 
 /** Stagger for [data-reveal] elements. */
