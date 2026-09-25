@@ -278,6 +278,10 @@ footer .logo { display: flex; width: fit-content; }
   .nav-cta { display: none; }
   .menu-button { display: grid; }
   .hero { display: flow-root; height: auto; padding-bottom: 0; }
+  /* The desktop crop (fixed 1853x1043, anchored near the top) was built for a ~1000px-tall hero.
+     Mobile's hero is much shorter (content-sized), so that crop only ever showed empty sky.
+     Fill the actual box instead and bias the crop toward the bottom, where the mountains/lake are. */
+  .hero-bg { position: absolute; inset: 0; left: 0; width: 100%; height: 100%; min-width: 0; transform: none; object-position: center 78%; }
   .hero-copy { padding-top: 64px; }
   .hero-mockup { position: relative; left: auto; top: auto; transform: none; width: min(835px, calc(100% - 64px)); margin: 56px auto -12%; }
   .bento-row { flex-direction: column; }
