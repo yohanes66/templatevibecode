@@ -14,6 +14,7 @@ Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, de
 
 | Project | Deskripsi | Stack | Folder |
 |---|---|---|---|
+| Maren Botanical | Botanical haircare storefront with automatic ritual steps | TanStack Router, React, Vite, CSS | [`apps/maren-botanical`](apps/maren-botanical) |
 | Scalar.ai | Landing page SaaS AI visibility (SEO, GEO, AEO) | TanStack Start, React, Vite, CSS | [`apps/scalar-ai`](apps/scalar-ai) |
 
 ---
@@ -23,7 +24,8 @@ Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, de
 ```text
 templatevibecode/
 ├── apps/
-│   └── scalar-ai/            # Standalone app: punya package.json sendiri
+│   ├── scalar-ai/            # Standalone app: punya package.json sendiri
+│   └── maren-botanical/      # Botanical haircare storefront
 │
 ├── docs/
 │   ├── ADD_NEW_PROJECT.md    # Workflow menambahkan project baru
