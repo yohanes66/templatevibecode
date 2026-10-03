@@ -1,6 +1,6 @@
 # Maren Botanical
 
-A self-contained beauty storefront built with React, TypeScript, Vite, and TanStack Router. The homepage implements the 1440 × 7301 Figma frame, using all 19 original images exported with Figma CLI and locally hosted Instrument Serif / Instrument Sans fonts.
+A self-contained beauty storefront built with React, TypeScript, Vite, and TanStack Router. The homepage follows the supplied Figma design, using all 19 original images exported with Figma CLI and locally hosted Instrument Serif / Instrument Sans fonts. Hero statistics are visible on the first screen. Desktop sections use comfortable spacing and proportionate photos/cards. The product section fills the area below the sticky header; other sections follow their content height. Mobile and tablet layouts retain natural document flow.
 
 ## Run
 
@@ -33,7 +33,7 @@ Routes include `/`, `/shop`, `/products/$slug`, `/journal`, `/journal/$slug`, an
 
 The bag persists locally with validated quantities and corrupted-storage recovery. Search, bag editing, mobile navigation, product details, reviews, and ritual image switching work in the browser. The sticky header keeps navigation available; the mobile menu uses the same native modal drawer as the bag, including focus trapping, Escape dismissal, and focus restoration.
 
-The ritual automatically cycles every six seconds while visible, with one vertical progress rail beside the steps. It keeps playing while hovered; keyboard focus pauses it for reading, and it stops offscreen or in a hidden tab. Mobile places the numbered progress rail and active description inside the matching photograph, with no repeated list underneath. Trust and clinical numbers count up once on first appearance, without changing their allocated width. Reveals use gentle movement and staggered timing. All motion respects `prefers-reduced-motion`.
+The ritual automatically cycles every four seconds while visible, with a contrasting background on the active step and clickable steps for quick navigation. It keeps playing while hovered; keyboard focus pauses it for reading, and it stops offscreen or in a hidden tab. Mobile places the numbered step controls and active description inside the matching photograph, with no repeated list underneath. Trust and clinical numbers count up once on first appearance, without changing their allocated width. Reveals use gentle movement and staggered timing. All motion respects `prefers-reduced-motion`.
 
 Checkout, account access, and newsletter submission are explicitly demo flows. Connect commerce, authentication, and email providers before accepting orders or subscriptions. Replace sample claims, policies, and editorial copy before launch. No CMS or database is required for the starter.
 

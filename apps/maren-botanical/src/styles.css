@@ -37,13 +37,15 @@
   --rust: #8a4e37;
   --terra: #a8664c;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --header-height: 72px;
+  --hero-height: min(820px, calc(100svh - var(--header-height) - 35px));
 }
 * {
   box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 112px;
+  scroll-padding-top: var(--header-height);
 }
 body {
   margin: 0;
@@ -157,8 +159,8 @@ em {
   z-index: 30;
   background: rgba(246, 241, 234, 0.94);
   backdrop-filter: blur(14px);
-  height: 88px;
-  padding: 24px 48px;
+  height: var(--header-height);
+  padding: 16px 48px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -190,20 +192,21 @@ em {
   display: none;
 }
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: 52.777778% 47.222222%;
-  min-height: 820px;
+  min-height: var(--hero-height);
 }
 .hero-copy {
-  padding: 96px 64px 48px 48px;
+  padding: clamp(32px, 8svh, 96px) 64px clamp(24px, 4svh, 48px) 48px;
   display: flex;
   flex-direction: column;
-  min-height: 820px;
+  min-height: var(--hero-height);
 }
 .hero-stack {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: clamp(16px, 2.8svh, 28px);
 }
 .eyebrow {
   font-family: "Instrument Sans", sans-serif;
@@ -215,7 +218,7 @@ em {
   color: var(--rust);
 }
 .hero h1 {
-  font-size: clamp(56px, 5.55556vw, 96px);
+  font-size: clamp(52px, min(5.55556vw, 9svh), 96px);
 }
 .hero-description {
   max-width: 440px;
@@ -265,8 +268,9 @@ em {
   border-color: var(--ink);
 }
 .trust-row {
-  display: flex;
-  gap: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 28px);
   margin-top: auto;
   padding-top: 24px;
   border-top: 1px solid var(--line);
@@ -282,11 +286,15 @@ em {
   font-size: 13px;
   line-height: 16px;
   color: var(--muted);
-  white-space: nowrap;
+  white-space: normal;
 }
 .hero-image {
-  width: 100%;
-  height: 820px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 47.222222%;
+  height: 100%;
+  object-position: center 35%;
 }
 .ticker {
   overflow: hidden;
@@ -393,6 +401,7 @@ em {
 }
 .product-image {
   display: block;
+  width: 100%;
   position: relative;
   overflow: hidden;
   border-radius: 4px;
@@ -531,6 +540,7 @@ em {
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: contain;
   opacity: 0;
   transform: scale(1.025);
   transition:
@@ -553,7 +563,6 @@ em {
 .ritual-steps {
   grid-area: steps;
   position: relative;
-  padding-left: 24px;
 }
 .ritual-caption {
   display: none;
@@ -578,31 +587,8 @@ em {
   color: var(--rust);
   border-color: var(--terra);
 }
-.ritual-progress {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--line);
-}
-.ritual-progress > span {
-  display: block;
-  height: 100%;
-  background: var(--terra);
-  transform: scaleY(var(--progress-end));
-  transform-origin: top;
-}
-.ritual[data-playing="true"] .ritual-progress > span {
-  animation: ritual-progress 6s linear forwards;
-}
-@keyframes ritual-progress {
-  from {
-    transform: scaleY(var(--progress-start));
-  }
-  to {
-    transform: scaleY(var(--progress-end));
-  }
+.ritual-step[aria-pressed="true"] .step-instruction {
+  color: var(--ink);
 }
 .animated-number {
   display: inline-grid;
@@ -615,6 +601,9 @@ em {
 }
 .ritual-step:hover {
   background: rgba(234, 219, 205, 0.45);
+}
+.ritual-step[aria-pressed="true"] {
+  background: var(--sand);
 }
 .step-number {
   font:
@@ -1350,40 +1339,8 @@ details p {
   margin-top: 12px;
 }
 @media (min-width: 1400px) {
-  .products {
-    min-height: 998px;
-  }
   .footer-wordmark {
     text-indent: -8px;
-  }
-  .products .section-heading {
-    width: calc(100% + 17px);
-  }
-  .ingredients {
-    min-height: 871px;
-  }
-  .ritual {
-    min-height: 1000px;
-  }
-  .results {
-    min-height: 579px;
-  }
-  .testimonials {
-    min-height: 763px;
-  }
-  .journal {
-    min-height: 887px;
-  }
-}
-@media (min-width: 1200px) and (max-width: 1500px) {
-  .hero h1 {
-    line-height: 77px;
-  }
-  .trust-row > div:nth-child(1) {
-    min-width: 172px;
-  }
-  .trust-row > div:nth-child(2) {
-    min-width: 157px;
   }
 }
 @media (max-width: 1199px) {
@@ -1395,21 +1352,10 @@ details p {
     gap: 22px;
   }
   .hero-copy {
-    padding: 72px 32px 40px;
-    min-height: 740px;
-  }
-  .hero-image {
-    height: 740px;
-  }
-  .hero {
-    min-height: 740px;
-  }
-  .hero-stack {
-    gap: 24px;
+    padding-inline: 32px;
   }
   .trust-row {
     gap: 24px;
-    flex-wrap: wrap;
   }
   .trust-row p {
     font-size: 11px;
@@ -1489,14 +1435,7 @@ details p {
     gap: 16px;
   }
   .hero-copy {
-    padding: 56px 24px 32px;
-    min-height: 690px;
-  }
-  .hero-image {
-    height: 690px;
-  }
-  .hero {
-    min-height: 690px;
+    padding-inline: 24px;
   }
   .hero h1 {
     font-size: 58px;
@@ -1631,6 +1570,9 @@ details p {
   }
 }
 @media (max-width: 640px) {
+  :root {
+    --header-height: 72px;
+  }
   html {
     scroll-padding-top: 88px;
   }
@@ -1640,7 +1582,6 @@ details p {
     height: 35px;
   }
   .site-header {
-    height: 72px;
     padding: 16px 20px;
   }
   .nav-left,
@@ -1699,6 +1640,7 @@ details p {
     max-width: 108px;
   }
   .hero-image {
+    position: static;
     height: auto;
     width: 100%;
     aspect-ratio: 680/820;
@@ -1867,14 +1809,7 @@ details p {
     width: 58px;
     margin: 20px;
     gap: 0;
-    padding-left: 14px;
     filter: drop-shadow(0 1px 3px rgba(43, 36, 32, 0.5));
-  }
-  .ritual-progress {
-    background: rgba(246, 241, 233, 0.4);
-  }
-  .ritual-progress > span {
-    background: var(--paper);
   }
   .ritual-step {
     align-items: center;
@@ -1885,9 +1820,11 @@ details p {
     border-radius: 50%;
     transition: background 300ms ease;
   }
-  .ritual-step:hover,
-  .ritual-step[aria-pressed="true"] {
+  .ritual-step:hover {
     background: rgba(246, 241, 233, 0.16);
+  }
+  .ritual-step[aria-pressed="true"] {
+    background: var(--paper);
   }
   .ritual-step .step-copy,
   .ritual-step .duration {
@@ -1902,6 +1839,9 @@ details p {
   .ritual-step[aria-pressed="false"] .step-number {
     color: var(--paper);
     opacity: 0.65;
+  }
+  .ritual-step[aria-pressed="true"] .step-number {
+    color: var(--ink);
   }
   .step-number {
     font-size: 36px;
@@ -2085,6 +2025,109 @@ details p {
   }
   .journal-list {
     margin-top: 40px;
+  }
+}
+@media (min-width: 901px) {
+  :root {
+    --section-space: clamp(64px, 9svh, 120px);
+    --section-room: calc(
+      100svh - var(--header-height) - 2 * var(--section-space)
+    );
+  }
+  h2 {
+    font-size: clamp(36px, 6svh, 56px);
+  }
+  .section-pad {
+    padding-block: var(--section-space);
+  }
+  .products {
+    min-height: calc(100svh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .results {
+    align-items: center;
+  }
+  .products .section-heading,
+  .testimonials .section-heading {
+    margin-bottom: clamp(24px, 4svh, 48px);
+  }
+  .products .section-heading h2,
+  .ingredients-heading h2,
+  .ingredient-card {
+    min-height: 0;
+  }
+  .products .section-heading h2 {
+    max-width: 720px;
+  }
+  .ingredients-heading {
+    margin-bottom: clamp(24px, 4svh, 56px);
+  }
+  .ingredient-card img {
+    width: clamp(128px, calc(var(--section-room) - 340px), 200px);
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .ingredient-card h3 {
+    margin-top: clamp(20px, 4svh, 32px);
+  }
+  .ritual {
+    grid-template-columns: minmax(0, 520fr) minmax(0, 728fr);
+    gap: clamp(20px, 3svh, 48px) clamp(48px, 6.666667vw, 96px);
+  }
+  .ritual-heading h2 {
+    font-size: clamp(36px, 5.5svh, 56px);
+  }
+  .ritual-steps {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+  .ritual-step {
+    flex: 1;
+    align-items: center;
+    min-height: 0;
+    padding: 18px 20px;
+  }
+  .review-card {
+    min-height: 0;
+  }
+  .review-card blockquote {
+    font-size: clamp(26px, 3.6svh, 32px);
+  }
+  .journal {
+    padding-block: var(--section-space);
+  }
+  .journal .section-heading {
+    margin-bottom: clamp(24px, 4svh, 40px);
+  }
+  .journal .featured-story {
+    min-height: 0;
+    aspect-ratio: 7 / 5;
+  }
+  .journal .side-stories .story-card {
+    min-height: 0;
+  }
+  .newsletter {
+    padding-block: 64px;
+    min-height: 0;
+  }
+  .newsletter-status {
+    position: static;
+  }
+  .newsletter-status:empty {
+    display: none;
+  }
+  .site-footer {
+    padding-top: var(--section-space);
+  }
+  .footer-wordmark {
+    font-size: clamp(120px, 20svh, 240px);
+  }
+  .footer-wordmark,
+  .footer-legal {
+    margin-top: clamp(40px, 8svh, 80px);
   }
 }
 @media (prefers-reduced-motion: reduce) {

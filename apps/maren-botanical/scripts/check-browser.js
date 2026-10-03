@@ -1,6 +1,7 @@
 async (page) => {
   const check = (value, message) => { if (!value) throw new Error(message) }
   const base = 'http://127.0.0.1:3200'
+  try {
   const errors = []
   page.on('pageerror', error => errors.push(error.message))
   await page.emulateMedia({ reducedMotion: 'reduce' })
@@ -11,8 +12,29 @@ async (page) => {
   await page.evaluate(() => document.fonts.ready)
   for (const section of await page.locator('main > div > section').all()) await section.scrollIntoViewIfNeeded()
   await page.waitForFunction(() => [...document.images].every(i => i.complete && i.naturalWidth > 0))
-  const sections = await page.locator('main > div > section').evaluateAll(es => es.map(e => [Math.round(e.offsetTop), Math.round(e.offsetHeight)]))
-  check(JSON.stringify(sections) === JSON.stringify([[123,820],[1012,998],[2010,871],[2881,1000],[3881,579],[4460,763],[5223,887],[6110,518]]), 'Desktop section geometry differs from Figma')
+  for (const [width, height] of [[1024,600],[1280,650],[1440,780],[1512,820],[1728,980],[1920,900]]) {
+    await page.setViewportSize({ width, height })
+    await page.evaluate(() => scrollTo(0, 0))
+    const geometry = await page.evaluate(() => {
+      const header = document.querySelector('.site-header').getBoundingClientRect().height
+      return {
+        heroBottom: document.querySelector('.hero').getBoundingClientRect().bottom,
+        trustBottom: document.querySelector('.trust-row').getBoundingClientRect().bottom,
+        ritualBalanced: Math.abs(document.querySelector('.ritual-images').getBoundingClientRect().bottom - document.querySelector('.ritual-steps').getBoundingClientRect().bottom) < 2,
+        productPhotosFill: [...document.querySelectorAll('.product-card')].every(e => Math.abs(e.clientWidth - e.querySelector('.product-image').clientWidth) < 2),
+        undersized: [...document.querySelectorAll('.products')].filter(e => e.getBoundingClientRect().height < innerHeight - header - 1).map(e => e.classList[0]),
+        cramped: [...document.querySelectorAll('.hero ~ section')].filter(e => parseFloat(getComputedStyle(e).paddingTop) < 64 || parseFloat(getComputedStyle(e).paddingBottom) < 64).map(e => e.classList[0]),
+        clipped: [...document.querySelectorAll('.review-card, .story-card')].filter(e => e.matches('.story-card') ? e.querySelector('.story-copy').getBoundingClientRect().height > e.clientHeight + 1 : e.scrollHeight > e.clientHeight + 1).map(e => e.classList[0]),
+      }
+    })
+    check(geometry.heroBottom <= height + 1 && geometry.trustBottom < height, `Hero statistics fall below the first viewport at ${width}×${height}`)
+    check(geometry.ritualBalanced && geometry.productPhotosFill, `Unbalanced ritual or product photo width at ${width}×${height}`)
+    check(geometry.undersized.length === 0, `Next section peeks into the viewport at ${width}×${height}: ${geometry.undersized.join(', ')}`)
+    check(geometry.cramped.length === 0 && geometry.clipped.length === 0, `Cramped or clipped content at ${width}×${height}: ${[...geometry.cramped, ...geometry.clipped].join(', ')}`)
+    await page.locator('#ritual').evaluate(e => e.scrollIntoView({ block: 'start' }))
+    check(await page.locator('#ritual').evaluate(e => e.getBoundingClientRect().top >= document.querySelector('.site-header').getBoundingClientRect().height - 1), `Ritual heading is obscured by the sticky header at ${width}×${height}`)
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 })
   for (const [number, filename] of [['02', 'ritual-condition.png'], ['03', 'ritual-treat.png'], ['01', 'ritual-cleanse.png']]) {
     await page.getByRole('button', { name: new RegExp('^' + number + ' ') }).click()
     check((await page.locator('.ritual-images img.active').getAttribute('src')).endsWith(filename), 'Wrong ritual image')
@@ -90,6 +112,9 @@ async (page) => {
   await page.waitForFunction(() => [...document.images].every(i => i.complete && i.naturalWidth > 0))
   await page.evaluate(() => scrollTo(0, 0))
   await page.screenshot({ path: 'output/playwright/maren-desktop.png', fullPage: true })
-  await page.screenshot({ path: 'templates/maren-botanical/preview.jpg', type: 'jpeg', quality: 90 })
-  return { result: 'PASS', checked: ['Figma desktop geometry', 'all 19 assets', 'three ritual images', 'reviews', 'cart totals and persistence', 'checkout preview', 'dialog focus and Escape', 'product search and empty state', 'product and journal routes', '404', 'email validation', 'mobile navigation', 'eight viewport widths', 'reduced motion', 'scroll reveal'], browserErrors: errors }
+  await page.screenshot({ path: 'apps/maren-botanical/preview.jpg', type: 'jpeg', quality: 90 })
+  return { result: 'PASS', checked: ['hero statistics visible in six laptop/desktop viewports', 'generous section spacing and no clipped cards', 'product section fills the area below the header', 'all 19 assets', 'three ritual images', 'reviews', 'cart totals and persistence', 'checkout preview', 'dialog focus and Escape', 'product search and empty state', 'product and journal routes', '404', 'email validation', 'mobile navigation', 'eight viewport widths', 'reduced motion', 'scroll reveal'], browserErrors: errors }
+  } finally {
+    await page.emulateMedia({ reducedMotion: null })
+  }
 }

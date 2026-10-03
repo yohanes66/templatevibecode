@@ -6,7 +6,6 @@ import {
   useState,
   type FormEvent,
   type ReactNode,
-  type CSSProperties,
 } from "react";
 import {
   createRootRoute,
@@ -115,7 +114,13 @@ function Shell() {
           Free shipping on orders over $75 · Try the Discovery Set
         </Link>
       </div>
-      <header className="site-header">
+      <header
+        className="site-header"
+        onClickCapture={(event) => {
+          // Safari needs a focused trigger for native dialog focus restoration.
+          (event.target as HTMLElement).closest("button")?.focus();
+        }}
+      >
         <nav className="nav-left" aria-label="Main navigation">
           <Link to="/" hash="shop">
             Shop
@@ -526,7 +531,7 @@ function Home() {
     if (!ritualPlaying) return;
     const timer = setTimeout(
       () => setStep((current) => (current + 1) % steps.length),
-      6000,
+      4000,
     );
     return () => clearTimeout(timer);
   }, [step, ritualPlaying]);
@@ -719,17 +724,6 @@ function Home() {
               setRitualFocused(false);
           }}
         >
-          <span className="ritual-progress" aria-hidden="true">
-            <span
-              key={`${step}-${ritualPlaying}`}
-              style={
-                {
-                  "--progress-start": step / steps.length,
-                  "--progress-end": (step + 1) / steps.length,
-                } as CSSProperties
-              }
-            />
-          </span>
           {steps.map((item, index) => (
             <button
               className="ritual-step"

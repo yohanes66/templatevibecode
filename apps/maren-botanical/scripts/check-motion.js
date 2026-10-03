@@ -1,5 +1,6 @@
 async (page) => {
   const check = (value, message) => { if (!value) throw new Error(message) }
+  try {
   const errors = []
   page.on('pageerror', error => errors.push(error.message))
   await page.emulateMedia({ reducedMotion: 'no-preference' })
@@ -18,20 +19,19 @@ async (page) => {
   await page.reload()
   await page.locator('.ritual-images').scrollIntoViewIfNeeded()
   await page.waitForFunction(() => document.querySelector('#ritual').dataset.playing === 'true')
-  check(await page.locator('.ritual-progress').count() === 1, 'There is more than one progress rail')
+  check(await page.locator('.ritual-progress').count() === 0, 'Progress rail remains')
   check(await page.locator('.ritual-controls, .step-progress').count() === 0, 'Old controls or horizontal loaders remain')
   check(await page.locator('.ritual-step').first().evaluate(e => getComputedStyle(e).borderTopWidth === '0px'), 'The line above Cleanse remains')
   await page.locator('.ritual-heading').hover()
   for (const filename of ['ritual-condition.png', 'ritual-treat.png', 'ritual-cleanse.png']) {
-    await page.waitForFunction(file => document.querySelector('.ritual-images img.active').getAttribute('src').endsWith(file), filename, { timeout: 8500 })
+    await page.waitForFunction(file => document.querySelector('.ritual-images img.active').getAttribute('src').endsWith(file), filename, { timeout: 5500 })
   }
-  check(await page.locator('.ritual-progress').evaluate(e => e.getBoundingClientRect().width === 2 && e.getBoundingClientRect().height > 400), 'Progress is not one vertical rail')
+  await page.waitForFunction(() => getComputedStyle(document.querySelector('.ritual-step[aria-pressed=true]')).backgroundColor !== getComputedStyle(document.querySelector('.ritual-step[aria-pressed=false]')).backgroundColor)
   check(await page.locator('#ritual').getAttribute('data-playing') === 'true', 'Hover stopped autoplay')
   await page.mouse.move(0, 0)
   await page.waitForFunction(() => document.querySelector('#ritual').dataset.playing === 'true')
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.waitForFunction(() => document.querySelector('#ritual').dataset.playing === 'false')
-  check(await page.locator('.ritual-progress > span').evaluate(e => getComputedStyle(e).animationName === 'none'), 'Reduced-motion progress still animates')
   await page.setViewportSize({ width: 390, height: 844 })
   await page.locator('.ritual-images').scrollIntoViewIfNeeded()
   check(await page.locator('.ritual-caption').evaluate(e => {
@@ -77,5 +77,8 @@ async (page) => {
     }
   }
   check(errors.length === 0, errors.join('; '))
-  return { result: 'PASS', checked: ['count-up only on first appearance', 'autoplay 01 → 02 → 03 → 01 while hovered', 'one vertical progress rail', 'no pause/count overlay or top separator', 'mobile autoplay with synchronized caption', 'mobile indicators inside the image with no overlap and 44px touch targets', 'reduced motion', 'sticky header', 'mobile image/caption synchronization', 'shared drawer geometry', 'Escape and focus restoration', 'anchor offset below header', 'six viewport widths'], browserErrors: errors }
+  return { result: 'PASS', checked: ['count-up only on first appearance', 'autoplay 01 → 02 → 03 → 01 while hovered', 'no progress rail; distinct active step', 'no pause/count overlay or top separator', 'mobile autoplay with synchronized caption', 'mobile indicators inside the image with no overlap and 44px touch targets', 'reduced motion', 'sticky header', 'mobile image/caption synchronization', 'shared drawer geometry', 'Escape and focus restoration', 'anchor offset below header', 'six viewport widths'], browserErrors: errors }
+  } finally {
+    await page.emulateMedia({ reducedMotion: null })
+  }
 }
