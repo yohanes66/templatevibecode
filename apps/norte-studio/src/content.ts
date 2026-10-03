@@ -29,7 +29,7 @@ export const services = [
       "events-2.webp",
       "events-3.webp",
       "events-4.webp",
-      "events-5.webp"
+      "events-5-reception.webp"
     ]
   },
   {
