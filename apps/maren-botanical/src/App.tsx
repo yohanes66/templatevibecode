@@ -166,7 +166,7 @@ function Shell() {
       <dialog
         ref={dialog}
         aria-labelledby="dialog-title"
-        className={`shop-dialog ${panel === "bag" || panel === "checkout" || panel === "menu" ? "bag-dialog" : ""}`}
+        className={`shop-dialog ${panel === "menu" ? "menu-dialog" : panel === "bag" || panel === "checkout" ? "bag-dialog" : ""}`}
         onCancel={close}
         onClose={close}
         onClick={(e) => {

@@ -1063,7 +1063,8 @@ input::placeholder {
   flex-shrink: 0;
   font-size: 24px;
 }
-.bag-dialog {
+.bag-dialog,
+.menu-dialog {
   margin: 0 0 0 auto;
   max-height: none;
   height: 100dvh;
@@ -1073,6 +1074,12 @@ input::placeholder {
 }
 .bag-dialog[open] {
   animation: bag-in 250ms var(--ease);
+}
+.menu-dialog {
+  margin: 0 auto 0 0;
+}
+.menu-dialog[open] {
+  animation: menu-in 250ms var(--ease);
 }
 .drawer-navigation {
   display: flex;
@@ -1084,10 +1091,10 @@ input::placeholder {
   align-items: center;
   justify-content: space-between;
   text-align: left;
-  padding: 24px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--line);
   font:
-    36px/1.2 "Instrument Serif",
+    24px/1.2 "Instrument Serif",
     serif;
   transition: color 200ms ease;
 }
@@ -1097,12 +1104,20 @@ input::placeholder {
 }
 .drawer-navigation span {
   font:
-    20px/1 "Instrument Sans",
+    16px/1 "Instrument Sans",
     sans-serif;
 }
 @keyframes bag-in {
   from {
     transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes menu-in {
+  from {
+    transform: translateX(-100%);
   }
   to {
     transform: none;
@@ -1806,7 +1821,7 @@ details p {
     align-self: start;
     justify-self: end;
     z-index: 2;
-    width: 36px;
+    width: 28px;
     margin: 16px;
     gap: 8px;
     filter: drop-shadow(0 1px 3px rgba(43, 36, 32, 0.5));
@@ -1814,8 +1829,8 @@ details p {
   .ritual-step {
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     min-height: 0;
     border: 0;
     padding: 0;
@@ -1833,8 +1848,7 @@ details p {
     display: none;
   }
   .ritual-step .step-number {
-    font-size: 16px;
-    line-height: 20px;
+    font: 500 12px/1 "Instrument Sans", sans-serif;
     color: var(--paper);
     transition: opacity 300ms ease;
   }
