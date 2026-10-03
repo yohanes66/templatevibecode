@@ -1,0 +1,24 @@
+{
+  "name": "norte-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 3300 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 3300 --strictPort",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "1.170.41",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.1.1",
+    "typescript": "5.7.3",
+    "vite": "8.3.2"
+  }
+}

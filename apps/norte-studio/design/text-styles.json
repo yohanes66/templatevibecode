@@ -1,0 +1,3564 @@
+[
+  {
+    "id": "1662:5604",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5606",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5609",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5610",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5612",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5615",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5616",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5618",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5619",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5621",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5622",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 0.6000000238418579,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5624",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5627",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5628",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5632",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5634",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5636",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5638",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5639",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5640",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5643",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5644",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5646",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5650",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5651",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5652",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5653",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5662",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5663",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5664",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5665",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5668",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5669",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5670",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5671",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5674",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5675",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5676",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5677",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5680",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5681",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5683",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5688",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5691",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5692",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5693",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5698",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5699",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5700",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5705",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5706",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5707",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5712",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5713",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5714",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5719",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5720",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5721",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5726",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5727",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5728",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5730",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5734",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5735",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5739",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5740",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5744",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5745",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5749",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5750",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5753",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5754",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5756",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5757",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5758",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5761",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5762",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5765",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5766",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5768",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.16862745583057404,
+          "g": 0.23137255012989044,
+          "b": 1
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5769",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5773",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5774",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5776",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5780",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5782",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5783",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5787",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5789",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5790",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5794",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5796",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5797",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5801",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5802",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5804",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5809",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5810",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5811",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5812",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5816",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5817",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5818",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5819",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5823",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5824",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5825",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5826",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5830",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5831",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5832",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5833",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Geist",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5836",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5837",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5840",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5842",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.05098039284348488,
+          "g": 0.05098039284348488,
+          "b": 0.05098039284348488
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5843",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.3686274588108063,
+          "g": 0.3607843220233917,
+          "b": 0.34117648005485535
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5847",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5848",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5849",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5850",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5851",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5852",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5853",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5855",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5857",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.6039215922355652,
+          "g": 0.5921568870544434,
+          "b": 0.5607843399047852
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5858",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5861",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.6039215922355652,
+          "g": 0.5921568870544434,
+          "b": 0.5607843399047852
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5862",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5864",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.6039215922355652,
+          "g": 0.5921568870544434,
+          "b": 0.5607843399047852
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5865",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5867",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.6039215922355652,
+          "g": 0.5921568870544434,
+          "b": 0.5607843399047852
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5868",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5870",
+    "textCase": "ORIGINAL",
+    "fontName": {
+      "family": "Zalando Sans Expanded",
+      "style": "Medium",
+      "variationSettings": {
+        "wght": 500
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5872",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.6039215922355652,
+          "g": 0.5921568870544434,
+          "b": 0.5607843399047852
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5873",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.9529411792755127,
+          "g": 0.9450980424880981,
+          "b": 0.9254902005195618
+        },
+        "boundVariables": {}
+      }
+    ]
+  },
+  {
+    "id": "1662:5874",
+    "textCase": "UPPER",
+    "fontName": {
+      "family": "Geist Mono",
+      "style": "Regular",
+      "variationSettings": {
+        "wght": 400
+      }
+    },
+    "opacity": 1,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 0.6039215922355652,
+          "g": 0.5921568870544434,
+          "b": 0.5607843399047852
+        },
+        "boundVariables": {}
+      }
+    ]
+  }
+]

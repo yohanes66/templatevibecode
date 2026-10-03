@@ -16,6 +16,7 @@ Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, de
 |---|---|---|---|
 | Maren Botanical | Botanical haircare storefront with automatic ritual steps | TanStack Router, React, Vite, CSS | [`apps/maren-botanical`](apps/maren-botanical) |
 | Scalar.ai | Landing page SaaS AI visibility (SEO, GEO, AEO) | TanStack Start, React, Vite, CSS | [`apps/scalar-ai`](apps/scalar-ai) |
+| Norte Studio | Editorial studio fashion, beauty & lifestyle dengan empat galeri discipline | TanStack Router, React, Vite, CSS | [`apps/norte-studio`](apps/norte-studio) |
 
 ---
 
