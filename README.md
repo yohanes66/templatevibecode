@@ -12,6 +12,8 @@ Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, de
 
 ## Projects
 
+Katalog template lokal tersedia di `index.html`. Template company profile terbaru: [Sorrel Studio](templates/sorrel-studio/README.md), menggunakan React, TanStack Router, Vite dan TypeScript. Jalankan dari `templates/sorrel-studio` dengan `npm install` lalu `npm run dev` (port 3400). Halaman detail katalog: `sorrel-studio.html`.
+
 | Project | Deskripsi | Stack | Folder |
 |---|---|---|---|
 | Maren Botanical | Botanical haircare storefront with automatic ritual steps | TanStack Router, React, Vite, CSS | [`apps/maren-botanical`](apps/maren-botanical) |

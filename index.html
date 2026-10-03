@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A small collection of portfolio and company profile templates made to be remixed with AI."
+    />
+    <title>Porto — Portfolio templates for your next idea</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #171713;
+        --muted: #686860;
+        --paper: #f3f1ea;
+        --card: #faf9f5;
+        --line: rgba(23, 23, 19, 0.16);
+        --accent: #d8ff48;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1440px, 100%);
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 80px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 750;
+        letter-spacing: -0.03em;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--ink);
+        color: var(--paper);
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 12px;
+      }
+
+      .header-meta,
+      .eyebrow,
+      .card-meta {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .header-meta {
+        color: var(--muted);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.6fr);
+        gap: 64px;
+        align-items: end;
+        padding: 96px 0 88px;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 24px;
+        color: var(--muted);
+      }
+
+      .eyebrow::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 1px var(--ink);
+        content: "";
+      }
+
+      h1 {
+        max-width: 950px;
+        margin: 0;
+        font-size: clamp(52px, 7vw, 112px);
+        font-weight: 520;
+        letter-spacing: -0.065em;
+        line-height: 0.9;
+      }
+
+      .hero-copy {
+        margin: 0 0 4px;
+        color: var(--muted);
+        font-size: clamp(17px, 1.35vw, 21px);
+        line-height: 1.5;
+      }
+
+      .hero-copy strong {
+        color: var(--ink);
+        font-weight: 650;
+      }
+
+      .collection {
+        padding: 0 0 104px;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 650;
+      }
+
+      .section-head span {
+        color: var(--muted);
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 11px;
+      }
+
+      .template-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .template-card {
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--card);
+      }
+
+      .preview {
+        position: relative;
+        display: block;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        background: #ddd;
+      }
+
+      .preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .preview:hover img,
+      .preview:focus-visible img {
+        transform: scale(1.025);
+      }
+
+      .preview-label {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        padding: 9px 12px;
+        border-radius: 999px;
+        background: rgba(250, 249, 245, 0.9);
+        font-size: 12px;
+        font-weight: 650;
+        backdrop-filter: blur(10px);
+      }
+
+      .card-body {
+        padding: 24px;
+      }
+
+      .card-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 34px;
+        color: var(--muted);
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .status::before {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #49a65d;
+        content: "";
+      }
+
+      .status.soon::before {
+        background: #b7b4a8;
+      }
+
+      .card-body h3 {
+        margin: 0 0 12px;
+        font-size: clamp(29px, 3vw, 46px);
+        font-weight: 520;
+        letter-spacing: -0.05em;
+      }
+
+      .card-body p {
+        max-width: 550px;
+        min-height: 3em;
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .card-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 650;
+        text-decoration: none;
+        transition: background 160ms ease, color 160ms ease;
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background: var(--accent);
+        color: var(--ink);
+        outline: none;
+      }
+
+      .button[aria-disabled="true"] {
+        cursor: not-allowed;
+        border-color: var(--line);
+        background: #e8e6df;
+        color: #8a887f;
+        pointer-events: none;
+      }
+
+      .how-it-works {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 64px;
+        padding: 72px 0 88px;
+        border-top: 1px solid var(--line);
+      }
+
+      .how-it-works h2 {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .steps span {
+        display: block;
+        margin-bottom: 20px;
+        color: var(--muted);
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 11px;
+      }
+
+      .steps strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+
+      .steps p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 22px 0 30px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      @media (max-width: 820px) {
+        .shell {
+          padding: 0 18px;
+        }
+
+        .hero,
+        .how-it-works {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+
+        .hero {
+          padding: 72px 0 64px;
+        }
+
+        .template-grid,
+        .steps {
+          grid-template-columns: 1fr;
+        }
+
+        .card-body p {
+          min-height: 0;
+        }
+
+        .header-meta {
+          display: none;
+        }
+      }
+
+      @media (max-width: 520px) {
+        h1 {
+          font-size: 51px;
+        }
+
+        .card-actions {
+          flex-direction: column;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .preview img {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="#top" aria-label="Porto home">
+          <span class="brand-mark" aria-hidden="true">P</span>
+          Porto Templates
+        </a>
+        <span class="header-meta">Portfolio starters · Built to be remixed</span>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">Four opinionated starting points</p>
+            <h1 id="page-title">Start ahead.<br />Make it yours.</h1>
+          </div>
+          <p class="hero-copy">
+            Thoughtful website templates with real structure and editable content.
+            <strong>Bring one to your AI editor and skip the blank page.</strong>
+          </p>
+        </section>
+
+        <section class="collection" aria-labelledby="collection-title">
+          <div class="section-head">
+            <h2 id="collection-title">Template collection</h2>
+            <span>04 templates</span>
+          </div>
+
+          <div class="template-grid">
+            <article class="template-card">
+              <a
+                class="preview"
+                href="./editorial-index.html"
+                aria-label="Open the Editorial Index template detail page"
+              >
+                <img
+                  src="./templates/editorial-index/implementation-home-final-desktop.jpg"
+                  alt="Dark editorial portfolio homepage with a sidebar and large project preview"
+                />
+                <span class="preview-label">View details ↗</span>
+              </a>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span>01 / Editorial</span>
+                  <span class="status">Ready</span>
+                </div>
+                <h3>Editorial Index</h3>
+                <p>
+                  A motion-led portfolio for designers who want focused case studies, an image gallery,
+                  and a built-in CMS.
+                </p>
+                <div class="card-actions">
+                  <!-- Publish this folder as a GitHub template repo, replace # with
+                       https://github.com/new?owner=%40me&template_owner=OWNER&template_name=REPOSITORY,
+                       then remove aria-disabled. -->
+                  <a
+                    class="button primary"
+                    href="#"
+                    aria-disabled="true"
+                    title="Add the GitHub template repository URL to activate this button"
+                  >
+                    Use this template
+                  </a>
+                  <a
+                    class="button"
+                    href="./editorial-index.html"
+                  >
+                    Explore details
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="template-card">
+              <a
+                class="preview"
+                href="./casework-grid.html"
+                aria-label="Open the Casework Grid template detail page"
+              >
+                <img
+                  src="./templates/tagged-grid/public/demo/tagged-grid-preview.png"
+                  alt="Light Tagged Grid portfolio homepage with oversized editorial typography"
+                />
+                <span class="preview-label">View details ↗</span>
+              </a>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span>02 / Modular</span>
+                  <span class="status soon">In development</span>
+                </div>
+                <h3>Casework Grid</h3>
+                <p>
+                  A flexible, filterable portfolio for multidisciplinary work, writing, experiments,
+                  and detailed case studies.
+                </p>
+                <div class="card-actions">
+                  <a class="button primary" href="#" aria-disabled="true">Coming soon</a>
+                  <a
+                    class="button"
+                    href="./casework-grid.html"
+                  >
+                    Explore details
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="template-card">
+              <a class="preview" href="./maren-botanical.html" aria-label="Open the Maren Botanical template detail page">
+                <img src="./apps/maren-botanical/preview.jpg" alt="Maren botanical haircare storefront with serif typography, warm neutral colors, and original Figma photography" loading="lazy" />
+                <span class="preview-label">View details ↗</span>
+              </a>
+              <div class="card-body">
+                <div class="card-meta"><span>03 / TanStack</span><span class="status">Ready</span></div>
+                <h3>Maren Botanical</h3>
+                <p>A responsive botanical haircare storefront with a three-step ritual, product pages, a shopping bag, and an editorial journal.</p>
+                <div class="card-actions">
+                  <a class="button primary" href="http://127.0.0.1:3200/" target="_blank" rel="noreferrer">Open live site ↗</a>
+                  <a class="button" href="./maren-botanical.html">Explore details</a>
+                </div>
+              </div>
+            </article>
+            <article class="template-card">
+              <a class="preview" href="./sorrel-studio.html" aria-label="Open the Sorrel Studio company profile template detail page">
+                <img src="./templates/sorrel-studio/preview.jpg" alt="Sorrel Studio company profile with navy typography, a split editorial hero, and tropical interior photography" loading="lazy" />
+                <span class="preview-label">View details ↗</span>
+              </a>
+              <div class="card-body">
+                <div class="card-meta"><span>04 / Company profile</span><span class="status">Ready</span></div>
+                <h3>Sorrel Studio</h3>
+                <p>A responsive company profile for interior and hospitality studios, with before/after projects, services, an editorial journal, and thoughtful motion.</p>
+                <div class="card-actions">
+                  <a class="button primary" href="http://127.0.0.1:3400/" target="_blank" rel="noreferrer">Open preview ↗</a>
+                  <a class="button" href="./sorrel-studio.html">Explore details</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="how-it-works" aria-labelledby="how-title">
+          <h2 id="how-title">From template to yours</h2>
+          <ol class="steps">
+            <li>
+              <span>01</span>
+              <strong>Choose a starting point</strong>
+              <p>Preview the structure and select the template that fits your work.</p>
+            </li>
+            <li>
+              <span>02</span>
+              <strong>Create your repository</strong>
+              <p>GitHub copies the starter into a clean repository owned by you.</p>
+            </li>
+            <li>
+              <span>03</span>
+              <strong>Remix with your AI</strong>
+              <p>Open it in your preferred AI editor and change content, style, or features.</p>
+            </li>
+          </ol>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 Porto</span>
+        <span>Make less from scratch.</span>
+      </footer>
+    </div>
+  </body>
+</html>
