@@ -597,6 +597,10 @@ body:has(.announcement) {
   aspect-ratio: 138/380;
   background: transparent;
 }
+.set-photo > img {
+  object-fit: contain;
+  object-position: center;
+}
 .essentials {
   padding: 100px 24px 120px;
 }
@@ -1985,8 +1989,8 @@ details p {
   .sets-track {
     --set-gap: 16px;
     --set-visible: 1;
-    --set-step: calc(88% + var(--set-gap));
-    grid-template-columns: 88%;
+    --set-step: calc(100% + var(--set-gap));
+    grid-template-columns: 100%;
   }
   .sets-progress {
     margin-top: 28px;

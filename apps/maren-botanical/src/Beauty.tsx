@@ -23,7 +23,7 @@ export function ProductImage({
 }) {
   return (
     <div
-      className={`product-photo ${product.shadeIndex !== undefined ? "tint-photo" : ""}`}
+      className={`product-photo ${product.shadeIndex !== undefined ? "tint-photo" : ""} ${product.step === "Sets" ? "set-photo" : ""}`}
     >
       <img
         src={`/images/${product.image}.png`}

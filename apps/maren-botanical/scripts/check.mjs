@@ -25,6 +25,9 @@ assert.deepEqual(readCart('{"barrier-mist":-1,"cloud-tint-bare":1.5,"cloud-tint-
 assert.deepEqual(readCart('{"restore-shampoo":2,"root-serum":1,"barrier-mist":2,"cloud-tint-fig":1}'), { "barrier-mist":2, "cloud-tint-fig":1 });
 assert.equal(new Set(products.map((p) => p.slug)).size, products.length);
 assert.ok(products.every(product => product.image.startsWith('v5/')), 'Catalog must only use current Maren product imagery');
+const sets = products.filter(product => product.step === 'Sets');
+assert.equal(new Set(sets.map(product => product.image)).size, 3, 'Each set needs an independent product photograph');
+assert.ok(sets.every(product => !product.crop), 'Sets must not crop a shared contact sheet');
 for (const item of [
   ...products,
   ...ingredients,

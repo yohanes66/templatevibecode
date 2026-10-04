@@ -457,7 +457,7 @@ async (previewPage) => {
   await page.locator('#sets').scrollIntoViewIfNeeded();
   await page.getByRole('button', {name:'Next set',exact:true}).click();
   await page.waitForFunction(() => new DOMMatrix(getComputedStyle(document.querySelector('.sets-track')).transform).m41 < -1);
-  const setFrame = await page.locator('.sets-track').evaluate(el => ({x:new DOMMatrix(getComputedStyle(el).transform).m41, step:el.clientWidth * .88 + 16}));
+  const setFrame = await page.locator('.sets-track').evaluate(el => ({x:new DOMMatrix(getComputedStyle(el).transform).m41, step:el.clientWidth + 16}));
   check(setFrame.x > -setFrame.step + 1, "Set change is instant");
   await page.waitForFunction(() => document.querySelector('.sets-track').getAnimations().length === 0);
   await page.setViewportSize({width:1440,height:900});
@@ -466,6 +466,26 @@ async (previewPage) => {
   check(await page.locator('.sets-track').evaluate(el => el.getAnimations().length > 0), "Desktop sets do not animate");
   await page.waitForFunction(() => document.querySelector('.sets-track').getAnimations().length === 0);
   check((await page.locator('.sets-track > a[aria-hidden="false"]').count()) === 3, "Sets visible count is wrong");
+  check(await page.locator('.sets-track > a[aria-hidden="false"] img').evaluateAll(images => {
+    return new Set(images.map(image => image.currentSrc)).size === 3 && images.every(image => {
+      const photo=image.parentElement, box=photo.getBoundingClientRect(), frame=image.getBoundingClientRect();
+      return image.complete && image.naturalWidth > 0 &&
+        getComputedStyle(image).objectFit === 'contain' &&
+        !image.hasAttribute('style') &&
+        Math.abs(image.naturalWidth / image.naturalHeight - 6/7) < .01 &&
+        Math.abs(frame.x + frame.width/2 - box.x - box.width/2) < 1;
+    });
+  }), 'Sets photos are shared, cropped, stretched, or misaligned');
+  await page.locator('#sets').screenshot({path:'output/playwright/maren-sets-new-desktop.png'});
+  await page.setViewportSize({width:390,height:844});
+  await page.waitForFunction(() => document.querySelector('.sets-track').getAnimations().length === 0 && document.querySelectorAll('.sets-track > a[aria-hidden="false"]').length === 1);
+  check(await page.locator('.sets-track > a[aria-hidden="false"] .product-photo').evaluate(photo => {
+    const box=photo.getBoundingClientRect(), frame=photo.closest('.sets-window').getBoundingClientRect();
+    return box.left >= frame.left - 1 && box.right <= frame.right + 1 && Math.abs(box.x + box.width/2 - frame.x - frame.width/2) < 1;
+  }), 'Mobile set photo is clipped or off center');
+  await page.locator('#sets').screenshot({path:'output/playwright/maren-sets-new-mobile.png'});
+  await page.setViewportSize({width:1440,height:900});
+  await page.waitForFunction(() => document.querySelector('.sets-track').getAnimations().length === 0);
   await page.getByRole('button', {name:'Search',exact:true}).click();
   await page.waitForFunction(() => document.querySelector('dialog').getAnimations().length === 0);
   await page.getByRole('button', {name:'Close dialog',exact:true}).click();
@@ -541,6 +561,7 @@ async (previewPage) => {
       "accordion and newsletter",
       "eight widths and unclipped desktop products/footer",
       "mobile menu and sets",
+      "three independent generated Set photos, complete and centered without sprite crops",
       "square footer images and no space after footer",
       "Sets intermediate frames and dialog exit completion",
       "intermediate animation frames and rapid changes",
