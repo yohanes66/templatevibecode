@@ -115,6 +115,56 @@ async (previewPage) => {
     (await page.locator(".bag-item").count()) === 5,
     "Shade variants did not stay separate",
   );
+  for (const viewport of [
+    { width: 1440, height: 900 },
+    { width: 390, height: 844 },
+    { width: 320, height: 480 },
+    { width: 844, height: 390 },
+  ]) {
+    await page.setViewportSize(viewport);
+    check(
+      await page.locator(".bag-summary").evaluate((el) => {
+        const box = el.getBoundingClientRect();
+        return (
+          box.top >= 0 &&
+          box.bottom <= innerHeight + 1 &&
+          box.right <= innerWidth + 1
+        );
+      }),
+      "Bag summary clipped at " + viewport.width,
+    );
+    check(
+      await page.locator(".bag-items").evaluate((el) => {
+        el.scrollTop = el.scrollHeight;
+        const last = el.lastElementChild.getBoundingClientRect(),
+          bounds = el.getBoundingClientRect();
+      return last.bottom <= bounds.bottom + 1 && bounds.height >= 100;
+      }),
+      "Last bag item is unreachable at " + viewport.width,
+    );
+    check(
+      await page.locator(".bag-item").evaluateAll((items) =>
+        items.every((el) => {
+          const box = el.getBoundingClientRect();
+          return [...el.querySelectorAll("button,a,strong")].every(
+            (control) => {
+              const bounds = control.getBoundingClientRect();
+              return bounds.left >= box.left && bounds.right <= box.right + 1;
+            },
+          );
+        }),
+      ),
+      "Bag controls overflow at " + viewport.width,
+    );
+  }
+  await page.screenshot({
+    path: "output/playwright/maren-bag-landscape.png",
+  });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator(".bag-items").evaluate((el) => (el.scrollTop = 0));
+  await page.screenshot({ path: "output/playwright/maren-bag-mobile.png" });
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.screenshot({ path: "output/playwright/maren-bag-desktop.png" });
   await page
     .getByRole("button", { name: "Add one Cloud Tint — Bare", exact: true })
     .click();
@@ -123,7 +173,7 @@ async (previewPage) => {
     "Quantity subtotal failed",
   );
   await page
-    .getByRole("button", { name: "Preview checkout →", exact: true })
+    .getByRole("button", { name: "Preview checkout", exact: true })
     .click();
   check(
     (await page.locator(".demo-note").innerText()).includes("No payment"),
@@ -204,6 +254,25 @@ async (previewPage) => {
   );
   for (const width of [320, 390, 640, 768, 1024, 1280, 1440, 1920]) {
     await page.setViewportSize({ width, height: 1000 });
+    check(
+      await page.locator(".size-select").evaluateAll((labels) =>
+        labels.every((label) => {
+          const select = label.querySelector("select"),
+            icon = label.querySelector("svg");
+          const box = select.getBoundingClientRect(),
+            arrow = icon.getBoundingClientRect();
+          return (
+            getComputedStyle(select).appearance === "none" &&
+            box.right - arrow.right >= 13 &&
+            box.right - arrow.right <= 15 &&
+            Math.abs(arrow.y + arrow.height / 2 - box.y - box.height / 2) <
+              1 &&
+            parseFloat(getComputedStyle(select).paddingRight) >= 42
+          );
+        }),
+      ),
+      "Dropdown arrow spacing is wrong at " + width,
+    );
     check(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,
@@ -420,6 +489,8 @@ async (previewPage) => {
       "centered products and looping through five shades",
       "keyboard, product click and drag",
       "cart variants, totals and persistence",
+      "bag summary visibility and scrollable items at desktop, mobile and short landscape sizes",
+      "consistent dropdown arrow spacing at eight widths",
       "dialog focus",
       "search and product routes",
       "accordion and newsletter",

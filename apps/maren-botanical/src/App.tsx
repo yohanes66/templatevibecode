@@ -1,5 +1,6 @@
 import {
   ArrowLeft,
+  ArrowRight,
   CaretLeft,
   CaretRight,
   List,
@@ -256,15 +257,19 @@ function Shell() {
         <div className="dialog-inner">
           <div className="dialog-heading">
             <h2 id="dialog-title">
-              {panel === "search"
-                ? "Find your essentials"
-                : panel === "menu"
-                  ? "Explore Maren"
-                  : panel === "account"
-                    ? "Your Maren account"
-                    : panel === "checkout"
-                      ? "Your order preview"
-                      : "Your bag"}
+              {panel === "search" ? (
+                "Find your essentials"
+              ) : panel === "menu" ? (
+                "Explore Maren"
+              ) : panel === "account" ? (
+                "Your Maren account"
+              ) : panel === "checkout" ? (
+                "Your order preview"
+              ) : (
+                <>
+                  Your bag <span className="bag-title-count">({count})</span>
+                </>
+              )}
             </h2>
             <button
               className="circle-button"
@@ -350,24 +355,38 @@ function Shell() {
             </>
           )}
           {(panel === "bag" || panel === "checkout") && (
-            <>
+            <div className="bag-content">
               {!count ? (
                 <div className="empty-bag">
-                  <p>A little care goes a long way.</p>
-                  <p>Your bag is waiting for your ritual.</p>
+                  <p>Your bag is empty.</p>
+                  <p>Discover your next everyday essential.</p>
                   <button className="button" onClick={close}>
                     Continue exploring
                   </button>
                 </div>
               ) : (
                 <>
+                  <div className="bag-shipping">
+                    <p>
+                      {total >= 50
+                        ? "Your order qualifies for free shipping."
+                        : `${money(50 - total)} away from free shipping.`}
+                    </p>
+                    <progress
+                      value={Math.min(total, 50)}
+                      max={50}
+                      aria-label="Progress toward free shipping"
+                    />
+                  </div>
                   <div className="bag-items">
                     {products
                       .filter((p) => cart[p.slug])
                       .map((p) => (
                         <article className="bag-item" key={p.slug}>
-                          <ProductImage product={p} />
-                          <div>
+                          <div className="bag-thumbnail">
+                            <ProductImage product={p} eager />
+                          </div>
+                          <div className="bag-item-details">
                             <Link
                               to="/products/$slug"
                               params={{ slug: p.slug }}
@@ -375,7 +394,9 @@ function Shell() {
                             >
                               {p.name}
                             </Link>
-                            <p>{money(p.price)}</p>
+                            <p>
+                              {p.step} · {money(p.price)} each
+                            </p>
                             <div className="quantity">
                               <button
                                 onClick={() => change(p.slug, -1)}
@@ -397,32 +418,33 @@ function Shell() {
                         </article>
                       ))}
                   </div>
-                  <div className="bag-total">
-                    <span>Subtotal</span>
-                    <strong>{money(total)}</strong>
-                  </div>
-                  <p className="muted">
-                    {total >= 50
-                      ? "Your order qualifies for free shipping."
-                      : `${money(50 - total)} away from free shipping.`}
-                  </p>
-                  {panel === "checkout" ? (
-                    <p className="demo-note" role="status">
-                      This is a template preview. No payment is collected or
-                      order placed. Connect your commerce provider to enable
-                      checkout.
+                  <div className="bag-summary">
+                    <div className="bag-total">
+                      <span>Subtotal</span>
+                      <strong>{money(total)}</strong>
+                    </div>
+                    <p className="muted">
+                      Shipping and taxes calculated at checkout.
                     </p>
-                  ) : (
-                    <button
-                      className="button full-width"
-                      onClick={() => setPanel("checkout")}
-                    >
-                      Preview checkout →
-                    </button>
-                  )}
+                    {panel === "checkout" ? (
+                      <p className="demo-note" role="status">
+                        This is a template preview. No payment is collected or
+                        order placed. Connect your commerce provider to enable
+                        checkout.
+                      </p>
+                    ) : (
+                      <button
+                        className="button bag-checkout"
+                        onClick={() => setPanel("checkout")}
+                      >
+                        <span>Preview checkout</span>
+                        <ArrowRight size={20} aria-hidden="true" />
+                      </button>
+                    )}
+                  </div>
                 </>
               )}
-            </>
+            </div>
           )}
           {panel === "account" && (
             <form

@@ -13,6 +13,8 @@ Reference: Figma file `34T8K3XRn2jL4OlaIcbVMu`, frame `1687:2` (1440 × 7855), s
 - The Sets slides on desktop and mobile, preserving the same three products. Intermediate frames are measured to reject instant replacement.
 - Dialog close leaves the native modal open through its exit animation, then restores focus and scrolling. Reduced motion closes without a delay.
 - Cart totals, quantity bounds, storage recovery, search, product routes, unknown-slug 404, reward accordion, and newsletter validation pass.
+- The Bag uses the v5 typography, cream product tiles, square quantity controls, shipping progress, and a fixed summary beneath the scrolling item list. Its summary and last item remain reachable at 1440 × 900, 390 × 844, 320 × 480, and 844 × 390 in Chromium and WebKit.
+- All product size selectors share a Phosphor caret with a 14px right inset and reserved text padding. The native select remains operable; alignment is verified at all eight responsive widths.
 - Promotion arrows change three sample messages. Close removes the strip until refresh.
 - Footer images retain a square aspect ratio at every checked width. At maximum scroll, the footer bottom matches the viewport bottom; copyright and legal links remain reachable.
 - Native Safari footer inspected directly. Additional WebKit checks at 1440 × 695, 1440 × 1000, and 390 × 844 show no overflow below the footer.

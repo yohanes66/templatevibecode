@@ -1,6 +1,7 @@
 import {
   ArrowLeft,
   ArrowRight,
+  CaretDown,
   CaretLeft,
   CaretRight,
   Minus,
@@ -90,6 +91,7 @@ export function BeautyCard({
           </option>
           <option value="standard">Standard size</option>
         </select>
+        <CaretDown size={16} aria-hidden="true" />
       </label>
       <button
         className="add-bar"
@@ -185,16 +187,21 @@ function ShadeCarousel({ onAdd }: { onAdd: Add }) {
         >
           <div
             className="shade-track"
-            style={{
-              "--position": position,
-              "--track-start": trackStart,
-              "--track-count": trackCount,
-            } as CSSProperties}
+            style={
+              {
+                "--position": position,
+                "--track-start": trackStart,
+                "--track-count": trackCount,
+              } as CSSProperties
+            }
             onTransitionEnd={(event) => {
               if (event.target === event.currentTarget) setSettled(position);
             }}
           >
-            {Array.from({ length: trackCount }, (_, slot) => trackStart + slot).map((slot) => {
+            {Array.from(
+              { length: trackCount },
+              (_, slot) => trackStart + slot,
+            ).map((slot) => {
               const index = ((slot % 5) + 5) % 5;
               const item = shades[index];
               const visible = Math.abs(slot - position) <= 2;
