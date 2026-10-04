@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync, statSync } from "node:fs";
+import { existsSync, statSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import {
   ingredients,
@@ -37,6 +37,19 @@ for (const item of [
     `Missing image: ${item.image}`,
   );
 }
+for (const filename of readdirSync(
+  new URL("../public/images/v5/", import.meta.url),
+)) {
+  assert.ok(
+    statSync(new URL("../public/images/v5/" + filename, import.meta.url)).size >
+      0,
+    "Empty Figma v5 asset: " + filename,
+  );
+}
+assert.deepEqual(
+  readCart('{"cloud-tint-bare":2,"cloud-tint-fig":1,"unknown":1}'),
+  { "cloud-tint-bare": 2, "cloud-tint-fig": 1 },
+);
 console.log(
-  "PASS: corrupted cart recovery, quantity validation, known products, and all 19 Figma assets.",
+  "PASS: cart recovery, quantity validation, hair/beauty products, and all original Figma assets.",
 );

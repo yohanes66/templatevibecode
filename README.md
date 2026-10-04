@@ -16,7 +16,7 @@ Katalog template lokal tersedia di `index.html`. Template company profile terbar
 
 | Project | Deskripsi | Stack | Folder |
 |---|---|---|---|
-| Maren Botanical | Botanical haircare storefront with automatic ritual steps | TanStack Router, React, Vite, CSS | [`apps/maren-botanical`](apps/maren-botanical) |
+| Maren Botanical | Beauty storefront with shade colors and centered carousels | TanStack Router, React, Vite, CSS | [`apps/maren-botanical`](apps/maren-botanical) |
 | Scalar.ai | Landing page SaaS AI visibility (SEO, GEO, AEO) | TanStack Start, React, Vite, CSS | [`apps/scalar-ai`](apps/scalar-ai) |
 | Norte Studio | Editorial studio fashion, beauty & lifestyle dengan empat galeri discipline | TanStack Router, React, Vite, CSS | [`apps/norte-studio`](apps/norte-studio) |
 
@@ -28,7 +28,7 @@ Katalog template lokal tersedia di `index.html`. Template company profile terbar
 templatevibecode/
 ├── apps/
 │   ├── scalar-ai/            # Standalone app: punya package.json sendiri
-│   └── maren-botanical/      # Botanical haircare storefront
+│   └── maren-botanical/      # Maren beauty storefront
 │
 ├── docs/
 │   ├── ADD_NEW_PROJECT.md    # Workflow menambahkan project baru

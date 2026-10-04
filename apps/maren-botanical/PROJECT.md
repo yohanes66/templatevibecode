@@ -1,13 +1,12 @@
-# Maren Botanical
+# Maren Beauty
 
-Botanical haircare storefront based on the supplied Figma design.
+Responsive beauty storefront based on Maren v5 in Figma.
 
-- Type: Marketing website / storefront preview
-- Stack: TanStack Router, React, TypeScript, Vite, CSS
-- Status: Implemented and verified locally; not deployed
+- Stack: TanStack Router, React, TypeScript, Vite, CSS, Phosphor icons
+- Status: Local preview; not deployed
 - Root Directory: `apps/maren-botanical`
 - Build Command: `npm run build`
 - Output Directory: `dist`
-- Design: https://www.figma.com/design/34T8K3XRn2jL4OlaIcbVMu/Eksplorasi-Dribbble?node-id=1660-5313
+- Design: https://www.figma.com/design/34T8K3XRn2jL4OlaIcbVMu/Eksplorasi-Dribbble?node-id=1687-2
 
 Checkout, account access, and newsletter submission are demo flows.

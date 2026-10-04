@@ -10,6 +10,7 @@
     "check": "node scripts/check.mjs"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
     "@tanstack/react-router": "1.170.41",
     "react": "19.2.6",
     "react-dom": "19.2.6"

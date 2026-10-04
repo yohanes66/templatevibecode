@@ -1,4 +1,4 @@
-export const products = [
+export const hairProducts = [
   {
     slug: "restore-shampoo",
     name: "Restore Shampoo",
@@ -39,6 +39,171 @@ export const products = [
       "The complete Restore Ritual: shampoo, conditioner and root serum. Three complementary formulas, one simple routine.",
   },
 ];
+
+export type ShopProduct = {
+  slug: string;
+  name: string;
+  step: string;
+  image: string;
+  price: number;
+  description: string;
+  tag?: string;
+  crop?: number[];
+  shadeIndex?: number;
+};
+
+export const shades = [
+  {
+    name: "Bare",
+    color: "#d9b49e",
+    dark: false,
+    left: -46.87,
+    description: "A soft nude for an effortless, everyday finish.",
+  },
+  {
+    name: "Petal",
+    color: "#edb8bf",
+    dark: false,
+    left: -212.11,
+    description: "A fresh petal pink that brightens your day.",
+  },
+  {
+    name: "Rosewood",
+    color: "#99545a",
+    dark: true,
+    left: -375.39,
+    description: "A soft brick-rose that warms every skin tone.",
+  },
+  {
+    name: "Fig",
+    color: "#6e3446",
+    dark: true,
+    left: -536.72,
+    description: "A rich berry for a deep, lived-in flush.",
+  },
+  {
+    name: "Coral",
+    color: "#e58a72",
+    dark: false,
+    left: -701.17,
+    description: "A vivid peach-coral for a warm, fresh glow.",
+  },
+];
+
+export const beautyProducts: ShopProduct[] = [
+  {
+    slug: "overnight-lip-mask",
+    name: "Overnight Lip Mask",
+    step: "Lip",
+    image: "v5/02fe6",
+    crop: [300, 300, 0, 0],
+    price: 24,
+    tag: "Bestseller",
+    description: "Lip mask + balm for soft, cushioned lips by morning",
+  },
+  {
+    slug: "daily-gel-cream",
+    name: "Daily Gel Cream",
+    step: "Skin",
+    image: "v5/02fe6",
+    crop: [300, 300, -100, 0],
+    price: 34,
+    tag: "New",
+    description: "Lightweight gel moisturiser in a travel-friendly tube",
+  },
+  {
+    slug: "barrier-mist",
+    name: "Barrier Mist",
+    step: "Skin",
+    image: "v5/02fe6",
+    crop: [300, 300, -200, 0],
+    price: 28,
+    description: "A calming facial mist that resets dry, stressed skin",
+  },
+  {
+    slug: "body-silk-oil",
+    name: "Body Silk Oil",
+    step: "Body",
+    image: "v5/02fe6",
+    crop: [300, 320.72, 0, -106.91],
+    price: 38,
+    description: "Fast-absorbing body oil with a soft, skin-close scent",
+  },
+  {
+    slug: "soft-cleanse-balm",
+    name: "Soft Cleanse Balm",
+    step: "Skin",
+    image: "v5/02fe6",
+    crop: [300, 320.72, -100, -106.91],
+    price: 26,
+    description: "A soft cleansing balm for your everyday skincare ritual.",
+  },
+  {
+    slug: "smoothing-body-polish",
+    name: "Smoothing Body Polish",
+    step: "Body",
+    image: "v5/02fe6",
+    crop: [300, 320.72, -200, -106.91],
+    price: 30,
+    description: "A considered body polish for soft, smooth skin.",
+  },
+  {
+    slug: "hand-cream-duo",
+    name: "Hand Cream Duo",
+    step: "Body",
+    image: "v5/02fe6",
+    crop: [300, 281.8, 0, -181.8],
+    price: 22,
+    description: "Everyday care for your hands, wherever you go.",
+  },
+  {
+    slug: "the-intro-set",
+    name: "The Intro Set",
+    step: "Sets",
+    image: "v5/962e7",
+    crop: [300, 100, 0, 0],
+    price: 68,
+    description: "The essentials for a considered everyday routine.",
+  },
+  {
+    slug: "the-glow-duo",
+    name: "The Glow Duo",
+    step: "Sets",
+    image: "v5/962e7",
+    crop: [300, 100, -100, 0],
+    price: 52,
+    description: "Two complementary formulas, one easy ritual.",
+  },
+  {
+    slug: "five-minute-morning",
+    name: "Five-Minute Morning",
+    step: "Sets",
+    image: "v5/962e7",
+    crop: [300, 100, -200, 0],
+    price: 96,
+    description: "A complete ritual for a slower start to your day.",
+  },
+  {
+    slug: "weekend-glow-kit",
+    name: "The Weekend Glow Kit",
+    step: "Kit",
+    image: "v5/24244",
+    price: 78,
+    description:
+      "Cloud Tint, Barrier Mist and a travel-size Body Oil in a reusable linen pouch.",
+  },
+  ...shades.map((shade, shadeIndex) => ({
+    slug: `cloud-tint-${shade.name.toLowerCase()}`,
+    name: `Cloud Tint — ${shade.name}`,
+    step: "Lip",
+    image: "v5/101ca",
+    crop: [848.44, 102.55, shade.left, -0.85],
+    shadeIndex,
+    price: 24,
+    description: shade.description,
+  })),
+];
+export const products: ShopProduct[] = [...beautyProducts, ...hairProducts];
 
 export const ingredients = [
   {
