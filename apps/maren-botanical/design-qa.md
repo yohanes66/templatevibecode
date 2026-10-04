@@ -38,3 +38,9 @@ rtk proxy /Users/nico/.codex/skills/playwright/scripts/playwright_cli.sh --sessi
 ```
 
 Desktop/mobile layouts adapt the supplied desktop frame. Checkout, accounts, and sending subscriptions remain explicit demo flows.
+
+## Catalog image verification — 2026-10-04
+
+All 16 products were inspected in `/shop` at 1440px and 390px. Product cards keep square frames; Cloud Tint uses a centered, contained portrait inside that frame. Figma contact-sheet cells keep their native proportions inside a clipping layer, so neighboring rows do not bleed into the image. The shared renderer applies to cards, mini products, search, product details, and bag thumbnails. Both shade arrows remain transparent and centered at rest, hover, and after clicking, on desktop and mobile. Build, data checks, Chromium, and WebKit checks passed.
+
+Generated asset: `public/images/v5/kit-weekend-glow.png`, using the built-in image generation tool. Reference: original Figma hero export `24244.png`. Prompt: Create one square ecommerce catalog photograph of the referenced Maren Weekend Glow Kit: rosewood lip tint with ivory cap, frosted Barrier Mist with tall ivory cap, smaller amber travel-size Body Silk Oil with ivory cap, and reusable beige linen zipped pouch behind. Preserve packaging, proportions, branding, and cream/beige/rosewood/amber palette. Center the entire group on a warm travertine vanity with soft upper-left sunlight, occupying 65–70% of frame height. Keep all caps, bases, and the entire pouch visible with balanced margins; no crops, montage, duplicated products, UI, or borders.

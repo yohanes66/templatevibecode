@@ -21,34 +21,51 @@ export function ProductImage({
   product: ShopProduct;
   eager?: boolean;
 }) {
+  const spriteRatio = product.shadeIndex !== undefined
+    ? 138 / 380
+    : product.crop ? product.crop[1] / product.crop[0] : 1;
+  const spriteScale = product.shadeIndex !== undefined ? 80 : 100;
+  const image = (
+    <img
+      src={`/images/${product.image}.png`}
+      alt={product.name}
+      loading={eager ? "eager" : "lazy"}
+      decoding={eager ? "sync" : "async"}
+      onLoad={
+        eager
+          ? (event) => {
+              void event.currentTarget.decode().catch(() => {});
+            }
+          : undefined
+      }
+      draggable="false"
+      style={
+        product.crop
+          ? {
+              width: `${product.crop[0]}%`,
+              height: `${product.crop[1]}%`,
+              left: `${product.crop[2]}%`,
+              top: `${product.crop[3]}%`,
+            }
+          : undefined
+      }
+    />
+  );
   return (
     <div
-      className={`product-photo ${product.shadeIndex !== undefined ? "tint-photo" : ""} ${product.step === "Sets" ? "set-photo" : ""}`}
+      className={`product-photo ${product.shadeIndex !== undefined ? "tint-photo" : ""} ${["Sets", "Kit"].includes(product.step) ? "set-photo" : ""}`}
     >
-      <img
-        src={`/images/${product.image}.png`}
-        alt={product.name}
-        loading={eager ? "eager" : "lazy"}
-        decoding={eager ? "sync" : "async"}
-        onLoad={
-          eager
-            ? (event) => {
-                void event.currentTarget.decode().catch(() => {});
-              }
-            : undefined
-        }
-        draggable="false"
-        style={
-          product.crop
-            ? {
-                width: `${product.crop[0]}%`,
-                height: `${product.crop[1]}%`,
-                left: `${product.crop[2]}%`,
-                top: `${product.crop[3]}%`,
-              }
-            : undefined
-        }
-      />
+      {product.crop ? (
+        <span
+          className="catalog-sprite"
+          style={{
+            width: `${spriteScale * Math.min(spriteRatio, 1)}%`,
+            height: `${spriteScale * Math.min(1 / spriteRatio, 1)}%`,
+          }}
+        >
+          {image}
+        </span>
+      ) : image}
     </div>
   );
 }

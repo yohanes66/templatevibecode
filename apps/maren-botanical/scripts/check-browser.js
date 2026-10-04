@@ -44,6 +44,26 @@ async (previewPage) => {
   await page.goto(base + '/shop');
   check((await page.locator('.beauty-card').count()) === 16, 'Shop does not match the current beauty catalog');
   check(await page.locator('.beauty-card img').evaluateAll(images => images.every(image => image.getAttribute('src').startsWith('/images/v5/'))), 'Shop still uses legacy product imagery');
+  for (const width of [1440,390]) {
+    await page.setViewportSize({width,height:900});
+    for (const card of await page.locator('.beauty-card').all()) await card.scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => [...document.querySelectorAll('.beauty-card img')].every(image => image.complete && image.naturalWidth > 0));
+    check(await page.locator('.beauty-card .product-photo').evaluateAll(photos => photos.every(photo => {
+      const box=photo.getBoundingClientRect();
+      if (Math.abs(box.width-box.height)>1) return false;
+      const sprite=photo.querySelector('.catalog-sprite');
+      if (!sprite) return true;
+      const tube=sprite.getBoundingClientRect();
+      const image=sprite.querySelector('img'), imageBox=image.getBoundingClientRect();
+      const expectedRatio=photo.classList.contains('tint-photo') ? 138/380 : parseFloat(image.style.height)/parseFloat(image.style.width);
+      return Math.abs(tube.x+tube.width/2-box.x-box.width/2)<1 && tube.top>=box.top-1 && tube.bottom<=box.bottom+1 && tube.left>=box.left-1 && tube.right<=box.right+1 && Math.abs(tube.width/tube.height-expectedRatio)<.01 && Math.abs(imageBox.width/imageBox.height-image.naturalWidth/image.naturalHeight)<.01;
+
+    })), 'Catalog photo is oversized, stretched, clipped, or off center at '+width);
+    check(await page.locator('.beauty-card .set-photo img').evaluateAll(images => images.every(image => getComputedStyle(image).objectFit === 'contain')), 'Kit or set catalog photo is cropped');
+    await page.evaluate(() => scrollTo(0,0));
+    await page.screenshot({path:'output/playwright/maren-catalog-'+width+'.png',fullPage:true});
+  }
+  await page.setViewportSize({width:1440,height:1000});
   await page.goto(base + '/products/restore-shampoo');
   check(await page.getByRole('heading', {name:'A little lost?',exact:true}).isVisible(), 'Legacy product route still accepts purchases');
   await page.goto(base);
@@ -57,6 +77,21 @@ async (previewPage) => {
   await page.waitForFunction(() =>
     [...document.images].every((img) => img.complete && img.naturalWidth > 0),
   );
+  for (const width of [1440,390]) {
+    await page.setViewportSize({width,height:900});
+    for (const name of ['Previous shade','Next shade']) {
+      const arrow=page.getByRole('button',{name,exact:true});
+      await arrow.hover();
+      await arrow.click();
+      check(await page.locator('.shade-arrow').evaluateAll(buttons => buttons.every(button => {
+        const box=button.getBoundingClientRect(), icon=button.querySelector('svg').getBoundingClientRect();
+        return getComputedStyle(button).backgroundColor === 'rgba(0, 0, 0, 0)' && Math.abs(icon.x+icon.width/2-box.x-box.width/2)<1 && Math.abs(icon.y+icon.height/2-box.y-box.height/2)<1;
+      })), 'Shade arrows differ in transparency or centering after hover/click at '+width);
+    }
+    await page.mouse.move(0,0);
+    await page.locator('#shades').screenshot({path:'output/playwright/maren-arrows-'+width+'.png'});
+  }
+  await page.setViewportSize({width:1440,height:1000});
   const colors = {
     Bare: "rgb(217, 180, 158)",
     Petal: "rgb(237, 184, 191)",
@@ -562,6 +597,7 @@ async (previewPage) => {
       "eight widths and unclipped desktop products/footer",
       "mobile menu and sets",
       "three independent generated Set photos, complete and centered without sprite crops",
+      "entire 16-product catalog at desktop/mobile with square photos, centered complete tints, and consistent transparent arrows after hover/click",
       "square footer images and no space after footer",
       "Sets intermediate frames and dialog exit completion",
       "intermediate animation frames and rapid changes",

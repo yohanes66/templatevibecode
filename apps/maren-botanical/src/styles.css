@@ -385,6 +385,7 @@ body:has(.announcement) {
   flex-shrink: 0;
   border: 1px solid currentColor;
   border-radius: 50%;
+  background: transparent;
   opacity: 0.8;
   transition:
     background-color var(--duration-quick, 150ms) ease,
@@ -392,7 +393,7 @@ body:has(.announcement) {
 }
 .shade-arrow:hover {
   opacity: 1;
-  background: #ffffff18;
+  background: transparent;
 }
 .shade-stage {
   flex: 1;
@@ -593,9 +594,17 @@ body:has(.announcement) {
   height: 100%;
   max-width: none;
 }
-.product-photo.tint-photo {
-  aspect-ratio: 138/380;
-  background: transparent;
+.catalog-sprite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.catalog-sprite > img {
+  position: absolute;
+  max-width: none;
+  object-fit: fill;
 }
 .set-photo > img {
   object-fit: contain;
@@ -1381,10 +1390,6 @@ input {
   height: auto;
   aspect-ratio: 1;
 }
-.bag-thumbnail > .tint-photo {
-  width: 32px;
-  height: 88px;
-}
 .bag-item-details {
   flex: 1;
   min-width: 0;
@@ -1585,14 +1590,8 @@ details p {
 
 .search-results .product-photo {
   width: 64px;
-  height: 80px;
+  height: 64px;
   flex: 0 0 64px;
-}
-.search-results .tint-photo {
-  width: 30px;
-  height: 80px;
-  flex-basis: 30px;
-  margin-inline: 17px;
 }
 .search-results > a > span:nth-child(2),
 .bag-item a,
@@ -1602,11 +1601,6 @@ details p {
 }
 .product-detail > .product-photo {
   aspect-ratio: 1;
-}
-.product-detail > .tint-photo {
-  width: 160px;
-  aspect-ratio: 138/380;
-  justify-self: center;
 }
 .product-detail h1 {
   font-size: clamp(32px, 4vw, 56px);
@@ -1878,7 +1872,7 @@ details p {
     width: 44px;
     height: 44px;
     top: 40%;
-    background: var(--shade-bg);
+    background: transparent;
     opacity: 1;
   }
   .shade-arrow:first-child {
@@ -2074,10 +2068,6 @@ details p {
     width: 76px;
     height: 92px;
     flex-basis: 76px;
-  }
-  .bag-thumbnail > .tint-photo {
-    width: 26px;
-    height: 72px;
   }
   .bag-item a {
     font-size: 16px;

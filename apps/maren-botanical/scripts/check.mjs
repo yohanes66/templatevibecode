@@ -28,6 +28,12 @@ assert.ok(products.every(product => product.image.startsWith('v5/')), 'Catalog m
 const sets = products.filter(product => product.step === 'Sets');
 assert.equal(new Set(sets.map(product => product.image)).size, 3, 'Each set needs an independent product photograph');
 assert.ok(sets.every(product => !product.crop), 'Sets must not crop a shared contact sheet');
+assert.deepEqual(products.filter(product => product.image === 'v5/02fe6').map(product => product.crop), [
+  [300,300,0,0], [300,300,-100,0], [300,300,-200,0],
+  [300,320.72,0,-106.91], [300,320.72,-100,-106.91], [300,320.72,-200,-106.91], [300,281.8,0,-181.8],
+], 'Catalog photos must select the correct cell in the Figma contact sheet');
+assert.equal(products.find(product => product.slug === 'weekend-glow-kit').image, 'v5/kit-weekend-glow');
+
 for (const item of [
   ...products,
   ...ingredients,

@@ -142,7 +142,7 @@ export const beautyProducts: ShopProduct[] = [
     slug: "weekend-glow-kit",
     name: "The Weekend Glow Kit",
     step: "Kit",
-    image: "v5/24244",
+    image: "v5/kit-weekend-glow",
     price: 78,
     description:
       "Cloud Tint, Barrier Mist and a travel-size Body Oil in a reusable linen pouch.",
