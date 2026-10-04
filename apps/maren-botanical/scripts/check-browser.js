@@ -11,6 +11,42 @@ async (previewPage) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto(base);
+  await page.evaluate(() => localStorage.setItem('maren-bag', JSON.stringify({
+    'restore-shampoo': 1, 'restore-conditioner': 2, 'root-serum': 1, 'the-restore-set': 1,
+  })));
+  await page.reload();
+  await page.getByRole('button', {name:'Bag (0)',exact:true}).click();
+  check(await page.getByText('Your bag is empty.',{exact:true}).isVisible(), 'Old-only bag was not cleared');
+  check(await page.evaluate(() => localStorage.getItem('maren-bag') === '{}'), 'Legacy products remain in saved cart');
+  await page.getByRole('button', {name:'Close dialog',exact:true}).click();
+  await page.waitForFunction(() => !document.querySelector('dialog').open);
+  await page.evaluate(() => localStorage.setItem('maren-bag', JSON.stringify({
+    'restore-shampoo': 1, 'root-serum': 2, 'barrier-mist': 2, 'cloud-tint-fig': 1,
+  })));
+  await page.reload();
+  await page.getByRole('button', {name:'Bag (3)',exact:true}).click();
+  check((await page.locator('.bag-item').count()) === 2, 'Mixed bag migration removed current products or retained old products');
+  check((await page.locator('.bag-total').innerText()).includes('$80'), 'Migrated bag subtotal is wrong');
+  check(await page.locator('.bag-thumbnail img').evaluateAll(images => images.every(image => image.getAttribute('src').startsWith('/images/v5/'))), 'Bag still uses legacy imagery');
+  check(await page.evaluate(() => {
+    const cart=JSON.parse(localStorage.getItem('maren-bag'));
+    return cart['barrier-mist'] === 2 && cart['cloud-tint-fig'] === 1 && Object.keys(cart).length === 2;
+  }), 'Mixed cart migration was not persisted');
+  await page.waitForFunction(() => [...document.querySelectorAll('.bag-thumbnail img')].every(image => image.complete && image.naturalWidth > 0));
+  await page.setViewportSize({width:390,height:844});
+  await page.screenshot({path:'output/playwright/maren-bag-migrated-mobile.png'});
+  await page.setViewportSize({width:1440,height:1000});
+  await page.getByRole('button', {name:'Close dialog',exact:true}).click();
+  await page.waitForFunction(() => !document.querySelector('dialog').open);
+  await page.getByRole('button', {name:'Search',exact:true}).click();
+  await page.getByRole('searchbox').fill('Restore');
+  check((await page.locator('.search-results > a').count()) === 0, 'Legacy products remain searchable');
+  await page.goto(base + '/shop');
+  check((await page.locator('.beauty-card').count()) === 16, 'Shop does not match the current beauty catalog');
+  check(await page.locator('.beauty-card img').evaluateAll(images => images.every(image => image.getAttribute('src').startsWith('/images/v5/'))), 'Shop still uses legacy product imagery');
+  await page.goto(base + '/products/restore-shampoo');
+  check(await page.getByRole('heading', {name:'A little lost?',exact:true}).isVisible(), 'Legacy product route still accepts purchases');
+  await page.goto(base);
   await page.evaluate(() => localStorage.removeItem("maren-bag"));
   await page.reload();
   await page.evaluate(() => document.fonts.ready);
@@ -122,6 +158,10 @@ async (previewPage) => {
     { width: 844, height: 390 },
   ]) {
     await page.setViewportSize(viewport);
+    check(await page.locator('.bag-dialog').evaluate(el => {
+      const box=el.getBoundingClientRect();
+      return Math.abs(box.width - Math.min(520, innerWidth - 32)) < 1;
+    }), 'Bag drawer occupies the full mobile width');
     check(
       await page.locator(".bag-summary").evaluate((el) => {
         const box = el.getBoundingClientRect();
@@ -313,6 +353,10 @@ async (previewPage) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.evaluate(() => scrollTo(0, 0));
   await page.getByRole("button", { name: "Menu", exact: true }).click();
+  check(await page.locator('.menu-dialog').evaluate(el => {
+    const box=el.getBoundingClientRect();
+    return Math.abs(box.width - (innerWidth - 32)) < 1;
+  }), 'Mobile menu width is inconsistent with the bag');
   await page
     .locator("#mobile-navigation")
     .getByRole("link", { name: "Lip", exact: true })
@@ -489,6 +533,7 @@ async (previewPage) => {
       "centered products and looping through five shades",
       "keyboard, product click and drag",
       "cart variants, totals and persistence",
+      "old-only and mixed saved cart migration, current product images and retired product routes",
       "bag summary visibility and scrollable items at desktop, mobile and short landscape sizes",
       "consistent dropdown arrow spacing at eight widths",
       "dialog focus",

@@ -25,7 +25,6 @@ import {
   steps,
   stories,
   studySummary,
-  hairProducts,
   type Cart,
 } from "./content";
 
@@ -69,8 +68,8 @@ function Shell() {
   const noticeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(
     undefined,
   );
-  const count = Object.values(cart).reduce(
-    (sum, quantity) => sum + quantity,
+  const count = products.reduce(
+    (sum, product) => sum + (cart[product.slug] ?? 0),
     0,
   );
   const total = products.reduce(
@@ -193,9 +192,6 @@ function Shell() {
           </Link>
           <Link to="/" hash="body">
             Body
-          </Link>
-          <Link to="/shop" hash="hair">
-            Hair
           </Link>
           <Link to="/" hash="sets">
             Sets
@@ -588,20 +584,12 @@ function Shop() {
         Your everyday <em>essentials.</em>
       </h1>
       <p className="listing-description">
-        A considered edit of skin, lip, body and hair care.
+        A considered edit of skin, lip and body care.
       </p>
       <div className="beauty-grid">
         {beautyProducts.map((product) => (
           <ProductCard key={product.slug} product={product} />
         ))}
-      </div>
-      <div id="hair" className="hair-collection">
-        <h2>The haircare ritual</h2>
-        <div className="beauty-grid">
-          {hairProducts.map((product) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -629,19 +617,13 @@ function Product() {
         <details>
           <summary>How to use</summary>
           <p>
-            {product.slug === "the-restore-set"
-              ? steps.map((s) => s.instruction).join(" ")
-              : (steps[hairProducts.findIndex((p) => p.slug === product.slug)]
-                  ?.instruction ??
-                "Apply as part of your daily routine. Follow the directions supplied with your product.")}
+            Apply as part of your daily routine. Follow the directions supplied with your product.
           </p>
         </details>
         <details>
           <summary>Formula notes</summary>
           <p>
-            {hairProducts.some((p) => p.slug === product.slug)
-              ? ingredients.map((i) => i.name).join(" · ")
-              : "A considered formula designed to fit into your everyday routine. See the product packaging for the complete ingredient list."}
+            A considered formula designed to fit into your everyday routine. See the product packaging for the complete ingredient list.
           </p>
         </details>
       </div>
@@ -693,7 +675,7 @@ const info: Record<string, { title: string; paragraphs: string[] }> = {
   "our-story": {
     title: "Beauty, with intention.",
     paragraphs: [
-      "A considered edit of skin, lip, body and hair essentials — fewer steps, better formulas, made to fit into your day.",
+      "A considered edit of skin, lip and body essentials — fewer steps, better formulas, made to fit into your day.",
       "This independent template contains demonstration brand content. Replace the product copy, claims and policies with your own before launching.",
     ],
   },
@@ -712,7 +694,7 @@ const info: Record<string, { title: string; paragraphs: string[] }> = {
     ],
   },
   contact: {
-    title: "Let’s talk haircare",
+    title: "Let’s talk beauty",
     paragraphs: [
       "Thanks for exploring Maren. Add your business email and customer service details here before publishing your store.",
     ],

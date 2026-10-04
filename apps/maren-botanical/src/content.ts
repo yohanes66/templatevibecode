@@ -1,45 +1,3 @@
-export const hairProducts = [
-  {
-    slug: "restore-shampoo",
-    name: "Restore Shampoo",
-    step: "Step 01 — Cleanse",
-    image: "shampoo",
-    price: 38,
-    tag: "New",
-    description:
-      "A gentle botanical cleanse for the scalp. Stinging nettle and ginseng lift buildup without stripping your hair’s natural oils.",
-  },
-  {
-    slug: "restore-conditioner",
-    name: "Restore Conditioner",
-    step: "Step 02 — Condition",
-    image: "conditioner",
-    price: 38,
-    description:
-      "A nourishing conditioner for softer lengths. Botanical oils help replenish moisture, smooth the strand and make detangling a little easier.",
-  },
-  {
-    slug: "root-serum",
-    name: "Root Serum",
-    step: "Step 03 — Treat",
-    image: "serum",
-    price: 64,
-    tag: "Bestseller",
-    description:
-      "A lightweight daily scalp serum. A considered blend of botanicals supports your scalp’s natural balance without weighing your hair down.",
-  },
-  {
-    slug: "the-restore-set",
-    name: "The Restore Set",
-    step: "All three steps",
-    image: "restore-set",
-    price: 119,
-    tag: "Save 15%",
-    description:
-      "The complete Restore Ritual: shampoo, conditioner and root serum. Three complementary formulas, one simple routine.",
-  },
-];
-
 export type ShopProduct = {
   slug: string;
   name: string;
@@ -203,7 +161,7 @@ export const beautyProducts: ShopProduct[] = [
     description: shade.description,
   })),
 ];
-export const products: ShopProduct[] = [...beautyProducts, ...hairProducts];
+export const products: ShopProduct[] = beautyProducts;
 
 export const ingredients = [
   {

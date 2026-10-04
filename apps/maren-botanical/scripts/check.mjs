@@ -15,13 +15,16 @@ assert.deepEqual(readCart("null"), {});
 assert.deepEqual(readCart("[]"), {});
 assert.deepEqual(
   readCart(
-    '{"root-serum":2,"unknown":3,"restore-shampoo":-1,"restore-conditioner":1.5,"the-restore-set":100}',
+    '{"root-serum":2,"unknown":3,"restore-shampoo":1,"restore-conditioner":2,"the-restore-set":1}',
   ),
-  { "root-serum": 2 },
+  {},
 );
-assert.deepEqual(readCart('{"root-serum":"3"}'), {});
-assert.deepEqual(readCart('{"root-serum":99}'), { "root-serum": 99 });
+assert.deepEqual(readCart('{"barrier-mist":"3"}'), {});
+assert.deepEqual(readCart('{"barrier-mist":99}'), { "barrier-mist": 99 });
+assert.deepEqual(readCart('{"barrier-mist":-1,"cloud-tint-bare":1.5,"cloud-tint-petal":100}'), {});
+assert.deepEqual(readCart('{"restore-shampoo":2,"root-serum":1,"barrier-mist":2,"cloud-tint-fig":1}'), { "barrier-mist":2, "cloud-tint-fig":1 });
 assert.equal(new Set(products.map((p) => p.slug)).size, products.length);
+assert.ok(products.every(product => product.image.startsWith('v5/')), 'Catalog must only use current Maren product imagery');
 for (const item of [
   ...products,
   ...ingredients,
@@ -51,5 +54,5 @@ assert.deepEqual(
   { "cloud-tint-bare": 2, "cloud-tint-fig": 1 },
 );
 console.log(
-  "PASS: cart recovery, quantity validation, hair/beauty products, and all original Figma assets.",
+  "PASS: legacy cart migration, quantity validation, current beauty catalog, and Figma assets.",
 );

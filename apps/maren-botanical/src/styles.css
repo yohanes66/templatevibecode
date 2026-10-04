@@ -1157,7 +1157,8 @@ input {
   margin: 0 0 0 auto;
   max-height: none;
   height: 100dvh;
-  width: min(520px, 100%);
+  width: min(520px, calc(100% - 32px));
+  max-width: calc(100% - 32px);
   border-radius: 0;
   border: 0;
 }
@@ -1169,7 +1170,6 @@ input {
 }
 .bag-dialog {
   overflow: hidden;
-  max-width: 100%;
   border-radius: 0;
 }
 .bag-dialog .dialog-inner {
@@ -1615,12 +1615,6 @@ details p {
 }
 .listing-page .beauty-grid {
   row-gap: 48px;
-}
-.hair-collection {
-  margin-top: 64px;
-}
-.hair-collection > h2 {
-  margin-bottom: 24px;
 }
 .number-width {
   visibility: hidden;

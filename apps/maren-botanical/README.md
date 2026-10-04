@@ -29,7 +29,7 @@ The Sets slides the same three products in a loop. Dialogs wait for their exit a
 
 The promotion strip includes previous/next arrows, three sample promotions, and a close button. Dismissal lasts until refresh. Footer images remain square, and the document scrolls naturally through the social links and copyright.
 
-Search, product pages, cart variants/quantities, locally persisted bag, mobile navigation, rewards accordion, and newsletter validation work. Original haircare products and journal routes remain available. Checkout, accounts, and newsletter sending are demo flows; no payment or information is sent.
+Search, product pages, cart variants/quantities, locally persisted bag, mobile navigation, rewards accordion, and newsletter validation work. The catalog uses only the current beauty products and v5 imagery. Saved carts automatically discard retired haircare products while retaining current products and quantities. Journal routes remain available. Checkout, accounts, and newsletter sending are demo flows; no payment or information is sent.
 
 ## Customize
 

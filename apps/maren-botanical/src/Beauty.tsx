@@ -508,7 +508,7 @@ export function BeautyHome({ onAdd }: { onAdd: Add }) {
           Beauty, with <em>intention.</em>
         </h2>
         <p>
-          A considered edit of skin, lip, body and hair essentials — fewer
+          A considered edit of skin, lip and body essentials — fewer
           steps, better formulas, made to fit into your day.
         </p>
         <Link
@@ -731,7 +731,6 @@ export function BeautyFooter() {
               "Skin",
               "Lip",
               "Body",
-              "Hair",
               "Sets",
             ].map((label) => (
               <Link key={label} to="/shop">
