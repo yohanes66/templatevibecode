@@ -21,7 +21,7 @@ Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, de
 
 Stack, port lokal, Figma, dan cara edit ada di README masing-masing app.
 
-Katalog template (static HTML, dibuka langsung di browser) ada di [`catalog/index.html`](catalog/index.html). Tombol preview di katalog mengarah ke dev server lokal (`127.0.0.1:<port>`), jadi app terkait harus sedang `npm run dev`.
+Showcase lengkap ada di portfolio: [yohanesnick.site/work](https://yohanesnick.site/work) (bagian Vibe Code).
 
 ---
 
@@ -34,9 +34,6 @@ templatevibecode/
 │   ├── maren-botanical/
 │   ├── norte-studio/
 │   └── sorrel-studio/
-│
-├── catalog/                  # Katalog template: index.html + halaman detail
-│   └── previews/             # Screenshot untuk template yang source-nya di luar repo
 │
 ├── docs/
 │   ├── ADD_NEW_PROJECT.md    # Workflow menambahkan project baru

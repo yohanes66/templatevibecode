@@ -4,11 +4,12 @@ Aturan untuk agent (Codex, Claude Code, dll.) yang bekerja di repo ini. Baca seb
 
 ## Repo ini apa
 
-Kumpulan template website untuk portfolio. Setiap template adalah app standalone dengan deployment Vercel sendiri.
+Kumpulan template website gratis (lisensi MIT) yang diambil orang lewat `npx degit yohanes66/templatevibecode/apps/<nama>`. Deployment Vercel hanya untuk showcase di portfolio [yohanesnick.site/work](https://yohanesnick.site/work).
+
+Karena orang mengambil satu folder app saja, setiap app harus bisa di-install, di-build, dan dipahami tanpa file lain di repo.
 
 ```text
 apps/<nama>/     1 folder = 1 app = 1 Vercel project
-catalog/         Katalog template statis (index.html + halaman detail)
 docs/            Panduan: ADD_NEW_PROJECT, README_TEMPLATE, VERCEL_SETUP
 ```
 
@@ -17,7 +18,7 @@ Tidak ada root `package.json`, workspace, atau shared package. Jalankan `npm` da
 ## Aturan struktur
 
 - **Semua app ada di `apps/<nama-kebab-case>/`.** Jangan membuat folder top-level baru seperti `templates/`, `projects/`, atau `sites/`.
-- **Jangan menaruh file HTML, gambar, atau aset di root repo.** Halaman katalog masuk ke `catalog/`, dan screenshot katalog masuk ke `catalog/previews/`.
+- **Jangan menaruh file HTML, gambar, atau aset di root repo.** Katalog atau showcase template tidak dibuat di repo ini; showcase-nya ada di portfolio [yohanesnick.site/work](https://yohanesnick.site/work).
 - **App harus self-contained.** Jangan import, `url()`, atau link ke file di luar folder app-nya (`../../...`). Vercel hanya membangun isi Root Directory, jadi file di luar folder itu tidak ikut ter-deploy.
 - **Satu README per app.** Ikuti format [`docs/README_TEMPLATE.md`](docs/README_TEMPLATE.md) dan tulis dalam Bahasa Indonesia. Jangan membuat `PROJECT.md` atau file metadata lain.
 - **Dokumen QA desain disimpan di `docs/design-qa.md` di dalam folder app.**
@@ -44,7 +45,6 @@ App baru memakai port kosong berikutnya: 3500, 3600, dan seterusnya. Tambahkan j
 4. Tulis `README.md` sesuai template.
 5. Pastikan `npm run build` lolos di folder itu.
 6. Tambahkan baris ke tabel **Projects** dan **Deployment** di `README.md` root, juga ke tabel port di atas.
-7. Kalau app perlu tampil di katalog, tambahkan kartu di `catalog/index.html`. Halaman detail-nya dibuat di `catalog/<nama>.html`.
 
 Vercel project dibuat oleh pemilik repo. Agent cukup menuliskan Root Directory yang benar, yaitu `apps/<nama>`, di README.
 
