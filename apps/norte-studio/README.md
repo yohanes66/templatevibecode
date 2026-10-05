@@ -2,55 +2,55 @@
 
 ![Norte Studio](cover.jpg)
 
-Landing page editorial untuk studio fashion, beauty & lifestyle, dengan empat galeri per disiplin.
+Editorial landing page for a fashion, beauty & lifestyle studio, with a gallery for each of its four disciplines.
 
 | | |
 |---|---|
-| Live | https://yohanesnicknorte.vercel.app |
-| Tipe | Editorial agency landing page |
+| Live demo | https://yohanesnicknorte.vercel.app |
+| Type | Editorial agency landing page |
 | Stack | TanStack Router, React 19, Vite 8, TypeScript, CSS |
-| Design | [Figma Community: Norte](https://www.figma.com/community/file/1688202903613718549/norte-fashion-agency-landing-page) (gratis) |
+| Design | [Figma Community: Norte](https://www.figma.com/community/file/1688202903613718549/norte-fashion-agency-landing-page) (free) |
 | Vercel | Project `norte`, Root Directory `apps/norte-studio` |
-| Port lokal | 3300 (QA: 3301) |
+| Local port | 3300 (QA: 3301) |
 
-## Menjalankan
+## Getting Started
 
 ```bash
 npm ci
 npm run dev        # http://127.0.0.1:3300
 ```
 
-| Script | Fungsi |
+| Script | What it does |
 |---|---|
 | `npm run dev` | Dev server |
-| `npm run build` | Type check + production build ke `dist/` |
-| `npm run preview` | Preview hasil build |
-| `npm run check` | Menjalankan server QA di port 3301 lalu browser check lewat Playwright CLI (butuh Node 24+, Chromium, dan akses network npm saat pertama kali) |
+| `npm run build` | Type check + production build to `dist/` |
+| `npm run preview` | Preview the build |
+| `npm run check` | Starts a QA server on port 3301 and runs browser checks through Playwright CLI (needs Node 24+, Chromium, and npm network access on the first run) |
 
-## Fitur
+## Features
 
-- Menu melayang, progress per chapter, empat galeri disiplin, halaman work, journal, dan dialog informasi.
-- Contact memakai `mailto:`.
-- Layout mobile dan tablet mengadaptasi layout editorial desktop.
+- Floating menu, per-chapter progress, four discipline galleries, work pages, journal, and information dialogs.
+- Contact uses `mailto:`.
+- Mobile and tablet layouts adapt the desktop editorial layout.
 
 Routes: `/`, `/work`, `/work/$slug`.
 
-## Mengedit
+## Editing
 
-| File | Isi |
+| File | Contents |
 |---|---|
-| `src/App.tsx` | Section, routes, dan interaksi |
-| `src/content.ts` | Copy, galeri, dan data work |
-| `src/styles.css` | Layout, tipografi, breakpoint, motion |
-| `public/` | Foto dan font |
+| `src/App.tsx` | Sections, routes, and interactions |
+| `src/content.ts` | Copy, galleries, and work data |
+| `src/styles.css` | Layout, typography, breakpoints, motion |
+| `public/` | Photography and fonts |
 
-## Catatan
+## Notes
 
-- 19 foto asli diekspor dari Figma (lewat Figma CLI) sebagai WebP lossless. Panel Influence, Events, dan Content masing-masing punya lima foto editorial hasil generate.
-- Ketiga font di-host sendiri beserta lisensi OFL-nya.
-- Newsletter hanya preview UI: tidak menyimpan atau mengirim email.
-- Profil komunitas, link sosial, dan intro berbahasa Indonesia adalah konten demo. Ganti dengan tujuan asli dan mailing provider sebelum dipakai di production.
+- 19 original photographs are exported from Figma as lossless WebP. The Influence, Events, and Content panels each have five generated editorial photographs.
+- All three font families are self-hosted with their OFL licenses.
+- The newsletter is a UI preview only. It doesn't store or send any email.
+- Community profiles, social links, and the Indonesian introduction are demo content. Connect real destinations and a mailing provider before using it in production.
 
 ## QA
 
-[`docs/design-qa.md`](docs/design-qa.md): ukuran desain dan spesifikasi motion.
+[`docs/design-qa.md`](docs/design-qa.md): design measurements and motion spec.

@@ -2,61 +2,61 @@
 
 ![Maren Botanical](cover.jpg)
 
-Storefront beauty yang responsive, dengan carousel pilihan shade dan bag yang tersimpan di browser. Dibuat dari desain Maren v5 di Figma.
+Responsive beauty storefront with a shade-picking carousel and a bag that persists in the browser.
 
 | | |
 |---|---|
-| Live | https://yohanesnickmarenbotanical.vercel.app |
-| Tipe | E-commerce storefront |
+| Live demo | https://yohanesnickmarenbotanical.vercel.app |
+| Type | E-commerce storefront |
 | Stack | TanStack Router, React, Vite, TypeScript, CSS, Phosphor Icons |
-| Design | [Figma Community: Maren](https://www.figma.com/community/file/1688265085265846630/maren-beauty-landing-page) (gratis) |
+| Design | [Figma Community: Maren](https://www.figma.com/community/file/1688265085265846630/maren-beauty-landing-page) (free) |
 | Vercel | Project `marenbotanical`, Root Directory `apps/maren-botanical` |
-| Port lokal | 3200 |
+| Local port | 3200 |
 
-## Menjalankan
+## Getting Started
 
-Butuh Node.js 22.18+.
+Requires Node.js 22.18+.
 
 ```bash
 npm ci
 npm run dev        # http://127.0.0.1:3200
 ```
 
-| Script | Fungsi |
+| Script | What it does |
 |---|---|
 | `npm run dev` | Dev server |
-| `npm run build` | Type check + production build ke `dist/` |
-| `npm run preview` | Preview hasil build |
-| `npm run check` | Cek data katalog, aset, dan bag |
+| `npm run build` | Type check + production build to `dist/` |
+| `npm run preview` | Preview the build |
+| `npm run check` | Validate catalog data, assets, and bag logic |
 
-## Fitur
+## Features
 
-- **Cloud Tint carousel.** Lima shade bisa dipilih lewat panah, klik produk, swatch, tombol panah keyboard, atau swipe. Produk terpilih bergeser ke tengah dan warna background mengikuti shade-nya. Klik beruntun tidak meninggalkan celah karena produk tetap ter-mount selama transisi.
-- **The Sets.** Carousel loop untuk tiga produk yang sama.
-- **Promotion strip.** Tiga promo dengan panah prev/next dan tombol close. Promo yang ditutup kembali muncul setelah refresh.
-- **Dialog.** Dialog ditutup setelah animasi keluar selesai, lalu fokus dikembalikan dan scroll dokumen dibuka lagi.
-- **Halaman yang berfungsi.** Search, halaman produk, varian dan jumlah di cart, bag yang tersimpan di `localStorage`, navigasi mobile, accordion rewards, dan validasi newsletter.
-- **Migrasi bag lama.** Bag yang tersimpan otomatis membuang produk haircare lama, sementara produk dan jumlah yang masih berlaku tetap disimpan.
-- Animasi mengikuti `prefers-reduced-motion`.
+- **Cloud Tint carousel.** Pick from five shades with the arrows, a product click, a swatch, the keyboard arrow keys, or a swipe. The selected product slides to the center and the background follows its shade. Products stay mounted through an interrupted transition, so rapid clicks never leave gaps.
+- **The Sets.** A looping carousel of the same three products.
+- **Promotion strip.** Three promotions with previous/next arrows and a close button. A dismissed strip comes back on refresh.
+- **Dialogs.** Dialogs close after their exit animation, then restore focus and unlock page scrolling.
+- **Working pages.** Search, product pages, cart variants and quantities, a bag saved in `localStorage`, mobile navigation, a rewards accordion, and newsletter validation.
+- **Bag migration.** Saved bags drop retired haircare products automatically and keep current products and quantities.
+- Animation respects `prefers-reduced-motion`.
 
 Routes: `/`, `/shop`, `/products/$slug`, `/journal`, `/journal/$slug`, `/info/$topic`.
 
-## Mengedit
+## Editing
 
-| File | Isi |
+| File | Contents |
 |---|---|
-| `src/Beauty.tsx` | Homepage, carousel, card, footer |
-| `src/App.tsx` | Navigasi, promotion strip, dialog, cart, routes |
-| `src/content.ts` | Produk, harga, shade, konten editorial |
-| `src/styles.css` | Layout, tipografi, breakpoint, motion |
-| `public/images/v5/` | 23 export dari Figma |
-| `public/fonts/` | Jost dan Instrument Serif beserta lisensinya |
+| `src/Beauty.tsx` | Homepage, carousels, cards, footer |
+| `src/App.tsx` | Navigation, promotion strip, dialogs, cart, routes |
+| `src/content.ts` | Products, prices, shades, editorial content |
+| `src/styles.css` | Layout, typography, breakpoints, motion |
+| `public/images/` | Product and editorial photography |
+| `public/fonts/` | Jost and Instrument Serif with their licenses |
 
-## Catatan
+## Notes
 
-- Checkout, akun, dan pengiriman newsletter hanya demo. Tidak ada pembayaran atau data yang dikirim.
-- Desain acuannya frame desktop; layout mobile dan tablet mengadaptasi hierarkinya.
-- `scripts/check-browser.js` adalah callback halaman untuk Playwright CLI. Script ini membuat dan menutup context terpisah, jadi cek responsive tidak mengubah jendela preview.
+- Checkout, accounts, and newsletter sending are demo flows. No payment or personal data is sent.
+- The desktop frame is the design reference; mobile and tablet layouts adapt its hierarchy.
+- `scripts/check-browser.js` is a page callback for Playwright CLI. It opens and closes its own browser context, so responsive checks never touch your preview window.
 
 ## QA
 

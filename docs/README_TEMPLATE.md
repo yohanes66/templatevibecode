@@ -1,166 +1,112 @@
 # README Template
 
-Setiap app di `apps/` punya satu `README.md` dengan format di bawah. Tidak ada `PROJECT.md` terpisah; metadata ada di tabel paling atas README.
+Every app in `apps/` has one `README.md` in this format, written in English. There is no separate `PROJECT.md`; metadata lives in the table at the top of the README.
 
----
-
-# Format README
+## Format
 
 ````md
-# <Nama Project>
+# <Template Name>
 
-![<Nama Project>](cover.jpg)
+![<Template Name>](cover.jpg)
 
-<Satu kalimat: apa ini dan untuk siapa.>
+<One sentence: what it is and who it's for.>
 
 | | |
 |---|---|
-| Live | https://<alias>.vercel.app |
-| Tipe | Landing page / Company profile / Storefront / Dashboard |
+| Live demo | https://<alias>.vercel.app |
+| Type | Landing page / Company profile / Storefront / Dashboard |
 | Stack | Framework, React, Vite, TypeScript, CSS |
-| Design | [Figma Community: <nama>](https://www.figma.com/community/file/...) (gratis) |
-| Vercel | Project `<nama-vercel>`, Root Directory `apps/<folder>` |
-| Port lokal | <port> |
+| Design | [Figma Community: <name>](https://www.figma.com/community/file/...) (free) |
+| Vercel | Project `<vercel-name>`, Root Directory `apps/<folder>` |
+| Local port | <port> |
 
-## Menjalankan
+## Getting Started
 
-Butuh Node.js <versi>.
+Requires Node.js <version>.
 
 ```bash
 npm ci
 npm run dev        # http://127.0.0.1:<port>
 ```
 
-| Script | Fungsi |
+| Script | What it does |
 |---|---|
 | `npm run dev` | Dev server |
 | `npm run build` | Production build |
-| `npm run preview` | Preview hasil build |
+| `npm run preview` | Preview the build |
 
-## Fitur
+## Features
 
-- Bullet singkat: interaksi, halaman, motion, aksesibilitas.
+- Short bullets: interactions, pages, motion, accessibility.
 
 Routes: `/`, ...
 
-## Mengedit
+## Editing
 
-| File | Isi |
+| File | Contents |
 |---|---|
-| `src/content.ts` | Copy dan data |
+| `src/content.ts` | Copy and data |
 | `src/styles.css` | Styling |
 
-## Catatan
+## Notes
 
-- Konten demo, aset hasil generate, batasan (form tidak mengirim data, dll).
+- Demo content, generated assets, limitations (forms don't send data, etc.).
 
 ## QA
 
 [`docs/design-qa.md`](docs/design-qa.md)
 ````
 
-Bahasa: Indonesia. Kode, nama file, dan istilah teknis tetap apa adanya.
+Keep code, file names, and technical terms as they are.
 
----
-
-# Recommended Folder Structure
+## Suggested Folder Structure
 
 ```text
-project-name/
+<template-name>/
 ├── public/
 │   ├── images/
 │   ├── icons/
-│   └── fonts/
-│
+│   └── fonts/          # with OFL license files
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── sections/
-│   ├── styles/
-│   ├── App.tsx
-│   └── main.tsx
-│
+├── docs/
+│   └── design-qa.md
+├── .gitignore
+├── cover.jpg           # thumbnail, max 1600px wide
 ├── README.md
 ├── package.json
-├── vite.config.ts
-├── tsconfig.json
+├── vercel.json
 └── index.html
 ```
 
-Tidak wajib mengikuti struktur ini persis.
+You don't have to follow this exactly.
 
----
+## Checklists
 
-# Design Checklist
+### Design
 
-- [ ] Hero section selesai
-- [ ] Navigation selesai
-- [ ] Main content sections selesai
-- [ ] Footer selesai
-- [ ] Desktop sesuai design
-- [ ] Tablet sesuai design
-- [ ] Mobile sesuai design
-- [ ] Spacing konsisten
-- [ ] Typography sesuai
-- [ ] Color sesuai
-- [ ] Border radius sesuai
-- [ ] Shadow sesuai
-- [ ] Icons sesuai
-- [ ] Images sesuai
-- [ ] Hover state tersedia jika diperlukan
-- [ ] Animation tidak berlebihan
+- [ ] Desktop, tablet, and mobile match the design
+- [ ] Spacing, typography, color, radius, and shadows match
+- [ ] Hover states where needed
+- [ ] Animation is restrained and respects `prefers-reduced-motion`
 
----
+### Development
 
-# Development Checklist
+- [ ] `npm ci`, `npm run dev`, and `npm run build` succeed
+- [ ] No console errors, missing assets, or broken imports
+- [ ] No hardcoded localhost URLs
+- [ ] Image sizes are reasonable and unused assets are deleted
+- [ ] Fonts load correctly
 
-- [ ] `npm install` berhasil
-- [ ] `npm run dev` berhasil
-- [ ] `npm run build` berhasil
-- [ ] Tidak ada critical console error
-- [ ] Tidak ada missing assets
-- [ ] Tidak ada broken import
-- [ ] Tidak ada hardcoded localhost URL
-- [ ] Responsive layout sudah dicek
-- [ ] Image size sudah reasonable
-- [ ] Font load dengan benar
+### Public release
 
----
+- [ ] Only the template's own pages; no navigation to other templates
+- [ ] No test copy, internal notes, secrets, or API keys
+- [ ] No Figma working-file links (Community links only)
+- [ ] Browser title and metadata match the template
+- [ ] `cover.jpg` added and the template is listed in the root README
 
-# Preview Checklist
+### Vercel
 
-- [ ] Project hanya menampilkan design yang relevan
-- [ ] Tidak ada navigation ke project lain
-- [ ] Tidak ada dev toolbar yang tidak diperlukan
-- [ ] Tidak ada test copy
-- [ ] Tidak ada dummy content yang tidak disengaja
-- [ ] Tidak ada secret / API key
-- [ ] Tidak ada internal note
-- [ ] Metadata/title browser sesuai project
-
----
-
-# Vercel Checklist
-
-- [ ] GitHub repository connected
-- [ ] Root Directory benar
-- [ ] Framework preset benar
-- [ ] Build command benar
-- [ ] Output directory benar jika perlu
-- [ ] Production deployment berhasil
-- [ ] Domain preview dapat dibuka
-- [ ] Mobile production sudah dites
-- [ ] Images production tidak broken
-
----
-
-# Portfolio Checklist
-
-- [ ] Portfolio case study dibuat
-- [ ] Thumbnail dibuat
-- [ ] Project title final
-- [ ] Short description final
-- [ ] Figma link tersedia jika ingin ditampilkan
-- [ ] Live preview URL ditambahkan
-- [ ] Preview bekerja di iframe jika digunakan
-- [ ] CTA membuka URL yang benar
+- [ ] Root Directory points to `apps/<folder>`
+- [ ] Framework preset, build command, and output directory are correct
+- [ ] Production deployment succeeds and the live demo opens on mobile

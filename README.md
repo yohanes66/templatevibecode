@@ -1,16 +1,12 @@
 # Template Vibe Code
 
-Kumpulan template website gratis (landing page, company profile, storefront) yang bisa kamu ambil dan pakai untuk project sendiri. Lisensi [MIT](LICENSE).
+Free website templates (landing pages, company profiles, storefronts) you can grab and use for your own projects. [MIT licensed](LICENSE).
 
-Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, dependency, font, asset, dan deployment Vercel masing-masing. Satu repository, banyak preview, tanpa perlu membuat repository baru untuk setiap exploration.
-
-```text
-1 folder = 1 project = 1 Vercel deployment
-```
+Each template is a **standalone app** in `apps/` with its own dependencies, fonts, and assets. Take one folder and it builds on its own.
 
 ---
 
-## Projects
+## Templates
 
 <table>
 <tr>
@@ -23,47 +19,20 @@ Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, de
 </tr>
 </table>
 
-| Project | Deskripsi | Live | Folder |
+| Template | Description | Live demo | Folder |
 |---|---|---|---|
-| Scalar.ai | Landing page SaaS AI visibility (SEO, GEO, AEO) | [yohanesnickscalar.vercel.app](https://yohanesnickscalar.vercel.app) | [`apps/scalar-ai`](apps/scalar-ai) |
-| Maren Botanical | Storefront beauty dengan carousel shade | [yohanesnickmarenbotanical.vercel.app](https://yohanesnickmarenbotanical.vercel.app) | [`apps/maren-botanical`](apps/maren-botanical) |
-| Norte Studio | Landing page editorial studio fashion, beauty & lifestyle | [yohanesnicknorte.vercel.app](https://yohanesnicknorte.vercel.app) | [`apps/norte-studio`](apps/norte-studio) |
-| Sorrel Studio | Company profile studio interior & hospitality | [yohanesnicksorrel.vercel.app](https://yohanesnicksorrel.vercel.app) | [`apps/sorrel-studio`](apps/sorrel-studio) |
+| Scalar.ai | SaaS landing page for an AI visibility platform (SEO, GEO, AEO) | [yohanesnickscalar.vercel.app](https://yohanesnickscalar.vercel.app) | [`apps/scalar-ai`](apps/scalar-ai) |
+| Maren Botanical | Beauty storefront with a shade carousel | [yohanesnickmarenbotanical.vercel.app](https://yohanesnickmarenbotanical.vercel.app) | [`apps/maren-botanical`](apps/maren-botanical) |
+| Norte Studio | Editorial landing page for a fashion, beauty & lifestyle studio | [yohanesnicknorte.vercel.app](https://yohanesnicknorte.vercel.app) | [`apps/norte-studio`](apps/norte-studio) |
+| Sorrel Studio | Company profile for an interior & hospitality design studio | [yohanesnicksorrel.vercel.app](https://yohanesnicksorrel.vercel.app) | [`apps/sorrel-studio`](apps/sorrel-studio) |
 
-Stack, port lokal, Figma, dan cara edit ada di README masing-masing app.
-
-Showcase lengkap ada di portfolio: [yohanesnick.site/work](https://yohanesnick.site/work) (bagian Vibe Code).
+Each template's README covers its stack, local port, Figma file, and where to edit content. The full showcase lives on my portfolio: [yohanesnick.site/work](https://yohanesnick.site/work) (Vibe Code section).
 
 ---
 
-## Repository Structure
+## Using a Template
 
-```text
-templatevibecode/
-├── apps/                     # 1 folder = 1 standalone app (package.json sendiri)
-│   ├── scalar-ai/
-│   ├── maren-botanical/
-│   ├── norte-studio/
-│   └── sorrel-studio/
-│
-├── docs/
-│   ├── ADD_NEW_PROJECT.md    # Workflow menambahkan project baru
-│   ├── README_TEMPLATE.md    # Format README per app + checklist
-│   └── VERCEL_SETUP.md       # Setup deployment per project
-│
-├── AGENTS.md                 # Aturan untuk agent (Codex, Claude Code)
-├── LICENSE                   # MIT
-├── .gitignore
-└── README.md
-```
-
-Tidak ada root `package.json` dan tidak ada workspace. Setiap app di-install dan dijalankan dari folder-nya sendiri.
-
----
-
-## Cara Pakai Template
-
-Ambil satu template saja, tanpa clone seluruh repo:
+Grab a single template without cloning the whole repo:
 
 ```bash
 npx degit yohanes66/templatevibecode/apps/sorrel-studio my-site
@@ -73,81 +42,86 @@ npm ci
 npm run dev
 ```
 
-Ganti `sorrel-studio` dengan folder template yang kamu mau (lihat tabel **Projects**). Setiap template berdiri sendiri, jadi folder hasil `degit` langsung bisa di-build dan di-deploy.
+Replace `sorrel-studio` with the folder you want (see the table above). Every template is self-contained, so the folder you get from `degit` builds and deploys as is.
 
-Sebelum dipakai untuk website sungguhan:
+Before you use it for a real website:
 
-- Ganti konten demo: nama brand, copy, metrik, kontak, link sosial. Lokasinya ada di bagian **Mengedit** di README template.
-- Ganti foto dan gambar dengan aset milikmu sendiri. Gambar di template disertakan sebagai contoh tampilan.
-- Font yang di-host lokal memakai lisensi OFL. File lisensinya ada di `public/fonts/`.
+- Replace the demo content: brand name, copy, metrics, contact details, social links. The **Editing** section of each template's README tells you where they live.
+- Replace the photos and images with your own. The bundled images are there to show the layout.
+- Self-hosted fonts are OFL licensed. The license files are in `public/fonts/`.
 
-Kalau mau clone semua template sekaligus:
+To clone every template at once:
 
 ```bash
 git clone https://github.com/yohanes66/templatevibecode.git
-cd templatevibecode/apps/<project-name>
+cd templatevibecode/apps/<template-name>
 npm ci
 npm run dev
 ```
 
 ---
 
-## Adding a New Project
+## Repository Structure
 
-1. Buat folder baru di `apps/` dengan nama **kebab-case**, misalnya `apps/fintech-dashboard`.
-2. Scaffold app dengan stack apa pun yang cocok untuk desainnya.
-3. Tambahkan `README.md` dengan format [`docs/README_TEMPLATE.md`](docs/README_TEMPLATE.md).
-4. Pastikan `npm run build` berhasil.
-5. Tambahkan project ke tabel **Projects** di atas.
-6. Buat Vercel project baru dengan Root Directory mengarah ke folder tersebut.
+```text
+templatevibecode/
+├── apps/                     # 1 folder = 1 standalone app with its own package.json
+│   ├── scalar-ai/
+│   ├── maren-botanical/
+│   ├── norte-studio/
+│   └── sorrel-studio/
+│
+├── docs/
+│   ├── ADD_NEW_PROJECT.md    # How to add a new template
+│   ├── README_TEMPLATE.md    # README format for each template + checklists
+│   └── VERCEL_SETUP.md       # Per-template Vercel deployment
+│
+├── AGENTS.md                 # Rules for coding agents (Codex, Claude Code)
+├── LICENSE                   # MIT
+├── .gitignore
+└── README.md
+```
 
-Workflow lengkap ada di [`docs/ADD_NEW_PROJECT.md`](docs/ADD_NEW_PROJECT.md).
-
-### Naming Convention
-
-| ✅ Recommended | ❌ Hindari |
-|---|---|
-| `saas-landing-page` | `SaaS Landing Page` |
-| `fintech-dashboard` | `landingPageFinal` |
-| `ai-product-landing` | `new-project-2` |
+There is no root `package.json` and no workspace. Install and run each app from its own folder.
 
 ---
 
-## Deployment
+## Maintaining This Repo
 
-Semua project terhubung ke repository GitHub yang sama, tetapi masing-masing memakai **Vercel Root Directory** yang berbeda:
+### Adding a template
 
-| Vercel Project | Root Directory |
+1. Create a **kebab-case** folder in `apps/`, e.g. `apps/fintech-dashboard`.
+2. Scaffold the app with whatever stack suits the design.
+3. Add a `README.md` following [`docs/README_TEMPLATE.md`](docs/README_TEMPLATE.md) and a `cover.jpg` thumbnail.
+4. Make sure `npm run build` passes.
+5. Add the template to the gallery and the table above.
+6. Create a new Vercel project whose Root Directory points to the folder.
+
+Full workflow: [`docs/ADD_NEW_PROJECT.md`](docs/ADD_NEW_PROJECT.md).
+
+### Deployment
+
+All templates deploy from this one GitHub repo. Each Vercel project uses a different **Root Directory**:
+
+| Vercel project | Root Directory |
 |---|---|
 | `scalar.ai` | `apps/scalar-ai` |
 | `marenbotanical` | `apps/maren-botanical` |
 | `norte` | `apps/norte-studio` |
 | `sorrel-studio` | `apps/sorrel-studio` |
 
-Push ke `main` langsung men-deploy production. Jangan memindah atau mengganti nama folder app tanpa mengubah Root Directory di Vercel.
+Pushing to `main` deploys to production. Don't move or rename an app folder without updating its Root Directory in Vercel. Setup details: [`docs/VERCEL_SETUP.md`](docs/VERCEL_SETUP.md).
 
-Detail setup ada di [`docs/VERCEL_SETUP.md`](docs/VERCEL_SETUP.md).
+### Principles
 
----
+- **Isolated.** Each template is its own website, not a page inside a bigger site. No navigation between templates.
+- **Any stack.** Templates can use different frameworks and tooling depending on the design.
+- **No shared UI package.** Each template has its own visual identity. A shared package only makes sense for technical utilities (analytics, SEO), never for a design system.
+- **Just enough structure.** Small templates can stay simple. Don't add architecture for the sake of consistency.
 
-## Principles
+### Commits
 
-- **Isolated.** Setiap preview adalah website terpisah, bukan halaman di dalam satu website besar. Tidak ada navigasi antar project kecuali memang disengaja.
-- **Bebas stack.** Project boleh memakai framework dan tooling berbeda sesuai kebutuhan desainnya.
-- **Tanpa shared UI package.** Setiap exploration punya visual identity sendiri. Shared package baru masuk akal untuk hal teknis (analytics, SEO utility, device mockup), bukan untuk design system.
-- **Struktur secukupnya.** Project kecil boleh sederhana; jangan membuat architecture kompleks hanya demi konsistensi.
-
----
-
-## Git Workflow
-
-```bash
-git add apps/<project-name>
-git commit -m "update <project-name> hero"
-git push
-```
-
-Contoh commit message:
+One commit, one app. Keep messages short and lowercase:
 
 ```text
 add scalar ai landing page
