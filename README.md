@@ -1,6 +1,6 @@
 # Template Vibe Code
 
-Kumpulan landing page, website exploration, dan interactive preview untuk portfolio.
+Kumpulan template website gratis (landing page, company profile, storefront) yang bisa kamu ambil dan pakai untuk project sendiri. Lisensi [MIT](LICENSE).
 
 Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, dependency, font, asset, dan deployment Vercel masing-masing. Satu repository, banyak preview, tanpa perlu membuat repository baru untuk setiap exploration.
 
@@ -44,6 +44,7 @@ templatevibecode/
 │   └── VERCEL_SETUP.md       # Setup deployment per project
 │
 ├── AGENTS.md                 # Aturan untuk agent (Codex, Claude Code)
+├── LICENSE                   # MIT
 ├── .gitignore
 └── README.md
 ```
@@ -52,17 +53,34 @@ Tidak ada root `package.json` dan tidak ada workspace. Setiap app di-install dan
 
 ---
 
-## Getting Started
+## Cara Pakai Template
+
+Ambil satu template saja, tanpa clone seluruh repo:
+
+```bash
+npx degit yohanes66/templatevibecode/apps/sorrel-studio my-site
+cd my-site
+
+npm ci
+npm run dev
+```
+
+Ganti `sorrel-studio` dengan folder template yang kamu mau (lihat tabel **Projects**). Setiap template berdiri sendiri, jadi folder hasil `degit` langsung bisa di-build dan di-deploy.
+
+Sebelum dipakai untuk website sungguhan:
+
+- Ganti konten demo: nama brand, copy, metrik, kontak, link sosial. Lokasinya ada di bagian **Mengedit** di README template.
+- Ganti foto dan gambar dengan aset milikmu sendiri. Gambar di template disertakan sebagai contoh tampilan.
+- Font yang di-host lokal memakai lisensi OFL. File lisensinya ada di `public/fonts/`.
+
+Kalau mau clone semua template sekaligus:
 
 ```bash
 git clone https://github.com/yohanes66/templatevibecode.git
 cd templatevibecode/apps/<project-name>
-
-npm install
+npm ci
 npm run dev
 ```
-
-Perintah per project (port, script, stack) ada di README masing-masing app.
 
 ---
 
