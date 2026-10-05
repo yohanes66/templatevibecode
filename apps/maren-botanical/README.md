@@ -7,7 +7,7 @@ Storefront beauty yang responsive, dengan carousel pilihan shade dan bag yang te
 | Live | https://yohanesnickmarenbotanical.vercel.app |
 | Tipe | E-commerce storefront |
 | Stack | TanStack Router, React, Vite, TypeScript, CSS, Phosphor Icons |
-| Design | [Figma: Maren v5](https://www.figma.com/design/34T8K3XRn2jL4OlaIcbVMu/Eksplorasi-Dribbble?node-id=1687-2) (komponen Cloud Tint terpilih: `1687:496`) |
+| Design | [Figma Community: Maren](https://www.figma.com/community/file/1688265085265846630/maren-beauty-landing-page) (gratis) |
 | Vercel | Project `marenbotanical`, Root Directory `apps/maren-botanical` |
 | Port lokal | 3200 |
 

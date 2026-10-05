@@ -7,7 +7,7 @@ Landing page SaaS untuk Scalar.ai, platform AI visibility yang membantu brand ta
 | Live | https://yohanesnickscalar.vercel.app |
 | Tipe | SaaS marketing website |
 | Stack | TanStack Start (React 19, SSR), Vite, TypeScript, plain CSS |
-| Design | Figma `Playground-nya Nico` (`94TJWi8Q2MhCh89lfO7fyo`), frame `4599:43035` |
+| Design | [Figma Community: Scalar](https://www.figma.com/community/file/1688200935581515789/scalar-a-saas-landing-page-concept-for-an-ai-visibility-platform-that-helps-brandsaas-landing-page) (gratis) |
 | Vercel | Project `scalar.ai`, Root Directory `apps/scalar-ai` |
 | Port lokal | 3000 |
 

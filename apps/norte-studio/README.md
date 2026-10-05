@@ -7,7 +7,7 @@ Landing page editorial untuk studio fashion, beauty & lifestyle, dengan empat ga
 | Live | https://yohanesnicknorte.vercel.app |
 | Tipe | Editorial agency landing page |
 | Stack | TanStack Router, React 19, Vite 8, TypeScript, CSS |
-| Design | [Figma: Norte](https://www.figma.com/design/34T8K3XRn2jL4OlaIcbVMu/Eksplorasi-Dribbble?node-id=1662-5602) (desktop 1440 × 10491) |
+| Design | [Figma Community: Norte](https://www.figma.com/community/file/1688202903613718549/norte-fashion-agency-landing-page) (gratis) |
 | Vercel | Project `norte`, Root Directory `apps/norte-studio` |
 | Port lokal | 3300 (QA: 3301) |
 

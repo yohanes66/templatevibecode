@@ -1,6 +1,6 @@
 # Design verification and motion
 
-Source: Figma `34T8K3XRn2jL4OlaIcbVMu`, frame `1662:5602`, 1440 × 10491. Inspected and exported with the locally installed Figma CLI 2.1.2 in Safe Mode.
+Source: Figma working file, frame `1662:5602`, 1440 × 10491. Inspected and exported with the locally installed Figma CLI 2.1.2 in Safe Mode.
 
 ## Desktop reference
 

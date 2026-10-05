@@ -16,7 +16,7 @@ Setiap app di `apps/` punya satu `README.md` dengan format di bawah. Tidak ada `
 | Live | https://<alias>.vercel.app |
 | Tipe | Landing page / Company profile / Storefront / Dashboard |
 | Stack | Framework, React, Vite, TypeScript, CSS |
-| Design | [Figma: <frame>](https://www.figma.com/design/...) |
+| Design | [Figma Community: <nama>](https://www.figma.com/community/file/...) (gratis) |
 | Vercel | Project `<nama-vercel>`, Root Directory `apps/<folder>` |
 | Port lokal | <port> |
 

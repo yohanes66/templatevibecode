@@ -22,6 +22,7 @@ Tidak ada root `package.json`, workspace, atau shared package. Jalankan `npm` da
 - **App harus self-contained.** Jangan import, `url()`, atau link ke file di luar folder app-nya (`../../...`). Vercel hanya membangun isi Root Directory, jadi file di luar folder itu tidak ikut ter-deploy.
 - **Satu README per app.** Ikuti format [`docs/README_TEMPLATE.md`](docs/README_TEMPLATE.md) dan tulis dalam Bahasa Indonesia. Jangan membuat `PROJECT.md` atau file metadata lain.
 - **Dokumen QA desain disimpan di `docs/design-qa.md` di dalam folder app.**
+- **Link desain hanya boleh link Figma Community** (`figma.com/community/file/...`), sama seperti di portfolio. Jangan menulis link atau file key file kerja Figma (`figma.com/design/...`) di mana pun di repo ini, karena repo ini publik.
 - **Jangan commit hasil build atau artefak lokal:** `dist/`, `.output/`, `.vercel/`, `node_modules/`, `output/`, `.playwright-cli/`. Semuanya sudah ada di `.gitignore`.
 
 ## Port lokal

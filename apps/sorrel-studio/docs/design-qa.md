@@ -1,6 +1,6 @@
 # Design and interaction verification
 
-Reference: Figma `34T8K3XRn2jL4OlaIcbVMu`, node `1680:4640` (1440 × 13088).
+Reference: Figma working file, node `1680:4640` (1440 × 13088).
 
 Implemented all fourteen homepage sections with the original section order, professional palette, Archivo/Geist/Pinyon Script typography and static asset slots. Absolute layout from the Figma prototype was translated into responsive grids and flex layout.
 

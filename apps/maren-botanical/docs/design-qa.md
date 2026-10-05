@@ -1,6 +1,6 @@
 # Maren v5 implementation checks
 
-Reference: Figma file `34T8K3XRn2jL4OlaIcbVMu`, frame `1687:2` (1440 × 7855), selected Cloud Tint component `1687:496`. Context and screenshots inspected through Figma tools and Figma CLI. All 23 v5 exports are local, alongside Jost and Instrument Serif fonts.
+Reference: Figma working file, frame `1687:2` (1440 × 7855), selected Cloud Tint component `1687:496`. Context and screenshots inspected through Figma tools and Figma CLI. All 23 v5 exports are local, alongside Jost and Instrument Serif fonts.
 
 ## Verified behavior
 

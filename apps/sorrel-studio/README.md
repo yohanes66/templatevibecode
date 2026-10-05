@@ -7,7 +7,7 @@ Template company profile responsive untuk studio desain interior dan hospitality
 | Live | https://yohanesnicksorrel.vercel.app |
 | Tipe | Company profile |
 | Stack | TanStack Router, React, Vite, TypeScript, CSS |
-| Design | [Figma node 1680:4640](https://www.figma.com/design/34T8K3XRn2jL4OlaIcbVMu/Eksplorasi-Dribbble?node-id=1680-4640) (1440 × 13088) |
+| Design | [Figma Community: Sorrel](https://www.figma.com/community/file/1688204741451715618/sorrel-company-profile) (gratis) |
 | Vercel | Project `sorrel-studio`, Root Directory `apps/sorrel-studio` |
 | Port lokal | 3400 |
 
