@@ -9,6 +9,8 @@ Setiap app di `apps/` punya satu `README.md` dengan format di bawah. Tidak ada `
 ````md
 # <Nama Project>
 
+![<Nama Project>](cover.jpg)
+
 <Satu kalimat: apa ini dan untuk siapa.>
 
 | | |

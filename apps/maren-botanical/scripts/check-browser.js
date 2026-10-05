@@ -575,7 +575,7 @@ async (previewPage) => {
     fullPage: true,
   });
   await page.screenshot({
-    path: "apps/maren-botanical/preview.jpg",
+    path: "output/playwright/maren-v5-preview.jpg",
     type: "jpeg",
     quality: 90,
   });

@@ -1,5 +1,7 @@
 # Sorrel Studio
 
+![Sorrel Studio](cover.jpg)
+
 Template company profile responsive untuk studio desain interior dan hospitality.
 
 | | |

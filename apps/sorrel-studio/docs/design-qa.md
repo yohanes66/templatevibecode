@@ -36,7 +36,7 @@ The four `kaia-before`, `teduh-before`, `lantai-before`, and `rumah-before` WebP
 - Reduced motion removes entrance/hover animation, counting and smooth scrolling while keeping all content and final metrics visible.
 - Company profile PDF downloads as a real four-page PDF; all pages rendered and visually reviewed.
 
-Screenshots are stored in ignored `output/playwright/`. The shipped `preview.jpg` is an implementation screenshot, not the Figma frame export.
+Screenshots are stored in ignored `output/playwright/`.
 
 ## Scope
 

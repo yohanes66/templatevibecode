@@ -1,5 +1,7 @@
 # Maren Botanical
 
+![Maren Botanical](cover.jpg)
+
 Storefront beauty yang responsive, dengan carousel pilihan shade dan bag yang tersimpan di browser. Dibuat dari desain Maren v5 di Figma.
 
 | | |

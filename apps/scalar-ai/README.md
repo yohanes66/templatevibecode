@@ -1,5 +1,7 @@
 # Scalar.ai
 
+![Scalar.ai](cover.jpg)
+
 Landing page SaaS untuk Scalar.ai, platform AI visibility yang membantu brand tampil di search engine, jawaban generative AI, dan answer engine (SEO, GEO, AEO).
 
 | | |

@@ -1,5 +1,7 @@
 # Norte Studio
 
+![Norte Studio](cover.jpg)
+
 Landing page editorial untuk studio fashion, beauty & lifestyle, dengan empat galeri per disiplin.
 
 | | |

@@ -12,6 +12,17 @@ Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, de
 
 ## Projects
 
+<table>
+<tr>
+<td width="50%"><a href="https://yohanesnickscalar.vercel.app"><img src="apps/scalar-ai/cover.jpg" alt="Scalar.ai" /></a><br /><b>Scalar.ai</b> · <a href="apps/scalar-ai">apps/scalar-ai</a></td>
+<td width="50%"><a href="https://yohanesnickmarenbotanical.vercel.app"><img src="apps/maren-botanical/cover.jpg" alt="Maren Botanical" /></a><br /><b>Maren Botanical</b> · <a href="apps/maren-botanical">apps/maren-botanical</a></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://yohanesnicknorte.vercel.app"><img src="apps/norte-studio/cover.jpg" alt="Norte Studio" /></a><br /><b>Norte Studio</b> · <a href="apps/norte-studio">apps/norte-studio</a></td>
+<td width="50%"><a href="https://yohanesnicksorrel.vercel.app"><img src="apps/sorrel-studio/cover.jpg" alt="Sorrel Studio" /></a><br /><b>Sorrel Studio</b> · <a href="apps/sorrel-studio">apps/sorrel-studio</a></td>
+</tr>
+</table>
+
 | Project | Deskripsi | Live | Folder |
 |---|---|---|---|
 | Scalar.ai | Landing page SaaS AI visibility (SEO, GEO, AEO) | [yohanesnickscalar.vercel.app](https://yohanesnickscalar.vercel.app) | [`apps/scalar-ai`](apps/scalar-ai) |
