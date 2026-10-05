@@ -1,6 +1,6 @@
 # Add New Project
 
-Dokumen ini adalah workflow utama untuk menambahkan project baru ke repository `portfolio-previews`.
+Dokumen ini adalah workflow utama untuk menambahkan project baru ke repository `templatevibecode`.
 
 Project dapat ditambahkan kapan pun design sudah siap. Tidak perlu mengisi seluruh repository sekaligus.
 
@@ -47,7 +47,7 @@ mkdir apps/saas-landing-page
 Hasil:
 
 ```text
-portfolio-previews/
+templatevibecode/
 └── apps/
     └── saas-landing-page/
 ```
@@ -131,38 +131,13 @@ Jika menggunakan Next.js:
 
 ---
 
-# 6. Add Project Metadata
+# 6. Add README
 
-Optional tetapi disarankan membuat file:
-
-```text
-PROJECT.md
-```
-
-di dalam folder project.
-
-Contoh:
-
-```text
-apps/saas-landing-page/
-├── PROJECT.md
-├── src/
-└── ...
-```
-
-Isi sederhana:
-
-```md
-# SaaS Landing Page
-
-Type: Landing Page
-Status: Live
-Stack: React, Vite, Tailwind
-Portfolio: https://yohanesnick.site/work/...
-Preview: https://...
-```
+Buat `README.md` di folder project dengan format dari [`README_TEMPLATE.md`](README_TEMPLATE.md). Metadata (live URL, stack, Figma, Vercel project, port) masuk ke tabel di bagian atas README.
 
 Tujuannya supaya beberapa bulan kemudian project masih mudah dikenali.
+
+Tambahkan juga project ke tabel **Projects** di README root.
 
 ---
 
@@ -183,7 +158,7 @@ git push
 Di Vercel:
 
 1. Add New Project
-2. Import repository `portfolio-previews`
+2. Import repository `templatevibecode`
 3. Pilih repository yang sama
 4. Set Root Directory ke:
 
@@ -333,7 +308,7 @@ Recommended:
 community-landing-page
 → keep as-is
 
-portfolio-previews
+templatevibecode
 → use for new projects
 ```
 

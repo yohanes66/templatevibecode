@@ -12,12 +12,14 @@ Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, de
 
 ## Projects
 
-| Project | Deskripsi | Stack | Folder |
+| Project | Deskripsi | Live | Folder |
 |---|---|---|---|
-| Scalar.ai | Landing page SaaS AI visibility (SEO, GEO, AEO) | TanStack Start, React, Vite, CSS | [`apps/scalar-ai`](apps/scalar-ai) |
-| Maren Botanical | Beauty storefront with shade colors and centered carousels | TanStack Router, React, Vite, CSS | [`apps/maren-botanical`](apps/maren-botanical) |
-| Norte Studio | Editorial studio fashion, beauty & lifestyle dengan empat galeri discipline | TanStack Router, React, Vite, CSS | [`apps/norte-studio`](apps/norte-studio) |
-| Sorrel Studio | Company profile studio interior & hospitality | TanStack Router, React, Vite, CSS | [`apps/sorrel-studio`](apps/sorrel-studio) |
+| Scalar.ai | Landing page SaaS AI visibility (SEO, GEO, AEO) | [yohanesnickscalar.vercel.app](https://yohanesnickscalar.vercel.app) | [`apps/scalar-ai`](apps/scalar-ai) |
+| Maren Botanical | Storefront beauty dengan carousel shade | [yohanesnickmarenbotanical.vercel.app](https://yohanesnickmarenbotanical.vercel.app) | [`apps/maren-botanical`](apps/maren-botanical) |
+| Norte Studio | Landing page editorial studio fashion, beauty & lifestyle | [yohanesnicknorte.vercel.app](https://yohanesnicknorte.vercel.app) | [`apps/norte-studio`](apps/norte-studio) |
+| Sorrel Studio | Company profile studio interior & hospitality | [yohanesnicksorrel.vercel.app](https://yohanesnicksorrel.vercel.app) | [`apps/sorrel-studio`](apps/sorrel-studio) |
+
+Stack, port lokal, Figma, dan cara edit ada di README masing-masing app.
 
 Katalog template (static HTML, dibuka langsung di browser) ada di [`catalog/index.html`](catalog/index.html). Tombol preview di katalog mengarah ke dev server lokal (`127.0.0.1:<port>`), jadi app terkait harus sedang `npm run dev`.
 
@@ -38,9 +40,10 @@ templatevibecode/
 │
 ├── docs/
 │   ├── ADD_NEW_PROJECT.md    # Workflow menambahkan project baru
-│   ├── PROJECT_TEMPLATE.md   # Checklist dan template PROJECT.md
+│   ├── README_TEMPLATE.md    # Format README per app + checklist
 │   └── VERCEL_SETUP.md       # Setup deployment per project
 │
+├── AGENTS.md                 # Aturan untuk agent (Codex, Claude Code)
 ├── .gitignore
 └── README.md
 ```
@@ -67,7 +70,7 @@ Perintah per project (port, script, stack) ada di README masing-masing app.
 
 1. Buat folder baru di `apps/` dengan nama **kebab-case**, misalnya `apps/fintech-dashboard`.
 2. Scaffold app dengan stack apa pun yang cocok untuk desainnya.
-3. Tambahkan `README.md` dan `PROJECT.md` (template di [`docs/PROJECT_TEMPLATE.md`](docs/PROJECT_TEMPLATE.md)).
+3. Tambahkan `README.md` dengan format [`docs/README_TEMPLATE.md`](docs/README_TEMPLATE.md).
 4. Pastikan `npm run build` berhasil.
 5. Tambahkan project ke tabel **Projects** di atas.
 6. Buat Vercel project baru dengan Root Directory mengarah ke folder tersebut.
@@ -90,10 +93,12 @@ Semua project terhubung ke repository GitHub yang sama, tetapi masing-masing mem
 
 | Vercel Project | Root Directory |
 |---|---|
-| `scalar-ai` | `apps/scalar-ai` |
-| `maren-botanical` | `apps/maren-botanical` |
-| `norte-studio` | `apps/norte-studio` |
+| `scalar.ai` | `apps/scalar-ai` |
+| `marenbotanical` | `apps/maren-botanical` |
+| `norte` | `apps/norte-studio` |
 | `sorrel-studio` | `apps/sorrel-studio` |
+
+Push ke `main` langsung men-deploy production. Jangan memindah atau mengganti nama folder app tanpa mengubah Root Directory di Vercel.
 
 Detail setup ada di [`docs/VERCEL_SETUP.md`](docs/VERCEL_SETUP.md).
 

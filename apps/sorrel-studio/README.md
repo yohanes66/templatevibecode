@@ -1,50 +1,60 @@
 # Sorrel Studio
 
-Responsive company profile template for an interior and hospitality design studio, built from [Figma node 1680:4640](https://www.figma.com/design/34T8K3XRn2jL4OlaIcbVMu/Eksplorasi-Dribbble?node-id=1680-4640).
+Template company profile responsive untuk studio desain interior dan hospitality.
 
-## Run
+| | |
+|---|---|
+| Live | https://yohanesnicksorrel.vercel.app |
+| Tipe | Company profile |
+| Stack | TanStack Router, React, Vite, TypeScript, CSS |
+| Design | [Figma node 1680:4640](https://www.figma.com/design/34T8K3XRn2jL4OlaIcbVMu/Eksplorasi-Dribbble?node-id=1680-4640) (1440 × 13088) |
+| Vercel | Project `sorrel-studio`, Root Directory `apps/sorrel-studio` |
+| Port lokal | 3400 |
 
-Requires Node.js 22.18+ (Node 24 recommended).
+## Menjalankan
 
-```sh
-npm install
-npm run dev
+Butuh Node.js 22.18+ (disarankan Node 24).
+
+```bash
+npm ci
+npm run dev        # http://127.0.0.1:3400
 ```
 
-Local preview: http://127.0.0.1:3400. This port is separate from Maren (3200) and Norte (3300).
+| Script | Fungsi |
+|---|---|
+| `npm run dev` | Dev server |
+| `npm run build` | Type check + production build ke `dist/` |
+| `npm run preview` | Preview hasil build |
+| `npm run check` | Cek data konten dan aset |
 
-```sh
-npm run check
-npm run build
-npm run preview
-```
+## Fitur
 
-## Included
+- 14 section homepage dengan foto, logo, dan avatar asli dari Figma.
+- Empat perbandingan before/after yang bisa dikontrol masing-masing, filter project, accordion eksklusif (process, experience, FAQ), dan navigasi mobile.
+- Empat halaman project, arsip journal dengan empat artikel, serta halaman contact, press, dan privacy.
+- PDF company profile empat halaman yang bisa diunduh.
+- Count-up metrik saat masuk viewport, reveal card/gambar bertahap, crossfade gambar, icon accordion beranimasi, hover yang halus, dan dukungan reduced motion.
 
-- React, TypeScript, Vite and TanStack Router with typed project/article routes.
-- All 14 homepage sections, original Figma photography, logos and avatar assets.
-- Local Archivo, Geist and Pinyon Script fonts with their OFL licences.
-- Four independently controlled before/after comparisons, project filters, exclusive process/experience/FAQ accordions and mobile navigation.
-- Four project pages, journal archive and four articles, contact, press and privacy pages.
-- A downloadable four-page company profile PDF.
-- Viewport-triggered count-up metrics, staggered card/image reveals, image crossfades, animated accordion icons, restrained hover motion and reduced-motion support.
+## Mengedit
 
-## Edit
+| File | Isi |
+|---|---|
+| `src/content.ts` | Project, gambar, layanan, tim, proses, artikel, FAQ |
+| `src/App.tsx` | Section, routes halaman, kontrol interaktif |
+| `src/styles.css` | Design token, layout, breakpoint, motion |
+| `public/images/` | 25 gambar WebP dan satu SVG asli Figma |
+| `public/fonts/` | Archivo, Geist, Pinyon Script beserta lisensi OFL-nya |
 
-- `src/content.ts`: projects, images, services, team, process, articles and FAQ copy.
-- `src/App.tsx`: sections, page routes and interactive controls.
-- `src/styles.css`: design tokens, layout, breakpoints and motion.
-- `public/images`: 25 WebP images and one original Figma SVG.
-- `public/fonts`: local fonts and licences.
+Untuk membuat ulang PDF setelah kontennya diubah: install `reportlab` di environment Python, lalu jalankan `python3 scripts/create-profile.py`.
 
-The four `*-before.webp` files are AI-generated before-renovation concepts, based on their corresponding original Figma after views. They are illustrations for this template, not documentary renovation photographs. Built-in image_gen was used; exact prompts are in `image-prompts.json`.
+## Catatan
 
-The contact form prepares a `mailto:` draft in the visitor's email app; it does not send or store submissions. Company names, metrics, contact details and article bodies are demonstration content. Replace these and social profile links before launching a real business website. The project archive contains the four supplied case studies, not a fabricated 120-project dataset.
+- Keempat file `*-before.webp` adalah konsep before-renovation hasil AI (image_gen), dibuat dari tampilan after di Figma. Ini ilustrasi, bukan foto renovasi asli. Prompt lengkapnya ada di `image-prompts.json`.
+- Form contact hanya menyiapkan draft `mailto:` di aplikasi email pengunjung; tidak ada data yang dikirim atau disimpan.
+- Nama perusahaan, metrik, detail kontak, isi artikel, dan link sosial adalah konten demo. Ganti sebelum dipakai untuk bisnis sungguhan.
+- Arsip project berisi empat case study dari desain, bukan dataset 120 project.
+- `vercel.json` menyediakan SPA rewrite untuk deep link project dan artikel.
 
-To regenerate the PDF after editing its content, install `reportlab` in your Python environment and run `python3 scripts/create-profile.py`.
+## QA
 
-## Deploy
-
-Create a separate Vercel project with Root Directory `apps/sorrel-studio`, framework Vite, build command `npm run build`, output `dist`. `vercel.json` provides SPA rewrites for project and article deep links. No deployment was made as part of this local implementation.
-
-The repository catalogue detail page is `../../catalog/sorrel-studio.html`. Its iframe points at the local development server; replace that URL with your deployed URL when publishing the catalogue.
+[`docs/design-qa.md`](docs/design-qa.md)

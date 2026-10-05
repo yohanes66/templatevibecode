@@ -9,7 +9,7 @@ Panduan ini digunakan untuk mendeploy beberapa project dari satu GitHub reposito
 GitHub repository:
 
 ```text
-portfolio-previews/
+templatevibecode/
 └── apps/
     ├── saas-landing-page/
     ├── fintech-dashboard/
@@ -49,7 +49,7 @@ Add New
 Import repository:
 
 ```text
-portfolio-previews
+templatevibecode
 ```
 
 Set:
@@ -75,7 +75,7 @@ Buat project baru lagi:
 ```text
 Add New
 → Project
-→ Import portfolio-previews
+→ Import templatevibecode
 ```
 
 Set:
@@ -98,7 +98,7 @@ Sekarang satu GitHub repository memiliki dua Vercel Projects.
 
 ```text
 GitHub Repo
-portfolio-previews
+templatevibecode
 │
 ├── apps/saas
 │   └── Vercel Project: saas-preview
@@ -298,7 +298,7 @@ Semua project baru:
 
 ```text
 Repo:
-portfolio-previews
+templatevibecode
 ```
 
 ---

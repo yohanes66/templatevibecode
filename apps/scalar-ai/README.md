@@ -1,80 +1,60 @@
-# Scalar.ai Landing Page
+# Scalar.ai
 
-Landing page SaaS untuk **Scalar.ai**, platform AI visibility yang membantu brand tampil di search engine, jawaban generative AI, dan answer engine (SEO, GEO, AEO).
-
-Dibangun pixel-perfect dari desain Figma, lengkap dengan animasi scroll, parallax, dan hover interaction.
-
-## Stack
+Landing page SaaS untuk Scalar.ai, platform AI visibility yang membantu brand tampil di search engine, jawaban generative AI, dan answer engine (SEO, GEO, AEO).
 
 | | |
 |---|---|
-| Framework | [TanStack Start](https://tanstack.com/start) (React 19, SSR) |
-| Bundler | Vite |
-| Language | TypeScript |
-| Styling | Plain CSS (tanpa framework) |
-| Icons | Phosphor Icons + SVG yang diekspor dari Figma |
-| Fonts | Inter 3.19 (`@fontsource`), Satoshi (Fontshare) |
-| Deploy | Vercel |
+| Live | https://yohanesnickscalar.vercel.app |
+| Tipe | SaaS marketing website |
+| Stack | TanStack Start (React 19, SSR), Vite, TypeScript, plain CSS |
+| Design | Figma `Playground-nya Nico` (`94TJWi8Q2MhCh89lfO7fyo`), frame `4599:43035` |
+| Vercel | Project `scalar.ai`, Root Directory `apps/scalar-ai` |
+| Port lokal | 3000 |
 
-## Getting Started
+## Menjalankan
 
 ```bash
-npm install
+npm ci
 npm run dev        # http://localhost:3000
 ```
 
-| Script | Keterangan |
+| Script | Fungsi |
 |---|---|
-| `npm run dev` | Dev server di port 3000 |
-| `npm run build` | Production build |
+| `npm run dev` | Dev server |
+| `npm run build` | Production build (output Nitro di `.output/`) |
 | `npm run preview` | Preview hasil build |
-| `npm run generate-routes` | Generate ulang `routeTree.gen.ts` |
+| `npm run generate-routes` | Generate ulang `src/routeTree.gen.ts` |
 
-## Project Structure
-
-```text
-apps/scalar-ai/
-├── public/
-│   ├── icons/          # SVG dari Figma: logo, bullet, social, verified
-│   ├── images/         # Hero, dashboard, avatar, bento, background
-│   └── logos/          # Logo perusahaan di section reviews
-├── src/
-│   ├── components/     # Komponen reusable: Logo, Mockup
-│   ├── data/           # Konten statis: plans, reviews, features, socials
-│   ├── lib/            # Motion helpers: reveal on scroll, pointer tracking
-│   ├── routes/         # TanStack Router: __root (head/meta) dan index (halaman)
-│   ├── sections/       # Satu file per section halaman
-│   ├── styles/         # global.css
-│   ├── router.tsx
-│   └── routeTree.gen.ts   # Auto-generated, jangan diedit manual
-├── docs/
-│   └── design-qa.md    # Catatan verifikasi desain vs Figma
-├── PROJECT.md
-├── vercel.json
-└── vite.config.ts
-```
-
-Urutan section di halaman (`src/routes/index.tsx`):
-
-`Hero` → `Features` (bento) → `CaseStudy` → `Pricing` → `Reviews` → `Cta` → `Footer`
-
-## Highlights
+## Fitur
 
 - **Pixel-perfect ke Figma.** Di viewport 1440×1024, tinggi ketujuh section sama persis dengan desain.
-- **Responsive proporsional.** Ilustrasi bento, case study, dan CTA menskala mengikuti lebar container (`container-type: inline-size` + unit `--u`), jadi komposisi tidak pecah di layar kecil.
-- **Adaptif tinggi layar.** Spacing vertikal mengecil di layar laptop pendek (700–1024px), sehingga konten utama tetap terlihat above the fold.
-- **Motion:**
-  - Reveal on scroll (IntersectionObserver).
-  - Parallax berbasis CSS scroll-driven animation.
-  - Bento hover dengan spotlight yang mengikuti kursor.
-  - Border gradasi berputar di plan unggulan.
-  - Review marquee: vertikal di desktop, horizontal di mobile.
-- **Aksesibel.** `prefers-reduced-motion` mematikan semua animasi. Salinan konten yang diduplikasi untuk marquee diberi `aria-hidden`.
+- **Responsive proporsional.** Ilustrasi bento, case study, dan CTA menskala mengikuti lebar container (`container-type: inline-size` + unit `--u`).
+- **Adaptif tinggi layar.** Spacing vertikal mengecil di layar laptop pendek (700–1024px) supaya konten utama tetap above the fold.
+- **Motion.** Reveal on scroll, parallax berbasis CSS scroll-driven animation, bento hover dengan spotlight yang mengikuti kursor, border gradasi berputar di plan unggulan, review marquee (vertikal di desktop, horizontal di mobile).
+- **Aksesibel.** `prefers-reduced-motion` mematikan semua animasi. Konten duplikat untuk marquee diberi `aria-hidden`.
 
-## Editing Content
+Urutan section (`src/routes/index.tsx`): `Hero` → `Features` → `CaseStudy` → `Pricing` → `Reviews` → `Cta` → `Footer`.
 
-Semua copy yang berulang ada di [`src/data/content.ts`](src/data/content.ts): harga, fitur plan, review, dan social links. Copy yang hanya muncul sekali (heading, hero) ada langsung di file section masing-masing.
+## Mengedit
 
-## Deployment
+| File | Isi |
+|---|---|
+| `src/data/content.ts` | Copy yang berulang: harga, fitur plan, review, social links |
+| `src/sections/` | Satu file per section; copy yang muncul sekali (heading, hero) ada di sini |
+| `src/components/` | Komponen reusable: `Logo`, `Mockup`, `Header` |
+| `src/lib/motion.ts` | Reveal on scroll dan pointer tracking |
+| `src/routes/` | `__root` (head/meta) dan `index` (halaman) |
+| `src/styles/global.css` | Seluruh styling |
+| `public/` | `icons/`, `images/`, `logos/` hasil export Figma |
 
-Deploy ke Vercel dengan **Root Directory** `apps/scalar-ai`. Framework preset terdeteksi otomatis lewat `vercel.json` (`tanstack-start`). Detail ada di [`docs/VERCEL_SETUP.md`](../../docs/VERCEL_SETUP.md).
+`src/routeTree.gen.ts` di-generate otomatis, jangan diedit manual.
+
+## Catatan
+
+- Icon: Phosphor Icons + SVG export Figma. Font: Inter 3.19 (`@fontsource`) dan Satoshi (Fontshare).
+- Preset framework Vercel diatur lewat `vercel.json` (`tanstack-start`).
+- Vercel memblokir deploy kalau versi `@tanstack/react-start` punya celah keamanan yang diketahui. Kalau deploy gagal dengan pesan "Vulnerable TanStack Start package", jalankan `npm update @tanstack/react-start @tanstack/react-router`.
+
+## QA
+
+[`docs/design-qa.md`](docs/design-qa.md)

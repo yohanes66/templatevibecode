@@ -1,49 +1,61 @@
-# Maren Beauty
+# Maren Botanical
 
-Responsive storefront based on Maren v5 in Figma, built with React, TypeScript, Vite, TanStack Router, and Phosphor icons. Photography, shade swatches, Jost and Instrument Serif are hosted locally.
+Storefront beauty yang responsive, dengan carousel pilihan shade dan bag yang tersimpan di browser. Dibuat dari desain Maren v5 di Figma.
 
-## Run
+| | |
+|---|---|
+| Live | https://yohanesnickmarenbotanical.vercel.app |
+| Tipe | E-commerce storefront |
+| Stack | TanStack Router, React, Vite, TypeScript, CSS, Phosphor Icons |
+| Design | [Figma: Maren v5](https://www.figma.com/design/34T8K3XRn2jL4OlaIcbVMu/Eksplorasi-Dribbble?node-id=1687-2) (komponen Cloud Tint terpilih: `1687:496`) |
+| Vercel | Project `marenbotanical`, Root Directory `apps/maren-botanical` |
+| Port lokal | 3200 |
 
-Requires Node.js 22.18+.
+## Menjalankan
 
-```sh
+Butuh Node.js 22.18+.
+
+```bash
 npm ci
-npm run dev
+npm run dev        # http://127.0.0.1:3200
 ```
 
-Open http://127.0.0.1:3200. This app runs independently of the other previews.
+| Script | Fungsi |
+|---|---|
+| `npm run dev` | Dev server |
+| `npm run build` | Type check + production build ke `dist/` |
+| `npm run preview` | Preview hasil build |
+| `npm run check` | Cek data katalog, aset, dan bag |
 
-```sh
-npm run build
-npm run check
-npm run preview
-```
+## Fitur
 
-Deploy `dist/` with an SPA fallback to `index.html`. Vercel Root Directory: `apps/maren-botanical`; `vercel.json` includes the fallback.
+- **Cloud Tint carousel.** Lima shade bisa dipilih lewat panah, klik produk, swatch, tombol panah keyboard, atau swipe. Produk terpilih bergeser ke tengah dan warna background mengikuti shade-nya. Klik beruntun tidak meninggalkan celah karena produk tetap ter-mount selama transisi.
+- **The Sets.** Carousel loop untuk tiga produk yang sama.
+- **Promotion strip.** Tiga promo dengan panah prev/next dan tombol close. Promo yang ditutup kembali muncul setelah refresh.
+- **Dialog.** Dialog ditutup setelah animasi keluar selesai, lalu fokus dikembalikan dan scroll dokumen dibuka lagi.
+- **Halaman yang berfungsi.** Search, halaman produk, varian dan jumlah di cart, bag yang tersimpan di `localStorage`, navigasi mobile, accordion rewards, dan validasi newsletter.
+- **Migrasi bag lama.** Bag yang tersimpan otomatis membuang produk haircare lama, sementara produk dan jumlah yang masih berlaku tetap disimpan.
+- Animasi mengikuti `prefers-reduced-motion`.
 
-## Behavior
+Routes: `/`, `/shop`, `/products/$slug`, `/journal`, `/journal/$slug`, `/info/$topic`.
 
-Cloud Tint loops through five shades using arrows, product clicks, swatches, keyboard arrows, or a swipe. The selected product moves to the center and its background color follows the shade. Products stay mounted through an interrupted transition, preventing gaps during repeated clicks. Carousel images load eagerly.
+## Mengedit
 
-The Sets slides the same three products in a loop. Dialogs wait for their exit animation before closing, then restore focus and unlock document scrolling. Animation respects `prefers-reduced-motion`.
+| File | Isi |
+|---|---|
+| `src/Beauty.tsx` | Homepage, carousel, card, footer |
+| `src/App.tsx` | Navigasi, promotion strip, dialog, cart, routes |
+| `src/content.ts` | Produk, harga, shade, konten editorial |
+| `src/styles.css` | Layout, tipografi, breakpoint, motion |
+| `public/images/v5/` | 23 export dari Figma |
+| `public/fonts/` | Jost dan Instrument Serif beserta lisensinya |
 
-The promotion strip includes previous/next arrows, three sample promotions, and a close button. Dismissal lasts until refresh. Footer images remain square, and the document scrolls naturally through the social links and copyright.
+## Catatan
 
-Search, product pages, cart variants/quantities, locally persisted bag, mobile navigation, rewards accordion, and newsletter validation work. The catalog uses only the current beauty products and v5 imagery. Saved carts automatically discard retired haircare products while retaining current products and quantities. Journal routes remain available. Checkout, accounts, and newsletter sending are demo flows; no payment or information is sent.
+- Checkout, akun, dan pengiriman newsletter hanya demo. Tidak ada pembayaran atau data yang dikirim.
+- Desain acuannya frame desktop; layout mobile dan tablet mengadaptasi hierarkinya.
+- `scripts/check-browser.js` adalah callback halaman untuk Playwright CLI. Script ini membuat dan menutup context terpisah, jadi cek responsive tidak mengubah jendela preview.
 
-## Customize
+## QA
 
-- `src/Beauty.tsx`: homepage, carousels, cards, and footer.
-- `src/App.tsx`: navigation, promotion strip, dialogs, cart, and routes.
-- `src/content.ts`: products, prices, shades, and editorial content.
-- `src/styles.css`: layout, typography, breakpoints, and motion.
-- `public/images/v5/`: 23 local Figma exports.
-- `public/fonts/`: local fonts and licenses.
-
-Routes: `/`, `/shop`, `/products/$slug`, `/journal`, `/journal/$slug`, and `/info/$topic`.
-
-## Reference and verification
-
-[Main Figma frame: Maren v5](https://www.figma.com/design/34T8K3XRn2jL4OlaIcbVMu/Eksplorasi-Dribbble?node-id=1687-2). Cloud Tint selected component: `1687:496`.
-
-The desktop frame is the design reference; mobile/tablet layouts adapt its hierarchy. See `design-qa.md` for verification. `scripts/check-browser.js` is a Playwright CLI page callback; it creates and closes an isolated context so responsive checks cannot alter the user's preview window.
+[`docs/design-qa.md`](docs/design-qa.md)
