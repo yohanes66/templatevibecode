@@ -12,13 +12,14 @@ Setiap project adalah **aplikasi standalone** di dalam `apps/`, dengan stack, de
 
 ## Projects
 
-Katalog template lokal tersedia di `index.html`. Template company profile terbaru: [Sorrel Studio](templates/sorrel-studio/README.md), menggunakan React, TanStack Router, Vite dan TypeScript. Jalankan dari `templates/sorrel-studio` dengan `npm install` lalu `npm run dev` (port 3400). Halaman detail katalog: `sorrel-studio.html`.
-
 | Project | Deskripsi | Stack | Folder |
 |---|---|---|---|
-| Maren Botanical | Beauty storefront with shade colors and centered carousels | TanStack Router, React, Vite, CSS | [`apps/maren-botanical`](apps/maren-botanical) |
 | Scalar.ai | Landing page SaaS AI visibility (SEO, GEO, AEO) | TanStack Start, React, Vite, CSS | [`apps/scalar-ai`](apps/scalar-ai) |
+| Maren Botanical | Beauty storefront with shade colors and centered carousels | TanStack Router, React, Vite, CSS | [`apps/maren-botanical`](apps/maren-botanical) |
 | Norte Studio | Editorial studio fashion, beauty & lifestyle dengan empat galeri discipline | TanStack Router, React, Vite, CSS | [`apps/norte-studio`](apps/norte-studio) |
+| Sorrel Studio | Company profile studio interior & hospitality | TanStack Router, React, Vite, CSS | [`apps/sorrel-studio`](apps/sorrel-studio) |
+
+Katalog template (static HTML, dibuka langsung di browser) ada di [`catalog/index.html`](catalog/index.html). Tombol preview di katalog mengarah ke dev server lokal (`127.0.0.1:<port>`), jadi app terkait harus sedang `npm run dev`.
 
 ---
 
@@ -26,9 +27,14 @@ Katalog template lokal tersedia di `index.html`. Template company profile terbar
 
 ```text
 templatevibecode/
-├── apps/
-│   ├── scalar-ai/            # Standalone app: punya package.json sendiri
-│   └── maren-botanical/      # Maren beauty storefront
+├── apps/                     # 1 folder = 1 standalone app (package.json sendiri)
+│   ├── scalar-ai/
+│   ├── maren-botanical/
+│   ├── norte-studio/
+│   └── sorrel-studio/
+│
+├── catalog/                  # Katalog template: index.html + halaman detail
+│   └── previews/             # Screenshot untuk template yang source-nya di luar repo
 │
 ├── docs/
 │   ├── ADD_NEW_PROJECT.md    # Workflow menambahkan project baru
@@ -85,6 +91,9 @@ Semua project terhubung ke repository GitHub yang sama, tetapi masing-masing mem
 | Vercel Project | Root Directory |
 |---|---|
 | `scalar-ai` | `apps/scalar-ai` |
+| `maren-botanical` | `apps/maren-botanical` |
+| `norte-studio` | `apps/norte-studio` |
+| `sorrel-studio` | `apps/sorrel-studio` |
 
 Detail setup ada di [`docs/VERCEL_SETUP.md`](docs/VERCEL_SETUP.md).
 

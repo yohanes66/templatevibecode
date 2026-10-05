@@ -6,7 +6,7 @@ Stack: TanStack Router, React, Vite, TypeScript, CSS
 
 Status: Implemented locally; production build verified. Not deployed.
 
-Root directory: `templates/sorrel-studio`
+Root directory: `apps/sorrel-studio`
 
 Preview: `http://127.0.0.1:3400/`
 

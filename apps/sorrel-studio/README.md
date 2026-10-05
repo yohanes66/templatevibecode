@@ -45,6 +45,6 @@ To regenerate the PDF after editing its content, install `reportlab` in your Pyt
 
 ## Deploy
 
-Create a separate Vercel project with Root Directory `templates/sorrel-studio`, framework Vite, build command `npm run build`, output `dist`. `vercel.json` provides SPA rewrites for project and article deep links. No deployment was made as part of this local implementation.
+Create a separate Vercel project with Root Directory `apps/sorrel-studio`, framework Vite, build command `npm run build`, output `dist`. `vercel.json` provides SPA rewrites for project and article deep links. No deployment was made as part of this local implementation.
 
-The repository catalogue detail page is `../../sorrel-studio.html`. Its iframe points at the local development server; replace that URL with your deployed URL when publishing the catalogue.
+The repository catalogue detail page is `../../catalog/sorrel-studio.html`. Its iframe points at the local development server; replace that URL with your deployed URL when publishing the catalogue.
