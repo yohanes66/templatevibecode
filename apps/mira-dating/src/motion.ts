@@ -22,6 +22,8 @@ function chatSequence(scope: Element) {
 }
 
 export function initLanding(root: HTMLElement) {
+  // ScrollTrigger re-applies the scroll position it remembered when it refreshes on load; forget it.
+  ScrollTrigger.clearScrollMemory("manual");
   // Solid nav once the hero is behind us (runs with or without motion).
   const nav = root.querySelector(".nav")!;
   const navST = ScrollTrigger.create({
