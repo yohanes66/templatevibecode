@@ -220,8 +220,8 @@ function Statement() {
     <section className="statement">
       <div className="statement-media">
         <img src={img("couple")} alt="A couple walking home after dinner at dusk" />
-        <h2 className="t-h2">Honest like your best friend. Private like your diary.</h2>
       </div>
+      <h2 className="t-h2">Honest like your best friend. Private like your diary.</h2>
     </section>
   );
 }

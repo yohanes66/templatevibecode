@@ -876,6 +876,12 @@ ul {
   line-height: 30px;
   opacity: 0.85;
 }
+h1,
+h2,
+h3,
+.hero-sub {
+  text-wrap: balance;
+}
 .hero-ctas {
   display: flex;
   flex-wrap: wrap;
@@ -1068,6 +1074,7 @@ ul {
   width: 75%;
 }
 .statement {
+  position: relative;
   padding: 0 32px;
 }
 .statement-media {
@@ -1089,11 +1096,11 @@ ul {
   background: linear-gradient(90deg, rgba(246, 242, 238, 0.82) 0%, rgba(246, 242, 238, 0.55) 30%, rgba(246, 242, 238, 0) 55%);
   pointer-events: none;
 }
-.statement-media h2 {
+.statement > h2 {
   position: absolute;
   z-index: 1;
   top: 88px;
-  left: 88px;
+  left: calc(32px + 88px);
   max-width: 480px;
 }
 .privacy,
@@ -1621,10 +1628,10 @@ ul {
     right: max(16px, calc(50% - 360px));
     top: 300px;
   }
-  .statement-media h2 {
+  .statement > h2 {
     top: 48px;
-    left: 48px;
-    right: 48px;
+    left: calc(32px + 48px);
+    right: calc(32px + 48px);
   }
   .statement-media::after {
     background: linear-gradient(180deg, rgba(246, 242, 238, 0.85) 0%, rgba(246, 242, 238, 0.55) 30%, rgba(246, 242, 238, 0) 58%);
@@ -1648,13 +1655,29 @@ ul {
     padding: 10px 16px;
     font-size: 14px;
   }
+  /* mobile hero flows: copy first, the phone always starts below it whatever the copy wraps to */
   .hero {
-    height: max(100svh, 680px);
-    --phone-top: max(calc(100% - 330px), 430px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    min-height: 100svh;
+    padding-top: 104px;
   }
   .hero-copy {
-    top: 108px;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
     gap: 18px;
+  }
+  .hero-stage {
+    position: relative;
+    top: auto;
+    flex: 1 0 300px;
+    width: 100%;
+    height: 0; /* grows to fill the screen; the phone overflows and the hero crops it */
+    margin-top: 36px;
   }
   .hero-sub {
     font-size: 17px;
@@ -1745,24 +1768,34 @@ ul {
   .debrief {
     width: 100%;
   }
+  /* mobile: headline above the photo, photo short enough to keep both people in frame */
   .statement {
+    display: flex;
+    flex-direction: column;
     padding: 0 12px;
   }
+  .statement > h2 {
+    position: static;
+    order: -1;
+    padding: 0 8px 24px;
+  }
   .statement-media {
-    height: 520px;
+    height: 340px;
     border-radius: 28px;
   }
   .statement-media img {
-    object-position: 70% center;
-  }
-  .statement-media h2 {
-    top: auto;
-    bottom: 28px;
-    left: 24px;
-    right: 24px;
+    object-position: 96% center;
   }
   .statement-media::after {
-    background: linear-gradient(0deg, rgba(246, 242, 238, 0.9) 0%, rgba(246, 242, 238, 0.6) 30%, rgba(246, 242, 238, 0) 52%);
+    display: none;
+  }
+  /* debrief panel grows with its chat instead of a fixed ratio */
+  .ch-visual.v4 {
+    aspect-ratio: auto;
+  }
+  .v4-thread {
+    position: relative;
+    inset: auto;
   }
   .privacy,
   .stories {
