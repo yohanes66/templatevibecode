@@ -18,7 +18,7 @@ Each template is a **standalone app** in `apps/` with its own dependencies, font
 <td width="50%"><a href="https://yohanesnicksorrel.vercel.app"><img src="apps/sorrel-studio/cover.jpg" alt="Sorrel Studio" /></a><br /><b>Sorrel Studio</b> · <a href="apps/sorrel-studio">apps/sorrel-studio</a></td>
 </tr>
 <tr>
-<td width="50%"><a href="apps/mira-dating"><img src="apps/mira-dating/cover.jpg" alt="Mira" /></a><br /><b>Mira</b> · <a href="apps/mira-dating">apps/mira-dating</a></td>
+<td width="50%"><a href="https://yohanesnickmiradating.vercel.app"><img src="apps/mira-dating/cover.jpg" alt="Mira" /></a><br /><b>Mira</b> · <a href="apps/mira-dating">apps/mira-dating</a></td>
 <td width="50%"></td>
 </tr>
 </table>
@@ -29,7 +29,7 @@ Each template is a **standalone app** in `apps/` with its own dependencies, font
 | Maren Botanical | Beauty storefront with a shade carousel | [yohanesnickmarenbotanical.vercel.app](https://yohanesnickmarenbotanical.vercel.app) | [`apps/maren-botanical`](apps/maren-botanical) |
 | Norte Studio | Editorial landing page for a fashion, beauty & lifestyle studio | [yohanesnicknorte.vercel.app](https://yohanesnicknorte.vercel.app) | [`apps/norte-studio`](apps/norte-studio) |
 | Sorrel Studio | Company profile for an interior & hospitality design studio | [yohanesnicksorrel.vercel.app](https://yohanesnicksorrel.vercel.app) | [`apps/sorrel-studio`](apps/sorrel-studio) |
-| Mira | AI dating coach landing page with GSAP motion and an interactive app demo | Coming soon | [`apps/mira-dating`](apps/mira-dating) |
+| Mira | AI dating coach landing page with GSAP motion and an interactive app demo | [yohanesnickmiradating.vercel.app](https://yohanesnickmiradating.vercel.app) | [`apps/mira-dating`](apps/mira-dating) |
 
 Each template's README covers its stack, local port, Figma file, and where to edit content. The full showcase lives on my portfolio: [yohanesnick.site/work](https://yohanesnick.site/work) (Vibe Code section).
 

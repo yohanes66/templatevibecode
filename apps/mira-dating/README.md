@@ -6,7 +6,7 @@ Landing page and interactive app demo for Mira, a fictional AI dating coach. The
 
 | | |
 |---|---|
-| Live demo | Coming soon |
+| Live demo | [yohanesnickmiradating.vercel.app](https://yohanesnickmiradating.vercel.app) |
 | Type | Landing page + app demo |
 | Stack | TanStack Router, React, Vite, TypeScript, CSS, GSAP, Phosphor Icons |
 | Design | Coming soon |
