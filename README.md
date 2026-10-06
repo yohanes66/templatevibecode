@@ -17,6 +17,10 @@ Each template is a **standalone app** in `apps/` with its own dependencies, font
 <td width="50%"><a href="https://yohanesnicknorte.vercel.app"><img src="apps/norte-studio/cover.jpg" alt="Norte Studio" /></a><br /><b>Norte Studio</b> · <a href="apps/norte-studio">apps/norte-studio</a></td>
 <td width="50%"><a href="https://yohanesnicksorrel.vercel.app"><img src="apps/sorrel-studio/cover.jpg" alt="Sorrel Studio" /></a><br /><b>Sorrel Studio</b> · <a href="apps/sorrel-studio">apps/sorrel-studio</a></td>
 </tr>
+<tr>
+<td width="50%"><a href="apps/mira-dating"><img src="apps/mira-dating/cover.jpg" alt="Mira" /></a><br /><b>Mira</b> · <a href="apps/mira-dating">apps/mira-dating</a></td>
+<td width="50%"></td>
+</tr>
 </table>
 
 | Template | Description | Live demo | Folder |
@@ -25,6 +29,7 @@ Each template is a **standalone app** in `apps/` with its own dependencies, font
 | Maren Botanical | Beauty storefront with a shade carousel | [yohanesnickmarenbotanical.vercel.app](https://yohanesnickmarenbotanical.vercel.app) | [`apps/maren-botanical`](apps/maren-botanical) |
 | Norte Studio | Editorial landing page for a fashion, beauty & lifestyle studio | [yohanesnicknorte.vercel.app](https://yohanesnicknorte.vercel.app) | [`apps/norte-studio`](apps/norte-studio) |
 | Sorrel Studio | Company profile for an interior & hospitality design studio | [yohanesnicksorrel.vercel.app](https://yohanesnicksorrel.vercel.app) | [`apps/sorrel-studio`](apps/sorrel-studio) |
+| Mira | AI dating coach landing page with GSAP motion and an interactive app demo | Coming soon | [`apps/mira-dating`](apps/mira-dating) |
 
 Each template's README covers its stack, local port, Figma file, and where to edit content. The full showcase lives on my portfolio: [yohanesnick.site/work](https://yohanesnick.site/work) (Vibe Code section).
 
@@ -69,7 +74,8 @@ templatevibecode/
 │   ├── scalar-ai/
 │   ├── maren-botanical/
 │   ├── norte-studio/
-│   └── sorrel-studio/
+│   ├── sorrel-studio/
+│   └── mira-dating/
 │
 ├── docs/
 │   ├── ADD_NEW_PROJECT.md    # How to add a new template
@@ -109,6 +115,7 @@ All templates deploy from this one GitHub repo. Each Vercel project uses a diffe
 | `marenbotanical` | `apps/maren-botanical` |
 | `norte` | `apps/norte-studio` |
 | `sorrel-studio` | `apps/sorrel-studio` |
+| `mira-dating` | `apps/mira-dating` |
 
 Pushing to `main` deploys to production. Don't move or rename an app folder without updating its Root Directory in Vercel. Setup details: [`docs/VERCEL_SETUP.md`](docs/VERCEL_SETUP.md).
 

@@ -38,8 +38,9 @@ Each app uses a fixed port (`--strictPort`) so they can run side by side:
 | maren-botanical | 3200 |
 | norte-studio | 3300 (QA 3301) |
 | sorrel-studio | 3400 |
+| mira-dating | 3500 |
 
-New apps take the next free port: 3500, 3600, and so on. Add them to this table.
+New apps take the next free port: 3600, 3700, and so on. Add them to this table.
 
 ## Adding an app
 
