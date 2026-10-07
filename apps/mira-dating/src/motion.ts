@@ -34,10 +34,7 @@ export function initLanding(root: HTMLElement) {
   });
 
   const mm = gsap.matchMedia(root);
-  mm.add({ motion: "(prefers-reduced-motion: no-preference)", pointer: "(hover: hover) and (pointer: fine)" }, (ctx) => {
-    const { motion, pointer } = ctx.conditions as { motion: boolean; pointer: boolean };
-    if (!motion) return;
-    let detach = () => {};
+  mm.add("(prefers-reduced-motion: no-preference)", () => {
 
     /* ---- hero: intro ---- */
     const tl = gsap.timeline({ defaults: { ease: EASE }, delay: 0.1 });
@@ -56,35 +53,6 @@ export function initLanding(root: HTMLElement) {
     gsap.to(".hero-stage", { y: -70, ease: "none", scrollTrigger: hero });
     gsap.to(".float-card.left", { y: -150, ease: "none", scrollTrigger: hero });
     gsap.to(".float-card.right", { y: -210, ease: "none", scrollTrigger: hero });
-
-    /* ---- hero: pointer parallax (desktop) ---- */
-    if (pointer) {
-      const layers = [
-        [".hero-bg-inner", -14],
-        [".hero-phone .phone", 6],
-        [".float-card.left .float-inner", 16],
-        [".float-card.right .float-inner", 22],
-      ] as const;
-      const movers = layers.map(([sel, depth]) => {
-        const el = root.querySelector(sel)!;
-        return {
-          depth,
-          x: gsap.quickTo(el, "x", { duration: 1.2, ease: "power3.out" }),
-          y: gsap.quickTo(el, "y", { duration: 1.2, ease: "power3.out" }),
-        };
-      });
-      const heroEl = root.querySelector<HTMLElement>(".hero")!;
-      const onMove = (e: PointerEvent) => {
-        const nx = e.clientX / window.innerWidth - 0.5;
-        const ny = e.clientY / window.innerHeight - 0.5;
-        for (const m of movers) {
-          m.x(nx * m.depth);
-          m.y(ny * m.depth);
-        }
-      };
-      heroEl.addEventListener("pointermove", onMove);
-      detach = () => heroEl.removeEventListener("pointermove", onMove);
-    }
 
     /* ---- simple reveals ---- */
     gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
@@ -167,7 +135,6 @@ export function initLanding(root: HTMLElement) {
     /* ---- statement: photo drifts slower than the page ---- */
     gsap.fromTo(".statement img", { yPercent: -6, scale: 1.12 }, { yPercent: 6, scale: 1.12, ease: "none", scrollTrigger: { trigger: ".statement", start: "top bottom", end: "bottom top", scrub: true } });
     gsap.from(".statement h2", { y: 20, autoAlpha: 0, duration: 1, ease: EASE, scrollTrigger: { trigger: ".statement", start: "top 65%" } });
-    return () => detach();
   });
 
   return () => {

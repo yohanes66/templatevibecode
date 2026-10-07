@@ -3,7 +3,7 @@
 Checked against the Figma desktop landing and the three mobile screens at 1440×900, 820×1180, and 390×844 in Chromium (Playwright).
 
 - No console errors on `/` or `/app`. No horizontal scroll at any width.
-- Hero: one-line headline at 1440 and the phone sits below the CTAs at a 900px viewport height. Scroll parallax over 400px moves the background 312px, the phone 431px, and the cards ~510px. Pointer parallax shifts the layers by up to ±11px.
+- Hero: one-line headline at 1440 and the phone sits below the CTAs at a 900px viewport height. Scroll parallax over 400px moves the background 312px, the phone 431px, and the cards ~510px. Mouse movement does not shift the hero layers.
 - Intro order: nav → tag → headline words → sub and CTAs → phone → cards → chat (me bubble, typing dots, Mira bubble, draft, tip). No bounce easing and no idle loops.
 - Chapters: soft fade-up for the text, photo, phone, and card. The chapter 04 chat sequence ends with the debrief card visible.
 - `/app`: "Roast my bio" shows the typing indicator and then a reply. Like moves Discover from Noor to Sarah. The Likes and You tabs are disabled ("Not in this demo").
@@ -38,8 +38,8 @@ Repeat with `--browser=webkit` to check Safari's rendering engine.
 
 Video hero checked in Chromium and WebKit at 390×844, 744×1133, and 1440×900, plus the 17-width layout check above.
 
-- The supplied 9,243,738-byte source becomes a 1,645,850-byte desktop loop (1600×900) or an 814,774-byte portrait loop (720×960), both H.264 at 24fps with no audio and fast-start metadata. A 0.6-second blend joins the loop, and the WebP poster matches its first frame.
+- Both variants use exactly seconds 3–10 of the supplied 9,243,738-byte source, without an added blend or transition. The desktop loop is 1,048,741 bytes (1600×900), and the portrait loop is 532,877 bytes (720×960), both H.264 at 24fps with 168 frames, no audio, and fast-start metadata. The 101,666-byte WebP poster matches the first frame of the trimmed clip.
 - Only one video variant downloads; resizing preserves that source and covers the hero without blank edges. The pause button does not overlap copy or floating cards.
-- Manual pause preserves the current frame. Playback pauses outside the hero and when the tab is hidden, then resumes when visible unless manually paused. Hidden-tab handling was checked by dispatching the visibility event with a hidden document state.
+- Manual pause preserves the current frame. Moving the mouse across the hero does not change the background position or resume playback. Playback pauses outside the hero and when the tab is hidden, then resumes when visible unless manually paused. Hidden-tab handling was checked by dispatching the visibility event with a hidden document state.
 - Reduced motion and Save-Data skip video requests. Blocked autoplay keeps the poster and offers a play button; network failure keeps the poster. `scripts/check-video.js` exercises these cases.
 - Layout containment keeps the scaled phone's internal width from causing horizontal overflow in WebKit when motion is disabled. The 320–1920px layout checks and production build pass.

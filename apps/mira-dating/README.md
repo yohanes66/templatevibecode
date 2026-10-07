@@ -30,7 +30,7 @@ npm run dev        # http://127.0.0.1:3500
 
 ## Features
 
-- **Video hero with depth.** A quiet meadow loop uses a 1600×900 desktop video or a lighter 720×960 portrait video. It has no audio, a still-image fallback, and a pause button. Playback stops outside the hero or in a hidden tab; reduced motion and Save-Data skip the video download. On scroll the background, headline, phone, and floating cards move at different speeds. On desktop they also shift slightly with the cursor.
+- **Video hero with depth.** A quiet meadow loop uses a 1600×900 desktop video or a lighter 720×960 portrait video. Both use seconds 3–10 of the same source, with no added transition. It has no audio, a still-image fallback, and a pause button. Playback stops outside the hero or in a hidden tab; reduced motion and Save-Data skip the video download. On scroll the background, headline, phone, and floating cards move at different speeds. Mouse movement leaves the hero stationary.
 - **Calm intro.** The headline rises word by word, then the phone mockup slides up, the cards fade in, and the chat inside the phone plays with a typing indicator.
 - **Four story chapters** (match, chat, date, debrief). Each pairs a model photo, illustration, or phone mockup with a UI card, and the elements fade up softly on scroll. The debrief chapter plays its own chat sequence.
 - **Quiet scroll effects.** The statement photo drifts slower than the page, sections reveal with a short stagger, and the nav turns into a flat solid bar after the hero.

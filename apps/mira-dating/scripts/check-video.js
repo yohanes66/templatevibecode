@@ -16,6 +16,7 @@ async (page) => {
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.goto(base);
     await page.waitForFunction(() => { const el = document.querySelector('.hero-bg video'); return !el.paused && el.readyState >= 3 && el.currentTime > 0; });
+    check(await page.locator('.hero-bg video').evaluate(el => Math.abs(el.duration - 7) < 0.05), 'Video is not the seven-second trim');
     check(await page.locator('.hero-bg video').evaluate((el, variant) => el.currentSrc.endsWith(`meadow-${variant}.mp4`) && el.muted && el.loop && el.playsInline && el.classList.contains('is-ready'), variant), `Wrong video configuration at ${width}px`);
     await page.evaluate(() => {
       const video = document.querySelector('.hero-bg video').getBoundingClientRect();
@@ -31,6 +32,15 @@ async (page) => {
     await page.getByRole('button', { name: 'Pause background video', exact: true }).click();
     await page.waitForFunction(() => document.querySelector('.hero-bg video').paused);
     check(await page.locator('.hero-bg video').evaluate(el => el.classList.contains('is-ready')), 'Manual pause loses the displayed frame');
+    await page.waitForTimeout(1800);
+    const background = await page.locator('.hero-bg-inner').boundingBox();
+    const pausedTime = await page.locator('.hero-bg video').evaluate(el => el.currentTime);
+    await page.mouse.move(10, 150);
+    await page.waitForTimeout(1400);
+    await page.mouse.move(width - 10, 250);
+    await page.waitForTimeout(1400);
+    check(JSON.stringify(await page.locator('.hero-bg-inner').boundingBox()) === JSON.stringify(background), 'Mouse movement shifts the background');
+    check(await page.locator('.hero-bg video').evaluate((el, time) => el.currentTime === time && el.paused, pausedTime), 'Mouse movement resumes the paused video');
     await page.getByRole('button', { name: 'Play background video', exact: true }).click();
     await page.waitForFunction(() => !document.querySelector('.hero-bg video').paused);
     await page.locator('.privacy').scrollIntoViewIfNeeded();
@@ -79,5 +89,5 @@ async (page) => {
     check(await page.locator('.hero-bg img').evaluate(el => el.complete && el.naturalWidth > 0), 'Failed video has no image fallback');
   } finally { await page.unroute('**/videos/*.mp4'); }
   check(errors.length === 0, errors.join('\n'));
-  return { result: 'PASS', checks: 'responsive source and coverage, playback, manual pause, offscreen pause/resume, hidden tab, reduced motion, Save-Data, blocked autoplay, network failure, no second download on resize' };
+  return { result: 'PASS', checks: 'seven-second trim, responsive source and coverage, playback, manual pause and stationary background on mouse movement, offscreen pause/resume, hidden tab, reduced motion, Save-Data, blocked autoplay, network failure, no second download on resize' };
 }
