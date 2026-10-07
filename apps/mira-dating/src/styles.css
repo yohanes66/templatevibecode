@@ -1383,7 +1383,7 @@ h3,
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 160px 24px;
+  padding: 112px 24px;
   text-align: center;
 }
 /* CTA orb: slow swell and turn; while the headline types, a light "speaking" pulse (on the wrapper, so it never fights the turn) and soft rings */
@@ -1467,13 +1467,23 @@ h3,
 .footer {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
-  padding: 56px var(--pad);
+  gap: 24px;
+  padding: 32px var(--pad);
   box-shadow: inset 0 1px 0 var(--line);
 }
 .footer-cols {
-  display: flex;
-  gap: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: space-between;
+  gap: 20px;
+  width: min(440px, 100%);
+  flex-shrink: 0;
+}
+.footer > .col {
+  max-width: 360px;
+}
+.footer-cols > .col {
+  gap: 8px;
 }
 .footer a {
   font-size: 15px;
@@ -1628,13 +1638,26 @@ h3,
     right: max(16px, calc(50% - 360px));
     top: 300px;
   }
+  /* tablet and mobile: headline above the photo so both people stay in frame */
+  .statement {
+    display: flex;
+    flex-direction: column;
+  }
   .statement > h2 {
-    top: 48px;
-    left: calc(32px + 48px);
-    right: calc(32px + 48px);
+    position: static;
+    order: -1;
+    max-width: none;
+    padding: 0 8px 24px;
+  }
+  .statement-media {
+    height: 340px;
+    border-radius: 28px;
+  }
+  .statement-media img {
+    object-position: 96% center;
   }
   .statement-media::after {
-    background: linear-gradient(180deg, rgba(246, 242, 238, 0.85) 0%, rgba(246, 242, 238, 0.55) 30%, rgba(246, 242, 238, 0) 58%);
+    display: none;
   }
   .footer {
     flex-direction: column;
@@ -1715,17 +1738,31 @@ h3,
     aspect-ratio: 588 / 520;
   }
   .ch-visual .card {
-    gap: 10px;
-    padding: 14px;
+    gap: 8px;
+    padding: 12px;
     border-radius: 18px;
   }
   .ch-visual .t-headline {
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .ch-visual .t-title {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .ch-visual .t-micro {
+    font-size: 9px;
+    line-height: 12px;
+  }
+  .ch-visual .chip {
+    padding: 4px 7px;
+    font-size: 10px;
+    line-height: 14px;
   }
   .ch-visual .btn {
-    padding: 8px 12px;
-    font-size: 12px;
+    padding: 7px 10px;
+    font-size: 11px;
+    line-height: 16px;
   }
   .v1 .ph {
     width: 64%;
@@ -1739,10 +1776,10 @@ h3,
     width: 100%;
   }
   .v2 .pop-card {
-    left: 4%;
+    left: auto;
     right: 4%;
-    bottom: 4%;
-    width: auto;
+    bottom: -4%;
+    width: min(88%, 280px);
   }
   .v3 .phone {
     left: 3%;
@@ -1751,16 +1788,19 @@ h3,
     top: auto;
     bottom: -6%;
     right: 3%;
-    width: 72%;
+    width: min(66%, 240px);
+    gap: 6px;
+  }
+  .v3 .plan-row {
     gap: 8px;
   }
   .v3 .plan .t-caption {
     display: none;
   }
   .v3 .icon-tile {
-    width: 28px;
-    height: 28px;
-    border-radius: 9px;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
   }
   .v4-thread {
     padding: 20px 14px;
@@ -1768,26 +1808,8 @@ h3,
   .debrief {
     width: 100%;
   }
-  /* mobile: headline above the photo, photo short enough to keep both people in frame */
   .statement {
-    display: flex;
-    flex-direction: column;
     padding: 0 12px;
-  }
-  .statement > h2 {
-    position: static;
-    order: -1;
-    padding: 0 8px 24px;
-  }
-  .statement-media {
-    height: 340px;
-    border-radius: 28px;
-  }
-  .statement-media img {
-    object-position: 96% center;
-  }
-  .statement-media::after {
-    display: none;
   }
   /* debrief panel grows with its chat instead of a fixed ratio */
   .ch-visual.v4 {
@@ -1807,14 +1829,13 @@ h3,
     padding: 24px;
   }
   .cta {
-    padding: 112px 20px;
+    padding: 80px 20px;
   }
   .cta h2 {
     min-height: 2.1em;
   }
-  .footer-cols {
-    flex-wrap: wrap;
-    gap: 32px 48px;
+  .footer {
+    padding-block: 24px;
   }
   .demo {
     grid-template-columns: 1fr;
@@ -1827,6 +1848,28 @@ h3,
   .demo-phone {
     width: min(390px, 100%);
     margin: 0 auto;
+  }
+}
+@media (max-width: 360px) {
+  .ch-visual.v2,
+  .ch-visual.v3 {
+    aspect-ratio: auto;
+  }
+  .v2 .ph {
+    position: relative;
+    height: auto;
+    aspect-ratio: 588 / 520;
+  }
+  .v3 .phone {
+    position: relative;
+    top: auto;
+  }
+  .v2 .pop-card,
+  .v3 .plan {
+    position: relative;
+    inset: auto;
+    width: 88%;
+    margin: -32px 0 0 auto;
   }
 }
 @media (max-width: 900px) and (min-width: 601px) {

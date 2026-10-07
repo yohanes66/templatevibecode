@@ -9,3 +9,10 @@ Checked against the Figma desktop landing and the three mobile screens at 1440×
 - `/app`: "Roast my bio" shows the typing indicator and then a reply. Like moves Discover from Noor to Sarah. The Likes and You tabs are disabled ("Not in this demo").
 - `prefers-reduced-motion`: GSAP setup is skipped and content renders in its final state.
 - Every match and chat partner is a woman. The app's user persona is a man.
+
+Responsive fixes checked on 2026-10-07 at widths 320, 390, 600, 744, 820, 1024, and 1440px in Chromium (Playwright).
+
+- iPad portrait: statement headline sits above the photo; both people remain visible.
+- Footer: smaller CTA spacing and bottom padding; all three link columns stay aligned without horizontal overflow.
+- Mobile chapter cards: smaller typography, padding, and widths expose more of the background visual. At 360px and below, cards flow below the photo or phone with a small overlap.
+- No console errors after making the route's scroll effect return no value. `npm run build` passes.

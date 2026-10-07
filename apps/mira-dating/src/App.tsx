@@ -484,7 +484,7 @@ function AppDemo() {
 
 function Root() {
   const { pathname } = useLocation();
-  useLayoutEffect(() => window.scrollTo({ top: 0, left: 0, behavior: "instant" }), [pathname]);
+  useLayoutEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }, [pathname]);
   return <Outlet />;
 }
 
