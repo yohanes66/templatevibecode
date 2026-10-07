@@ -324,6 +324,7 @@ ul {
 .phone {
   position: relative;
   aspect-ratio: 417 / 876;
+  contain: layout; /* WebKit must not propagate the unscaled screen's overflow to the page. */
 }
 .phone-body {
   position: absolute;
@@ -835,11 +836,30 @@ ul {
   position: absolute;
   inset: -2%;
 }
-.hero-bg img {
+.hero-bg img,
+.hero-bg video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 55%;
+}
+.hero-bg video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.hero-bg video.is-ready {
+  opacity: 1;
+}
+.btn.hero-video-toggle {
+  position: absolute;
+  z-index: 2;
+  right: var(--pad);
+  top: 112px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: rgba(24, 18, 12, 0.4);
 }
 .hero-bg::after {
   content: "";
@@ -1684,6 +1704,9 @@ h3,
   .nav-cta {
     padding: 10px 16px;
     font-size: 14px;
+  }
+  .btn.hero-video-toggle {
+    top: 80px;
   }
   /* mobile hero flows: copy first, the phone always starts below it whatever the copy wraps to */
   .hero {

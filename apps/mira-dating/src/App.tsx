@@ -14,6 +14,8 @@ import {
   LockSimple,
   MapPin,
   PaperPlaneTilt,
+  Pause,
+  Play,
   Quotes,
   ShieldCheck,
   Sparkle,
@@ -60,11 +62,68 @@ function Nav() {
 }
 
 function Hero() {
+  const video = useRef<HTMLVideoElement>(null);
+  const failed = useRef(false);
+  const [paused, setPaused] = useState(false);
+  const [ready, setReady] = useState(false);
+  const [canPlay, setCanPlay] = useState(false);
+  useEffect(() => {
+    const el = video.current!;
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+    const connection = (navigator as Navigator & { connection?: EventTarget & { saveData?: boolean } }).connection;
+    let visible = false;
+    let disposed = false;
+    const sync = () => {
+      const allowed = !reduced.matches && !connection?.saveData && !failed.current;
+      setCanPlay(allowed);
+      if (!allowed) {
+        el.pause();
+        if (el.hasAttribute("src")) {
+          el.removeAttribute("src");
+          el.load();
+        }
+        setReady(false);
+        return;
+      }
+      if (!visible || document.hidden || paused) {
+        el.pause();
+        return;
+      }
+      if (!el.hasAttribute("src")) el.src = matchMedia("(max-width: 900px)").matches ? "/videos/meadow-portrait.mp4" : "/videos/meadow-desktop.mp4";
+      el.muted = true;
+      void el.play().catch((error: DOMException) => {
+        if (disposed || error.name === "AbortError") return;
+        if (error.name === "NotAllowedError") setPaused(true);
+        else {
+          failed.current = true;
+          sync();
+        }
+      });
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting && entry.intersectionRatio >= 0.05;
+      sync();
+    }, { threshold: 0.05 });
+    observer.observe(el.closest(".hero")!);
+    reduced.addEventListener("change", sync);
+    connection?.addEventListener("change", sync);
+    document.addEventListener("visibilitychange", sync);
+    return () => {
+      disposed = true;
+      observer.disconnect();
+      reduced.removeEventListener("change", sync);
+      connection?.removeEventListener("change", sync);
+      document.removeEventListener("visibilitychange", sync);
+      el.pause();
+    };
+  }, [paused]);
   return (
     <header className="hero">
       <div className="hero-bg" aria-hidden>
         <div className="hero-bg-inner">
-          <img src={img("meadow")} alt="" />
+          <img src={img("meadow")} alt="" fetchPriority="high" />
+          <video ref={video} className={ready ? "is-ready" : ""} muted loop playsInline preload="none" poster={img("meadow")}
+            onPlaying={() => setReady(true)} onError={() => { failed.current = true; setReady(false); setCanPlay(false); }} />
         </div>
       </div>
       <div className="hero-copy">
@@ -96,6 +155,9 @@ function Hero() {
           </div>
         </div>
       </div>
+      {canPlay && <button type="button" className="btn glass hero-video-toggle" aria-label={paused ? "Play background video" : "Pause background video"} onClick={() => setPaused(!paused)}>
+        {paused ? <Play size={18} weight="fill" /> : <Pause size={18} weight="fill" />}
+      </button>}
     </header>
   );
 }
