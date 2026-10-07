@@ -13,6 +13,7 @@ Checked against the Figma desktop landing and the three mobile screens at 1440×
 Responsive fixes checked on 2026-10-07 at widths 320, 390, 600, 744, 820, 1024, and 1440px in Chromium (Playwright).
 
 - iPad portrait: statement headline sits above the photo; both people remain visible.
+- Chapter 02 photo fills the visual width in the stacked layout through 1080px; checked at 390, 744, 820, and 1024px, plus the desktop composition at 1440px.
 - Footer: smaller CTA spacing and bottom padding; all three link columns stay aligned without horizontal overflow.
 - Mobile chapter cards: smaller typography, padding, and widths expose more of the background visual. At 360px and below, cards flow below the photo or phone with a small overlap.
 - No console errors after making the route's scroll effect return no value. `npm run build` passes.
