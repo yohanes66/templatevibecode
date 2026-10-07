@@ -11,7 +11,7 @@ async (page) => {
   check(requests.length === 0, 'Reduced motion downloads video');
   check(await page.locator('.hero-bg video').evaluate(el => !el.hasAttribute('src') && el.paused), 'Reduced motion enables video');
   check(await page.getByRole('button', { name: /background video/ }).count() === 0, 'Reduced motion exposes video control');
-  for (const [width, height, variant] of [[390, 844, 'portrait'], [600, 900, 'portrait'], [601, 900, 'desktop'], [744, 1133, 'desktop'], [1133, 744, 'desktop'], [1440, 900, 'desktop'], [1920, 1080, 'desktop']]) {
+  for (const [width, height, variant] of [[320, 740, 'portrait'], [390, 844, 'portrait'], [600, 900, 'portrait'], [601, 900, 'desktop'], [744, 1133, 'desktop'], [901, 800, 'desktop'], [1133, 744, 'desktop'], [1440, 900, 'desktop'], [1920, 1080, 'desktop']]) {
     await page.setViewportSize({ width, height });
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.goto(base);
@@ -24,6 +24,12 @@ async (page) => {
       const hero = document.querySelector('.hero').getBoundingClientRect();
       if (video.left > hero.left || video.right < hero.right || video.top > hero.top || video.bottom < hero.bottom) throw new Error('Video leaves hero edges exposed');
       const control = document.querySelector('.hero-video-toggle').getBoundingClientRect();
+      if (Math.abs(hero.bottom - control.bottom - (innerWidth <= 600 ? 20 : 24)) > 1 || Math.abs(hero.right - control.right - (innerWidth <= 600 ? 8 : 24)) > 1) throw new Error('Video control is not in the bottom-right corner');
+      const style = getComputedStyle(document.querySelector('.hero-video-toggle'));
+      if (style.backgroundColor !== 'rgba(0, 0, 0, 0)' || style.backdropFilter !== 'none' || style.boxShadow !== 'none') throw new Error('Video control has a filled background or ring');
+      const icon = document.querySelector('.hero-video-toggle svg').getBoundingClientRect();
+      const phone = document.querySelector('.hero-phone').getBoundingClientRect();
+      if (icon.left < phone.right && icon.right > phone.left && icon.top < phone.bottom && icon.bottom > phone.top) throw new Error('Video control icon overlaps the phone');
       for (const el of document.querySelectorAll('.hero-tag, .hero-title, .hero-sub, .hero-ctas, .float-card')) {
         if (!el.getClientRects().length) continue;
         const rect = el.getBoundingClientRect();

@@ -854,12 +854,14 @@ ul {
 .btn.hero-video-toggle {
   position: absolute;
   z-index: 2;
-  right: var(--pad);
-  top: 112px;
+  right: 24px;
+  bottom: 24px;
   width: 44px;
   height: 44px;
   padding: 0;
-  background: rgba(24, 18, 12, 0.4);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 .hero-bg::after {
   content: "";
@@ -936,7 +938,7 @@ h3,
   left: calc(50% - 470px);
 }
 .float-card.right {
-  top: 260px;
+  top: min(260px, calc(100% - var(--phone-top) - 140px));
   right: calc(50% - 470px);
 }
 .float-card .row.card {
@@ -1660,7 +1662,7 @@ h3,
   }
   .float-card.right {
     right: max(16px, calc(50% - 360px));
-    top: 300px;
+    top: min(244px, calc(100% - var(--phone-top) - 140px));
   }
   /* tablet and mobile: headline above the photo so both people stay in frame */
   .statement {
@@ -1706,7 +1708,8 @@ h3,
     font-size: 14px;
   }
   .btn.hero-video-toggle {
-    top: 80px;
+    right: 8px;
+    bottom: 20px;
   }
   /* mobile hero flows: copy first, the phone always starts below it whatever the copy wraps to */
   .hero {
