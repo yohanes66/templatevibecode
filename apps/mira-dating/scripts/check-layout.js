@@ -1,0 +1,69 @@
+async (page) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto(new URL('/', page.url()).href);
+  await page.evaluate(() => document.fonts.ready);
+  await page.waitForFunction(() => [...document.images].every(img => img.complete && img.naturalWidth));
+  const widths = [320, 360, 375, 390, 600, 601, 744, 820, 900, 901, 1024, 1080, 1081, 1200, 1201, 1440, 1920];
+  for (const width of widths) {
+    await page.setViewportSize({ width, height: width === 744 ? 1133 : 900 });
+    await page.waitForFunction(width => innerWidth === width && parseFloat(getComputedStyle(document.querySelector('.nav')).paddingLeft) === (width <= 600 ? 20 : width <= 1200 ? 64 : 120), width);
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    await page.evaluate(() => {
+      const pad = innerWidth <= 600 ? 20 : innerWidth <= 1200 ? 64 : 120;
+      const check = (ok, message) => { if (!ok) throw new Error(`${innerWidth}px: ${message}`); };
+      const close = (a, b) => Math.abs(a - b) < 1;
+      const bounds = selector => document.querySelector(selector).getBoundingClientRect();
+      check(document.documentElement.scrollWidth <= innerWidth, 'horizontal overflow');
+      for (const selector of ['.nav', '.how', '.statement', '.privacy', '.stories', '.cta', '.footer']) {
+        const style = getComputedStyle(document.querySelector(selector));
+        check(close(parseFloat(style.paddingLeft), pad) && close(parseFloat(style.paddingRight), pad), `${selector} has different page padding`);
+      }
+      for (const selector of ['.how-intro', '.statement-media', '.privacy > .split-head', '.privacy > .grid-3', '.stories > .col', '.stories > .grid-3']) {
+        const rect = bounds(selector);
+        check(close(rect.left, pad) && close(innerWidth - rect.right, pad), `${selector} is off the page edges`);
+      }
+      check(close(bounds('.nav > .wordmark').left, pad), 'nav logo is misaligned');
+      check(close(innerWidth - bounds('.nav-cta').right, pad), 'nav button is misaligned');
+      check(close(bounds('.footer > .col').left, pad) && close(innerWidth - bounds('.footer-cols').right, pad), 'footer is misaligned');
+      const hero = bounds('.hero-copy');
+      check(close(hero.left, innerWidth - hero.right) && hero.width <= innerWidth - 2 * pad + 1, 'hero copy has uneven margins');
+      if (innerWidth <= 900) {
+        check(close(bounds('.statement > h2').left, pad) && close(parseFloat(getComputedStyle(document.querySelector('.statement > h2')).paddingLeft), 0), 'statement title has extra inset');
+      }
+      const columns = [...document.querySelectorAll('.footer-cols > .col')].map(el => el.getBoundingClientRect());
+      check(columns.every(rect => close(rect.top, columns[0].top)), 'footer columns are not aligned');
+      for (const chapter of document.querySelectorAll('.chapter')) {
+        const rect = chapter.getBoundingClientRect();
+        check(close(rect.left, pad) && close(innerWidth - rect.right, pad), 'chapter has uneven margins');
+        if (innerWidth <= 1080) {
+          for (const child of chapter.querySelectorAll(':scope > .ch-text, :scope > .ch-visual')) {
+            const childRect = child.getBoundingClientRect();
+            check(close(childRect.left - rect.left, rect.right - childRect.right), 'stacked chapter content is not centered');
+          }
+          check(close(chapter.querySelector('.ch-text').getBoundingClientRect().width, chapter.querySelector('.ch-visual').getBoundingClientRect().width), 'chapter text and visual widths differ');
+        }
+      }
+      const photo = bounds('.v2 .ph'), visual = bounds('.v2');
+      check(Math.abs(photo.width / visual.width - (innerWidth <= 1080 ? 1 : 0.85)) < 0.01, 'chapter 02 photo width regressed');
+      for (const el of document.querySelectorAll('.ch-text h3, .pop-card, .pop-card .t-title, .pop-card .t-headline, .pop-card .btn, .pop-card .chip, .cta h2, .footer a')) {
+        check(el.scrollWidth <= el.clientWidth + 1, `${el.className || el.tagName} clips its content`);
+      }
+    });
+  }
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.reload();
+  for (const width of [1440, 390, 744, 1440, 320]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    await page.waitForTimeout(1500);
+    await page.evaluate(() => {
+      const rect = document.querySelector('.hero-copy').getBoundingClientRect();
+      if (Math.abs(rect.left - (innerWidth - rect.right)) >= 1 || rect.left < 0) throw new Error(`${innerWidth}px: animated hero loses centering after resize`);
+    });
+  }
+  if (errors.length) throw new Error(errors.join('\n'));
+  return { result: 'PASS', widths, checks: 'page padding, section edges, chapter alignment, photo width, footer columns, text clipping, overflow, animated hero resize, browser errors' };
+}

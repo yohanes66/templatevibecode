@@ -17,3 +17,20 @@ Responsive fixes checked on 2026-10-07 at widths 320, 390, 600, 744, 820, 1024, 
 - Footer: smaller CTA spacing and bottom padding; all three link columns stay aligned without horizontal overflow.
 - Mobile chapter cards: smaller typography, padding, and widths expose more of the background visual. At 360px and below, cards flow below the photo or phone with a small overlap.
 - No console errors after making the route's scroll effect return no value. `npm run build` passes.
+
+Page padding checked in Chromium and WebKit at 17 widths from 320 to 1920px, including both sides of the 600, 900, 1080, and 1200px breakpoints.
+
+- Nav, chapter panels, statement photo, privacy, stories, CTA, and footer share the page padding: 20px on mobile, 64px on tablet, and 120px on desktop.
+- The statement heading has no extra horizontal inset on tablet or mobile. Footer columns span the content width in the stacked layout.
+- Hero centering uses CSS margins; an animated desktop-to-mobile resize no longer retains the desktop transform in WebKit.
+- `scripts/check-layout.js` checks both page edges, stacked chapter alignment, photo width, footer columns, text clipping, horizontal overflow, animated hero resizing, and browser errors. Run it before pushing layout changes.
+
+With `npm run dev` running, use these commands from this app folder:
+
+```sh
+npx --yes --package @playwright/cli playwright-cli -s=mira-layout open http://127.0.0.1:3500 --browser=chrome
+npx --yes --package @playwright/cli playwright-cli -s=mira-layout run-code --filename=scripts/check-layout.js
+npx --yes --package @playwright/cli playwright-cli -s=mira-layout close
+```
+
+Repeat with `--browser=webkit` to check Safari's rendering engine.

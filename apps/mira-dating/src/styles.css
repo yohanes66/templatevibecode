@@ -850,13 +850,14 @@ ul {
 .hero-copy {
   position: absolute;
   top: 168px;
-  left: 50%;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  width: min(1100px, calc(100% - 40px));
-  transform: translateX(-50%);
+  width: min(1100px, calc(100% - 2 * var(--pad)));
+  margin: 0 auto;
   text-align: center;
 }
 .hero-tag {
@@ -1075,7 +1076,7 @@ h3,
 }
 .statement {
   position: relative;
-  padding: 0 32px;
+  padding: 0 var(--pad);
 }
 .statement-media {
   position: relative;
@@ -1100,7 +1101,7 @@ h3,
   position: absolute;
   z-index: 1;
   top: 88px;
-  left: calc(32px + 88px);
+  left: calc(var(--pad) + 88px);
   max-width: 480px;
 }
 .privacy,
@@ -1383,7 +1384,7 @@ h3,
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 112px 24px;
+  padding: 112px var(--pad);
   text-align: center;
 }
 /* CTA orb: slow swell and turn; while the headline types, a light "speaking" pulse (on the wrapper, so it never fights the turn) and soft rings */
@@ -1650,7 +1651,7 @@ h3,
     position: static;
     order: -1;
     max-width: none;
-    padding: 0 8px 24px;
+    padding-bottom: 24px;
   }
   .statement-media {
     height: 340px;
@@ -1664,6 +1665,9 @@ h3,
   }
   .footer {
     flex-direction: column;
+  }
+  .footer-cols {
+    width: 100%;
   }
 }
 @media (max-width: 600px) {
@@ -1694,7 +1698,6 @@ h3,
     position: relative;
     top: auto;
     left: auto;
-    transform: none;
     gap: 18px;
   }
   .hero-stage {
@@ -1808,9 +1811,6 @@ h3,
   .debrief {
     width: 100%;
   }
-  .statement {
-    padding: 0 12px;
-  }
   /* debrief panel grows with its chat instead of a fixed ratio */
   .ch-visual.v4 {
     aspect-ratio: auto;
@@ -1829,7 +1829,7 @@ h3,
     padding: 24px;
   }
   .cta {
-    padding: 80px 20px;
+    padding-block: 80px;
   }
   .cta h2 {
     min-height: 2.1em;
