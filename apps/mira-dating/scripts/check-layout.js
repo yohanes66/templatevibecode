@@ -30,7 +30,7 @@ async (page) => {
       check(close(bounds('.footer > .col').left, pad) && close(innerWidth - bounds('.footer-cols').right, pad), 'footer is misaligned');
       const hero = bounds('.hero-copy');
       check(close(hero.left, innerWidth - hero.right) && hero.width <= innerWidth - 2 * pad + 1, 'hero copy has uneven margins');
-      if (innerWidth <= 1366) {
+      if (innerWidth <= 900) {
         check(close(bounds('.statement > h2').left, pad) && close(parseFloat(getComputedStyle(document.querySelector('.statement > h2')).paddingLeft), 0), 'statement title has extra inset');
       }
       const statement = document.querySelector('.statement img');
@@ -40,6 +40,12 @@ async (page) => {
       // The couple occupies source x=900..1780 in couple.webp.
       check(getComputedStyle(statement).objectPosition === '100% 50%' && getComputedStyle(statement).transform === 'none', 'statement photo loses its right focus or is zoomed');
       check(visibleLeft <= 900 && statement.naturalWidth >= 1780, 'statement photo crops the couple');
+      if (innerWidth > 900) {
+        const title = bounds('.statement > h2');
+        const coupleLeft = frame.left + (900 - visibleLeft) * scale;
+        check(getComputedStyle(document.querySelector('.statement > h2')).position === 'absolute', 'landscape statement title is not over the photo');
+        check(title.left >= frame.left && title.top >= frame.top && title.bottom <= frame.bottom && title.right < coupleLeft, 'statement title overlaps the couple or leaves the photo');
+      }
       const columns = [...document.querySelectorAll('.footer-cols > .col')].map(el => el.getBoundingClientRect());
       check(columns.every(rect => close(rect.top, columns[0].top)), 'footer columns are not aligned');
       for (const chapter of document.querySelectorAll('.chapter')) {

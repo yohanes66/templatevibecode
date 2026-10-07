@@ -1146,6 +1146,7 @@ h3,
 }
 .statement {
   position: relative;
+  container-type: inline-size;
   padding: 0 var(--pad);
 }
 .statement-media {
@@ -1171,9 +1172,9 @@ h3,
 .statement > h2 {
   position: absolute;
   z-index: 1;
-  top: 88px;
-  left: calc(var(--pad) + 88px);
-  max-width: 480px;
+  top: clamp(32px, 6cqw, 88px);
+  left: calc(var(--pad) + clamp(32px, 6cqw, 88px));
+  width: min(480px, 40cqw);
 }
 .privacy,
 .stories {
@@ -1644,7 +1645,7 @@ h3,
 }
 
 /* ---------- responsive ---------- */
-@media (max-width: 1366px) {
+@media (max-width: 900px) {
   .statement {
     display: flex;
     flex-direction: column;
@@ -1652,6 +1653,7 @@ h3,
   .statement > h2 {
     position: static;
     order: -1;
+    width: auto;
     max-width: none;
     padding-bottom: 24px;
   }
