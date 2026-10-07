@@ -45,3 +45,10 @@ Video hero checked in Chromium and WebKit at widths 320, 390, 600, 601, 744, 901
 - Manual pause preserves the current frame. Moving the mouse across the hero does not change the background position or resume playback. Playback pauses outside the hero and when the tab is hidden, then resumes when visible unless manually paused. Hidden-tab handling was checked by dispatching the visibility event with a hidden document state.
 - Reduced motion and Save-Data skip video requests. Blocked autoplay keeps the poster and offers a play button; network failure keeps the poster. `scripts/check-video.js` exercises these cases.
 - Layout containment keeps the scaled phone's internal width from causing horizontal overflow in WebKit when motion is disabled. The 320–1920px layout checks and production build pass.
+
+Chapter cards and couple framing checked in Chromium and WebKit at 21 widths from 320 to 1920px, including iPad landscape widths 1133, 1180, 1194, and 1366px.
+
+- Chapter typography, padding, chips, and buttons follow the visual column's width through CSS container units. Narrow two-column layouts no longer switch back to oversized desktop cards. Small date-plan cards omit secondary captions.
+- The debrief thread participates in normal layout and sets a minimum height for its photo; the photo expands with the content. Cards and bubbles stay inside the chapter panel. The checks now include the debrief, which the earlier overflow check omitted.
+- The statement photo retains the source aspect ratio on tablet and desktop, with right-aligned framing and no parallax zoom. Mobile uses a 4:3 frame that retains both people. Through 1366px the heading sits above the photo.
+- Retina screenshots cover chapters 02–04 and the statement at 390, 744, 1133, and 1440px. Animated debrief containment is checked at mobile, iPad portrait/landscape, and 1366px, alongside the existing static layout checks. `npm run build` passes.

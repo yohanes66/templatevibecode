@@ -132,8 +132,7 @@ export function initLanding(root: HTMLElement) {
         .add(chatSequence(card), 0.3);
     });
 
-    /* ---- statement: photo drifts slower than the page ---- */
-    gsap.fromTo(".statement img", { yPercent: -6, scale: 1.12 }, { yPercent: 6, scale: 1.12, ease: "none", scrollTrigger: { trigger: ".statement", start: "top bottom", end: "bottom top", scrub: true } });
+    /* ---- statement ---- */
     gsap.from(".statement h2", { y: 20, autoAlpha: 0, duration: 1, ease: EASE, scrollTrigger: { trigger: ".statement", start: "top 65%" } });
   });
 

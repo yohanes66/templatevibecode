@@ -33,7 +33,7 @@ npm run dev        # http://127.0.0.1:3500
 - **Video hero with depth.** A quiet meadow loop uses the original 1920×1080 video on desktop and tablet, or an 810×1080 crop on mobile. Both use seconds 3–10 of the same source, with no added transition. It has no audio, a still-image fallback, and a pause button. Playback stops outside the hero or in a hidden tab; reduced motion and Save-Data skip the video download. On scroll the background, headline, phone, and floating cards move at different speeds. Mouse movement leaves the hero stationary.
 - **Calm intro.** The headline rises word by word, then the phone mockup slides up, the cards fade in, and the chat inside the phone plays with a typing indicator.
 - **Four story chapters** (match, chat, date, debrief). Each pairs a model photo, illustration, or phone mockup with a UI card, and the elements fade up softly on scroll. The debrief chapter plays its own chat sequence.
-- **Quiet scroll effects.** The statement photo drifts slower than the page, sections reveal with a short stagger, and the nav turns into a flat solid bar after the hero.
+- **Quiet scroll effects.** Sections reveal with a short stagger, and the nav turns into a flat solid bar after the hero. The statement photo stays at its natural framing so both people remain visible.
 - **Interactive demo (`/app`, not linked from the landing).** Ask Mira with quick replies and a typing indicator, Discover with pass/like that swipes through three profiles, and Chats. The phone mockups on the landing page reuse these same screen components.
 - **Responsive** from 390px to 1440px+. All motion is off for `prefers-reduced-motion`.
 
