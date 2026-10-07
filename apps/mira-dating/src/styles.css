@@ -851,7 +851,7 @@ ul {
 .hero-bg video.is-ready {
   opacity: 1;
 }
-.hero-video-toggle {
+.btn.hero-video-toggle {
   position: absolute;
   z-index: 2;
   right: var(--pad);
@@ -859,6 +859,7 @@ ul {
   width: 44px;
   height: 44px;
   padding: 0;
+  background: rgba(24, 18, 12, 0.4);
 }
 .hero-bg::after {
   content: "";
@@ -1704,7 +1705,7 @@ h3,
     padding: 10px 16px;
     font-size: 14px;
   }
-  .hero-video-toggle {
+  .btn.hero-video-toggle {
     top: 80px;
   }
   /* mobile hero flows: copy first, the phone always starts below it whatever the copy wraps to */
