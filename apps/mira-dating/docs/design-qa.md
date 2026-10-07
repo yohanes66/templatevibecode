@@ -30,7 +30,16 @@ With `npm run dev` running, use these commands from this app folder:
 ```sh
 npx --yes --package @playwright/cli playwright-cli -s=mira-layout open http://127.0.0.1:3500 --browser=chrome
 npx --yes --package @playwright/cli playwright-cli -s=mira-layout run-code --filename=scripts/check-layout.js
+npx --yes --package @playwright/cli playwright-cli -s=mira-layout run-code --filename=scripts/check-video.js
 npx --yes --package @playwright/cli playwright-cli -s=mira-layout close
 ```
 
 Repeat with `--browser=webkit` to check Safari's rendering engine.
+
+Video hero checked in Chromium and WebKit at 390×844, 744×1133, and 1440×900, plus the 17-width layout check above.
+
+- The supplied 9,243,738-byte source becomes a 1,645,850-byte desktop loop (1600×900) or an 814,774-byte portrait loop (720×960), both H.264 at 24fps with no audio and fast-start metadata. A 0.6-second blend joins the loop, and the WebP poster matches its first frame.
+- Only one video variant downloads; resizing preserves that source and covers the hero without blank edges. The pause button does not overlap copy or floating cards.
+- Manual pause preserves the current frame. Playback pauses outside the hero and when the tab is hidden, then resumes when visible unless manually paused. Hidden-tab handling was checked by dispatching the visibility event with a hidden document state.
+- Reduced motion and Save-Data skip video requests. Blocked autoplay keeps the poster and offers a play button; network failure keeps the poster. `scripts/check-video.js` exercises these cases.
+- Layout containment keeps the scaled phone's internal width from causing horizontal overflow in WebKit when motion is disabled. The 320–1920px layout checks and production build pass.

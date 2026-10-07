@@ -39,9 +39,6 @@ export function initLanding(root: HTMLElement) {
     if (!motion) return;
     let detach = () => {};
 
-    /* ---- hero: slow camera drift, like footage rather than an effect ---- */
-    gsap.to(".hero-bg img", { scale: 1.06, duration: 30, ease: "sine.inOut", yoyo: true, repeat: -1 });
-
     /* ---- hero: intro ---- */
     const tl = gsap.timeline({ defaults: { ease: EASE }, delay: 0.1 });
     tl.from(".nav", { autoAlpha: 0, duration: 0.8 })

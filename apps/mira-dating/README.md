@@ -30,7 +30,7 @@ npm run dev        # http://127.0.0.1:3500
 
 ## Features
 
-- **Hero with depth.** On scroll the background, headline, phone, and floating cards move at different speeds. On desktop they also shift slightly with the cursor. The photo has a slow camera-like drift.
+- **Video hero with depth.** A quiet meadow loop uses a 1600×900 desktop video or a lighter 720×960 portrait video. It has no audio, a still-image fallback, and a pause button. Playback stops outside the hero or in a hidden tab; reduced motion and Save-Data skip the video download. On scroll the background, headline, phone, and floating cards move at different speeds. On desktop they also shift slightly with the cursor.
 - **Calm intro.** The headline rises word by word, then the phone mockup slides up, the cards fade in, and the chat inside the phone plays with a typing indicator.
 - **Four story chapters** (match, chat, date, debrief). Each pairs a model photo, illustration, or phone mockup with a UI card, and the elements fade up softly on scroll. The debrief chapter plays its own chat sequence.
 - **Quiet scroll effects.** The statement photo drifts slower than the page, sections reveal with a short stagger, and the nav turns into a flat solid bar after the hero.
@@ -47,13 +47,14 @@ npm run dev        # http://127.0.0.1:3500
 | `src/motion.ts` | Every GSAP animation and ScrollTrigger |
 | `src/styles.css` | Design tokens, layout, breakpoints |
 | `public/images/` | 16 WebP images |
+| `public/videos/` | Two optimized H.264 meadow loops, desktop and portrait |
 | `public/fonts/` | Geist and Geist Mono with their OFL licenses |
 
 ## Notes
 
 - All photos and illustrations are AI-generated and fictional. The prompts are in `image-prompts.json`.
 - The chat uses canned replies (`replies` in `src/content.ts`). Nothing is sent anywhere.
-- To use a real video in the hero, swap the `<img>` in `Hero` (`src/App.tsx`) for a muted, looping `<video>` that uses `meadow.webp` as its poster.
+- To replace the hero video, update both files in `public/videos/` and use a frame from the video for `public/images/meadow.webp`. Keep MP4/H.264, no audio, and fast-start metadata. The source variant is chosen once when playback starts; resizing uses `object-fit: cover` without downloading a second video.
 - “Get Mira, it’s free” and “Get the app” scroll to the download section. Put your App Store and Google Play URLs in `storeLinks` in `src/content.ts`.
 - Mira, its reviews, and its numbers are demo content.
 
