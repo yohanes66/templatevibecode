@@ -1077,7 +1077,7 @@ h3,
 }
 .v2 .ph {
   right: 0;
-  width: 85%;
+  width: 100%;
 }
 .v2 .pop-card {
   left: 0;
@@ -1688,9 +1688,6 @@ h3,
   }
   .ch-visual {
     max-width: 588px;
-  }
-  .v2 .ph {
-    width: 100%;
   }
 }
 @media (max-width: 900px) {

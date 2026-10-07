@@ -59,7 +59,7 @@ async (page) => {
         }
       }
       const photo = bounds('.v2 .ph'), visual = bounds('.v2');
-      check(Math.abs(photo.width / visual.width - (innerWidth <= 1080 ? 1 : 0.85)) < 0.01, 'chapter 02 photo width regressed');
+      check(close(photo.width, visual.width) && close(photo.left, visual.left) && close(photo.right, visual.right), 'chapter 02 photo must fill the visual at every width');
       for (const el of document.querySelectorAll('.ch-text h3, .pop-card, .pop-card .t-title, .pop-card .t-headline, .pop-card .btn, .pop-card .chip, .debrief, .debrief .t-headline, .debrief .chip, .cta h2, .footer a')) {
         check(el.scrollWidth <= el.clientWidth + 1, `${el.className || el.tagName} clips its content`);
       }
