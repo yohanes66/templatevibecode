@@ -30,7 +30,7 @@ npm run dev        # http://127.0.0.1:3500
 
 ## Features
 
-- **Video hero with depth.** A quiet meadow loop uses a 1600×900 desktop video or a lighter 720×960 portrait video. Both use seconds 3–10 of the same source, with no added transition. It has no audio, a still-image fallback, and a pause button. Playback stops outside the hero or in a hidden tab; reduced motion and Save-Data skip the video download. On scroll the background, headline, phone, and floating cards move at different speeds. Mouse movement leaves the hero stationary.
+- **Video hero with depth.** A quiet meadow loop uses the original 1920×1080 video on desktop and tablet, or an 810×1080 crop on mobile. Both use seconds 3–10 of the same source, with no added transition. It has no audio, a still-image fallback, and a pause button. Playback stops outside the hero or in a hidden tab; reduced motion and Save-Data skip the video download. On scroll the background, headline, phone, and floating cards move at different speeds. Mouse movement leaves the hero stationary.
 - **Calm intro.** The headline rises word by word, then the phone mockup slides up, the cards fade in, and the chat inside the phone plays with a typing indicator.
 - **Four story chapters** (match, chat, date, debrief). Each pairs a model photo, illustration, or phone mockup with a UI card, and the elements fade up softly on scroll. The debrief chapter plays its own chat sequence.
 - **Quiet scroll effects.** The statement photo drifts slower than the page, sections reveal with a short stagger, and the nav turns into a flat solid bar after the hero.
@@ -54,7 +54,7 @@ npm run dev        # http://127.0.0.1:3500
 
 - All photos and illustrations are AI-generated and fictional. The prompts are in `image-prompts.json`.
 - The chat uses canned replies (`replies` in `src/content.ts`). Nothing is sent anywhere.
-- To replace the hero video, update both files in `public/videos/` and use a frame from the video for `public/images/meadow.webp`. Keep MP4/H.264, no audio, and fast-start metadata. The source variant is chosen once when playback starts; resizing uses `object-fit: cover` without downloading a second video.
+- To replace the hero video, update both files in `public/videos/` and use a frame from the video for `public/images/meadow.webp`. Keep MP4/H.264, no audio, and fast-start metadata. Mobile widths through 600px start with the portrait crop. Wider screens use the full-resolution video; a mobile video upgrades when playback continues on a wider screen. It stays at that quality when narrowing again, avoiding repeated downloads during rotation.
 - “Get Mira, it’s free” and “Get the app” scroll to the download section. Put your App Store and Google Play URLs in `storeLinks` in `src/content.ts`.
 - Mira, its reviews, and its numbers are demo content.
 

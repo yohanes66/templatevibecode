@@ -11,12 +11,13 @@ async (page) => {
   check(requests.length === 0, 'Reduced motion downloads video');
   check(await page.locator('.hero-bg video').evaluate(el => !el.hasAttribute('src') && el.paused), 'Reduced motion enables video');
   check(await page.getByRole('button', { name: /background video/ }).count() === 0, 'Reduced motion exposes video control');
-  for (const [width, height, variant] of [[390, 844, 'portrait'], [744, 1133, 'portrait'], [1440, 900, 'desktop']]) {
+  for (const [width, height, variant] of [[390, 844, 'portrait'], [600, 900, 'portrait'], [601, 900, 'desktop'], [744, 1133, 'desktop'], [1133, 744, 'desktop'], [1440, 900, 'desktop'], [1920, 1080, 'desktop']]) {
     await page.setViewportSize({ width, height });
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.goto(base);
     await page.waitForFunction(() => { const el = document.querySelector('.hero-bg video'); return !el.paused && el.readyState >= 3 && el.currentTime > 0; });
     check(await page.locator('.hero-bg video').evaluate(el => Math.abs(el.duration - 7) < 0.05), 'Video is not the seven-second trim');
+    check(await page.locator('.hero-bg video').evaluate((el, variant) => el.videoWidth === (variant === 'desktop' ? 1920 : 810) && el.videoHeight === 1080, variant), `Wrong video resolution at ${width}px`);
     check(await page.locator('.hero-bg video').evaluate((el, variant) => el.currentSrc.endsWith(`meadow-${variant}.mp4`) && el.muted && el.loop && el.playsInline && el.classList.contains('is-ready'), variant), `Wrong video configuration at ${width}px`);
     await page.evaluate(() => {
       const video = document.querySelector('.hero-bg video').getBoundingClientRect();
@@ -53,6 +54,24 @@ async (page) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(300);
   check(await page.locator('.hero-bg video').getAttribute('src') === source && requests.length === 0, 'Resize downloads a second video');
+  await page.goto(base);
+  await page.waitForFunction(() => { const el = document.querySelector('.hero-bg video'); return !el.paused && el.currentTime > 0; });
+  await page.getByRole('button', { name: 'Pause background video', exact: true }).click();
+  const portraitTime = await page.locator('.hero-bg video').evaluate(el => el.currentTime);
+  await page.setViewportSize({ width: 1133, height: 744 });
+  check(await page.locator('.hero-bg video').evaluate((el, time) => el.paused && el.currentTime === time, portraitTime), 'Resize resumes a manually paused video');
+  await page.getByRole('button', { name: 'Play background video', exact: true }).click();
+  await page.waitForFunction(() => { const el = document.querySelector('.hero-bg video'); return el.videoWidth === 1920 && !el.paused && el.currentTime >= 0; });
+  check(await page.locator('.hero-bg video').evaluate((el, time) => el.currentTime >= time - 0.05, portraitTime), 'Quality upgrade resets playback position');
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(base);
+  await page.waitForFunction(() => { const el = document.querySelector('.hero-bg video'); return el.videoWidth === 810 && !el.paused && el.currentTime > 0; });
+  await page.setViewportSize({ width: 744, height: 1133 });
+  await page.waitForFunction(() => { const el = document.querySelector('.hero-bg video'); return el.videoWidth === 1920 && !el.paused; });
+  requests.length = 0;
+  await page.setViewportSize({ width: 1133, height: 744 });
+  await page.waitForTimeout(300);
+  check(requests.length === 0, 'iPad rotation downloads another video');
   await page.evaluate(() => { Object.defineProperty(document, 'hidden', { configurable: true, value: true }); document.dispatchEvent(new Event('visibilitychange')); });
   await page.waitForFunction(() => document.querySelector('.hero-bg video').paused);
   await page.evaluate(() => { delete document.hidden; document.dispatchEvent(new Event('visibilitychange')); });
@@ -89,5 +108,5 @@ async (page) => {
     check(await page.locator('.hero-bg img').evaluate(el => el.complete && el.naturalWidth > 0), 'Failed video has no image fallback');
   } finally { await page.unroute('**/videos/*.mp4'); }
   check(errors.length === 0, errors.join('\n'));
-  return { result: 'PASS', checks: 'seven-second trim, responsive source and coverage, playback, manual pause and stationary background on mouse movement, offscreen pause/resume, hidden tab, reduced motion, Save-Data, blocked autoplay, network failure, no second download on resize' };
+  return { result: 'PASS', checks: 'seven-second trim, native resolution, responsive source and coverage, mobile quality upgrade, paused resize and resume, iPad rotation without another download, stationary background on mouse movement, offscreen pause/resume, hidden tab, reduced motion, Save-Data, blocked autoplay, network failure' };
 }

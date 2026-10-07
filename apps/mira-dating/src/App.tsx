@@ -70,6 +70,7 @@ function Hero() {
   useEffect(() => {
     const el = video.current!;
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+    const mobile = matchMedia("(max-width: 600px)");
     const connection = (navigator as Navigator & { connection?: EventTarget & { saveData?: boolean } }).connection;
     let visible = false;
     let disposed = false;
@@ -89,7 +90,12 @@ function Hero() {
         el.pause();
         return;
       }
-      if (!el.hasAttribute("src")) el.src = matchMedia("(max-width: 900px)").matches ? "/videos/meadow-portrait.mp4" : "/videos/meadow-desktop.mp4";
+      if (!el.hasAttribute("src") || (!mobile.matches && el.getAttribute("src")!.endsWith("meadow-portrait.mp4"))) {
+        const time = el.currentTime;
+        setReady(false);
+        el.src = mobile.matches ? "/videos/meadow-portrait.mp4" : "/videos/meadow-desktop.mp4";
+        el.currentTime = time;
+      }
       el.muted = true;
       void el.play().catch((error: DOMException) => {
         if (disposed || error.name === "AbortError") return;
@@ -106,12 +112,14 @@ function Hero() {
     }, { threshold: 0.05 });
     observer.observe(el.closest(".hero")!);
     reduced.addEventListener("change", sync);
+    mobile.addEventListener("change", sync);
     connection?.addEventListener("change", sync);
     document.addEventListener("visibilitychange", sync);
     return () => {
       disposed = true;
       observer.disconnect();
       reduced.removeEventListener("change", sync);
+      mobile.removeEventListener("change", sync);
       connection?.removeEventListener("change", sync);
       document.removeEventListener("visibilitychange", sync);
       el.pause();

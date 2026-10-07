@@ -36,10 +36,11 @@ npx --yes --package @playwright/cli playwright-cli -s=mira-layout close
 
 Repeat with `--browser=webkit` to check Safari's rendering engine.
 
-Video hero checked in Chromium and WebKit at 390×844, 744×1133, and 1440×900, plus the 17-width layout check above.
+Video hero checked in Chromium and WebKit at widths 390, 600, 601, 744, 1133, 1440, and 1920px, including iPad portrait and landscape, plus the 17-width layout check above.
 
-- Both variants use exactly seconds 3–10 of the supplied 9,243,738-byte source, without an added blend or transition. The desktop loop is 1,048,741 bytes (1600×900), and the portrait loop is 532,877 bytes (720×960), both H.264 at 24fps with 168 frames, no audio, and fast-start metadata. The 101,666-byte WebP poster matches the first frame of the trimmed clip.
-- Only one video variant downloads; resizing preserves that source and covers the hero without blank edges. The pause button does not overlap copy or floating cards.
+- Both variants use exactly seconds 3–10 of the supplied 9,243,738-byte source, without an added blend or transition. The desktop/tablet loop is 4,445,097 bytes at the original 1920×1080 resolution. The mobile crop is 2,019,844 bytes at 810×1080, without downsampling. Both use H.264 CRF 22 at 24fps with 168 frames, no audio, and fast-start metadata. The 265,876-byte WebP poster matches the first frame at full resolution.
+- Desktop SSIM against the decoded original improves from 0.963546 to 0.989230 over the full seven seconds. Retina screenshots at device scale factor 2 cover mobile, iPad portrait/landscape, and desktop.
+- Widths above 600px use the desktop video, including iPad in either orientation. Mobile-to-tablet/desktop resizing upgrades a playing portrait video. Narrowing retains the higher-quality source; iPad rotation does not download another variant. A manually paused video stays paused during resize and upgrades on resume. The video covers the hero without blank edges, and the pause button does not overlap copy or floating cards.
 - Manual pause preserves the current frame. Moving the mouse across the hero does not change the background position or resume playback. Playback pauses outside the hero and when the tab is hidden, then resumes when visible unless manually paused. Hidden-tab handling was checked by dispatching the visibility event with a hidden document state.
 - Reduced motion and Save-Data skip video requests. Blocked autoplay keeps the poster and offers a play button; network failure keeps the poster. `scripts/check-video.js` exercises these cases.
 - Layout containment keeps the scaled phone's internal width from causing horizontal overflow in WebKit when motion is disabled. The 320–1920px layout checks and production build pass.
